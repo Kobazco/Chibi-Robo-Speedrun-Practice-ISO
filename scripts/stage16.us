@@ -1,0 +1,3467 @@
+	.stage	"stage16"
+
+
+	.prologue  *evt_prologue
+evt_prologue:
+	return
+
+
+	.startup  *evt_startup
+evt_startup:
+	scrn	@fade, 255.w, 255.w, 255.w, 0.w, 255.w, 255.w, 255.w, 255.w, 0.w
+	read	@anim, 20000.d, *loc_131
+	read	@anim, 20005.d, *loc_132
+	pushbp
+	setsp	0.w
+	lib	190.w
+	popbp
+	camera	@unk232, -2.d
+	run	*sub_99
+	run	*sub_100
+	if	not(flag(35.d)), else *loc_98
+	lib	74.w
+loc_98:
+	set	flag(160.d), 0.w
+	set	flag(161.d), 0.w
+	set	flag(162.d), 0.w
+	set	flag(163.d), 0.w
+	set	flag(164.d), 0.w
+	run	*sub_3
+	run	*sub_4
+	wait	@read, 20000.d
+	run	*sub_14
+	run	*sub_53
+	run	*sub_54
+	run	*sub_55
+	run	*sub_56
+	run	*sub_95
+	return
+
+
+loc_131:
+	.db	"cb_robo_1.dat"
+
+
+loc_132:
+	.db	"npc/tonpy_3.dat"
+
+
+sub_99:
+	lib	156.w
+	scrn	@hud, 1.d, 2.d
+	return
+
+
+sub_100:
+	if	eq(flag(8.d), 1.d), else *loc_114
+	run	*sub_113
+	call	-27.d, 48.d, 33.d
+	disp	30.d, 0.d
+	disp	14.d, 0.d
+	disp	15.d, 0.d
+	disp	16.d, 0.d
+	disp	17.d, 0.d
+	disp	18.d, 0.d
+	disp	19.d, 0.d
+	disp	20.d, 0.d
+	disp	21.d, 0.d
+	disp	22.d, 1.d
+	anim	22.d, 4.d
+	pos	22.d, 0.w, 0.w, -3000.d
+	if	eq(flag(595.d), 1.d), else *loc_112
+	disp	53.d, 1.d
+	call	-27.d, 22.d, 57.d
+	born	10011.d, 3.d, 0.w, 0.w, -3530.d, 0.w, 1300.w, 2000.w, 500.w, 0.w
+	born	10012.d, 3.d, -650.d, 0.w, -2830.d, 0.w, 200.w, 2000.w, 1400.w, 0.w
+	born	10013.d, 3.d, 650.w, 0.w, -2830.d, 0.w, 200.w, 2000.w, 1400.w, 0.w
+	attach	53.d, *sub_133
+	anim	22.d, 6.d
+	endif	*loc_103
+loc_112:
+	call	-27.d, 22.d, 57.d
+	disp	59.d, 1.d
+	anim	59.d, 1.w
+loc_103:
+	pushbp
+	setsp	2.w
+	run	*sub_105
+	popbp
+	endif	*loc_104
+loc_121:
+	run	*sub_122
+	run	*sub_116
+	run	*sub_113
+	pushbp
+	setsp	0.w
+	run	*sub_105
+	popbp
+loc_104:
+	return
+loc_114:
+	elif	eq(flag(940.d), 1.d), else *loc_118
+	run	*sub_116
+	run	*sub_117
+	pushbp
+	setsp	1.w
+	run	*sub_105
+	popbp
+	endif	*loc_104
+loc_118:
+	elif	eq(flag(7.d), 1.d), else *loc_121
+	run	*sub_116
+	run	*sub_113
+	run	*sub_120
+	pushbp
+	setsp	0.w
+	run	*sub_105
+	popbp
+	endif	*loc_104
+
+
+sub_113:
+	disp	31.d, 0.d
+	disp	32.d, 0.d
+	disp	33.d, 0.d
+	disp	34.d, 0.d
+	disp	35.d, 0.d
+	disp	36.d, 0.d
+	disp	37.d, 0.d
+	disp	38.d, 0.d
+	disp	40.d, 0.d
+	disp	41.d, 0.d
+	disp	42.d, 0.d
+	disp	43.d, 0.d
+	disp	44.d, 0.d
+	disp	45.d, 0.d
+	disp	46.d, 0.d
+	disp	47.d, 0.d
+	pos	26.d, 0.w, -650.d, 0.w
+	pos	48.d, 0.w, -1650.d, 0.w
+	pos	58.d, 0.w, -1850.d, 0.w
+	return
+
+
+sub_133:
+	scale	53.d, 150.w, 150.w, 150.w
+loc_135:
+	while	1.w, else *loc_136
+	anim	53.d, 1.w
+	wait	@anim, 53.d, -1.d
+	anim	53.d, 0.w
+	goto	*loc_135
+loc_136:
+	return
+
+
+sub_105:
+	case	eq(sp(0.b), 0.w), else *loc_108
+	disp	2.d, 0.d
+	disp	28.d, 0.d
+	disp	23.d, 0.d
+	disp	29.d, 0.d
+	disp	39.d, 1.d
+	disp	27.d, 1.d
+	printf	"０\n"
+	break	*loc_107
+loc_107:
+	return
+loc_108:
+	case	eq(sp(0.b), 1.w), else *loc_110
+	disp	2.d, 0.d
+	disp	27.d, 0.d
+	disp	39.d, 0.d
+	disp	28.d, 0.d
+	disp	23.d, 1.d
+	disp	29.d, 1.d
+	printf	"１\n"
+	break	*loc_107
+loc_110:
+	case	eq(sp(0.b), 2.w), else *loc_107
+	disp	23.d, 0.d
+	disp	28.d, 0.d
+	disp	39.d, 0.d
+	disp	29.d, 0.d
+	disp	2.d, 1.d
+	disp	27.d, 1.d
+	printf	"２\n"
+	break	*loc_107
+
+
+sub_122:
+	if	eq(flag(817.d), 0.d), else *loc_130
+	pos	54.d, -2670.d, -300.d, -2670.d
+	dir	54.d, 40.w
+	anim	54.d, 1.w
+	disp	54.d, 1.d
+loc_130:
+	if	eq(flag(818.d), 0.d), else *loc_129
+	pos	55.d, -960.d, -300.d, -3620.d
+	dir	55.d, 15.w
+	anim	55.d, 1.w
+	disp	55.d, 1.d
+loc_129:
+	if	eq(flag(819.d), 0.d), else *loc_128
+	pos	56.d, 960.w, -400.d, -3620.d
+	dir	56.d, 345.w
+	anim	56.d, 1.w
+	disp	56.d, 1.d
+loc_128:
+	if	eq(flag(820.d), 0.d), else *loc_127
+	pos	57.d, 2670.w, -300.d, -2670.d
+	dir	57.d, 320.w
+	anim	57.d, 1.w
+	disp	57.d, 1.d
+loc_127:
+	return
+
+
+sub_116:
+	pos	14.d, 0.w, 0.w, 0.w
+	pos	15.d, 0.w, 0.w, 0.w
+	pos	16.d, 0.w, 0.w, 0.w
+	pos	17.d, 0.w, 0.w, 0.w
+	pos	18.d, 0.w, 0.w, 0.w
+	pos	19.d, 0.w, 0.w, 0.w
+	pos	20.d, 0.w, 0.w, 0.w
+	pos	21.d, 0.w, 0.w, 0.w
+	call	30.d, 100.d, 14.d, 1.w, 0.w
+	call	30.d, 100.d, 15.d, 1.w, 1.w
+	call	30.d, 100.d, 16.d, 1.w, 2.w
+	call	30.d, 100.d, 17.d, 1.w, 3.w
+	call	30.d, 100.d, 20.d, 1.w, 4.w
+	call	30.d, 100.d, 21.d, 1.w, 5.w
+	call	30.d, 100.d, 18.d, 1.w, 6.w
+	call	30.d, 100.d, 19.d, 1.w, 7.w
+	anim	30.d, 1.w
+	return
+
+
+sub_117:
+	disp	31.d, 1.d
+	disp	32.d, 1.d
+	disp	33.d, 1.d
+	disp	34.d, 1.d
+	disp	35.d, 1.d
+	disp	36.d, 1.d
+	disp	37.d, 1.d
+	disp	38.d, 1.d
+	disp	40.d, 1.d
+	disp	41.d, 1.d
+	disp	42.d, 1.d
+	disp	43.d, 1.d
+	disp	44.d, 1.d
+	disp	45.d, 1.d
+	disp	46.d, 1.d
+	disp	47.d, 1.d
+	born	10001.d, 1.d, 0.w, 360.w, 0.w, 0.w, 1000.w, 50.w, 1000.w, *sub_137
+	born	10002.d, 1.d, 0.w, 0.w, 0.w, 0.w, 10000.w, 50.w, 10000.w, *sub_238
+	disp	10002.d, 0.d
+	born	10003.d, 1.d, 0.w, 0.w, 3250.w, 0.w, 1200.w, 50.w, 500.w, *sub_239
+	born	10004.d, 1.d, 0.w, 0.w, -3250.d, 0.w, 1200.w, 50.w, 500.w, *sub_286
+	born	10005.d, 1.d, -2300.d, 0.w, 2300.w, -45.d, 1200.w, 50.w, 500.w, *sub_289
+	born	10006.d, 1.d, 2300.w, 0.w, -2300.d, -45.d, 1200.w, 50.w, 500.w, *sub_292
+	born	10007.d, 1.d, -3250.d, 0.w, 0.w, -90.d, 1200.w, 50.w, 500.w, *sub_295
+	born	10008.d, 1.d, 3250.w, 0.w, 0.w, -90.d, 1200.w, 50.w, 500.w, *sub_298
+	born	10009.d, 1.d, -2300.d, 0.w, -2300.d, -135.d, 1200.w, 50.w, 500.w, *sub_301
+	born	10010.d, 1.d, 2300.w, 0.w, 2300.w, -135.d, 1200.w, 50.w, 500.w, *sub_304
+	set	var(44.d), -1.d
+	return
+
+
+sub_137:
+	if	or(or(or(not(flag(166.d)), not(flag(167.d))), not(flag(168.d))), not(flag(169.d))), else *loc_141
+	disp	10001.d, 0.d
+	moveto	26.d, 0.w, -200.d, 0.w, 25.w, -1.d, -1.d
+	wait	@move, 26.d
+	lib	54.w
+	camera	@unk229, 40.w, 1.d, 200.w
+	moveto	30.d, 0.w, 3000.w, 0.w, 300.w, -1.d, -1.d
+	wait	@move, 30.d
+	if	and(and(and(not(flag(166.d)), not(flag(167.d))), not(flag(168.d))), not(flag(169.d))), else *loc_140
+	anim	20045.d, 21.d
+	anim	20046.d, 21.d
+	anim	20047.d, 21.d
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"No, you mustn't!",
+		wait(254.b)
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+loc_140:
+	camera	@unk238, -2.d
+	lib	55.w
+	camera	@reset, 1.d, 100.w
+	attach	48.d, *sub_142
+	attach	26.d, *sub_145
+	set	flag(175.d), 1.d
+	disp	10002.d, 1.d
+loc_141:
+	return
+
+
+sub_142:
+	while	1.d, else *loc_144
+	sfx	589826.d, 1.d
+	wait	@sfx, 589826.d
+	goto	*sub_142
+loc_144:
+	return
+
+
+sub_145:
+	set	var(41.d), 0.w
+	set	var(42.d), 5.w
+	set	var(43.d), 0.w
+	set	flag(174.d), 0.d
+loc_156:
+	while	1.d, else *loc_188
+	case	eq(var(40.d), 0.w), else *loc_173
+	if	eq(flag(166.d), 0.d), else *loc_172
+	anim	31.d, 1.w
+	anim	32.d, 1.w
+	endif	*loc_149
+loc_172:
+	anim	31.d, 0.w
+	anim	32.d, 0.w
+loc_149:
+	break	*loc_150
+loc_150:
+	set	adda(var(41.d), 1.w)
+	if	ge(var(41.d), var(42.d)), else *loc_171
+	set	var(41.d), 0.w
+	if	flag(174.d), else *loc_154
+	set	var(42.d), add(var(42.d), 6.w)
+	set	suba(var(43.d), 1.w)
+	if	lt(var(43.d), 0.w), else *loc_154
+	timer	0.w, *sub_189
+	return
+loc_154:
+	set	adda(var(40.d), 1.w)
+	if	gt(var(40.d), 3.w), else *loc_170
+	set	var(40.d), 0.w
+loc_170:
+	run	*sub_157
+loc_171:
+	wait	@time, 1.w
+	goto	*loc_156
+loc_173:
+	case	eq(var(40.d), 1.w), else *loc_178
+	if	eq(flag(167.d), 0.d), else *loc_177
+	anim	33.d, 1.w
+	anim	34.d, 1.w
+	endif	*loc_176
+loc_177:
+	anim	33.d, 0.w
+	anim	34.d, 0.w
+loc_176:
+	break	*loc_150
+loc_178:
+	case	eq(var(40.d), 2.w), else *loc_183
+	if	eq(flag(168.d), 0.d), else *loc_182
+	anim	35.d, 1.w
+	anim	36.d, 1.w
+	endif	*loc_181
+loc_182:
+	anim	35.d, 0.w
+	anim	36.d, 0.w
+loc_181:
+	break	*loc_150
+loc_183:
+	case	eq(var(40.d), 3.w), else *loc_150
+	if	eq(flag(169.d), 0.d), else *loc_187
+	anim	37.d, 1.w
+	anim	38.d, 1.w
+	endif	*loc_186
+loc_187:
+	anim	37.d, 0.w
+	anim	38.d, 0.w
+loc_186:
+	break	*loc_150
+loc_188:
+	return
+
+
+sub_189:
+	wait	@time, 60.w
+	if	eq(var(44.d), var(40.d)), else *loc_234
+	sfx	589828.d, 1.d
+	anim	48.d, 0.w
+	case	eq(var(40.d), 0.w), else *loc_222
+	if	not(flag(166.d)), else *loc_221
+	set	flag(166.d), 1.d
+	run	*sub_218
+	anim	31.d, 0.w
+	anim	32.d, 0.w
+	anim	40.d, 0.w
+	anim	41.d, 0.w
+	wait	@time, 15.w
+	anim	31.d, 1.w
+	anim	32.d, 1.w
+	anim	40.d, 1.w
+	anim	41.d, 1.w
+	wait	@time, 15.w
+	anim	31.d, 0.w
+	anim	32.d, 0.w
+	anim	40.d, 0.w
+	anim	41.d, 0.w
+	wait	@time, 15.w
+	anim	31.d, 1.w
+	anim	32.d, 1.w
+	anim	40.d, 1.w
+	anim	41.d, 1.w
+	wait	@time, 15.w
+	anim	31.d, 0.w
+	anim	32.d, 0.w
+	anim	40.d, 0.w
+	anim	41.d, 0.w
+	wait	@time, 15.w
+	anim	31.d, 1.w
+	anim	32.d, 1.w
+	anim	40.d, 1.w
+	anim	41.d, 1.w
+	camera	@unk227, 0.w, 3000.w, 0.w, 1.d, 100.w
+	wait	@cam
+	sfx	589824.d, 1.d
+	anim	14.d, 1.w
+	anim	20.d, 1.w
+	wait	@anim, 14.d, -1.d
+	disp	61.d, 1.d
+	anim	61.d, 1.w
+	wait	@anim, 61.d, -1.d
+	anim	61.d, 0.w
+loc_221:
+	break	*loc_193
+loc_193:
+	endif	*loc_194
+loc_234:
+	sfx	589827.d, 1.d
+loc_194:
+	if	and(and(and(flag(166.d), flag(167.d)), flag(168.d)), flag(169.d)), else *loc_207
+	run	*sub_197
+	camera	@reset, 1.d, 100.w
+	endif	*loc_196
+loc_207:
+	if	eq(var(44.d), var(40.d)), else *loc_217
+	wait	@time, 60.w
+	lib	54.w
+	camera	@reset, 1.d, 100.w
+	anim	20045.d, 21.d
+	anim	20046.d, 21.d
+	anim	20047.d, 21.d
+	anim	20048.d, 21.d
+	if	eq(var(44.d), 0.w), else *loc_216
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Our technology is secret!",
+		wait(254.b)
+loc_216:
+	if	eq(var(44.d), 1.w), else *loc_215
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Do not match the colors!",
+		wait(254.b)
+loc_215:
+	if	eq(var(44.d), 2.w), else *loc_214
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Oh, no, he has formed the drive sphere!",
+		wait(254.b)
+loc_214:
+	if	eq(var(44.d), 3.w), else *loc_213
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Oh...no...",
+		wait(254.b)
+loc_213:
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	lib	55.w
+loc_217:
+	call	-26.d, 48.d, 40.d
+loc_196:
+	return
+loc_222:
+	case	eq(var(40.d), 1.w), else *loc_226
+	if	not(flag(167.d)), else *loc_225
+	set	flag(167.d), 1.d
+	run	*sub_218
+	anim	33.d, 0.w
+	anim	34.d, 0.w
+	anim	42.d, 0.w
+	anim	43.d, 0.w
+	wait	@time, 15.w
+	anim	33.d, 1.w
+	anim	34.d, 1.w
+	anim	42.d, 1.w
+	anim	43.d, 1.w
+	wait	@time, 15.w
+	anim	33.d, 0.w
+	anim	34.d, 0.w
+	anim	42.d, 0.w
+	anim	43.d, 0.w
+	wait	@time, 15.w
+	anim	33.d, 1.w
+	anim	34.d, 1.w
+	anim	42.d, 1.w
+	anim	43.d, 1.w
+	wait	@time, 15.w
+	anim	33.d, 0.w
+	anim	34.d, 0.w
+	anim	42.d, 0.w
+	anim	43.d, 0.w
+	wait	@time, 15.w
+	anim	33.d, 1.w
+	anim	34.d, 1.w
+	anim	42.d, 1.w
+	anim	43.d, 1.w
+	camera	@unk227, 0.w, 3000.w, 0.w, 1.d, 100.w
+	wait	@cam
+	sfx	589824.d, 1.d
+	anim	15.d, 1.w
+	anim	21.d, 1.w
+	wait	@anim, 15.d, -1.d
+	disp	61.d, 1.d
+	anim	61.d, 2.w
+	wait	@anim, 61.d, -1.d
+	anim	61.d, 0.w
+loc_225:
+	break	*loc_193
+loc_226:
+	case	eq(var(40.d), 2.w), else *loc_230
+	if	not(flag(168.d)), else *loc_229
+	set	flag(168.d), 1.d
+	run	*sub_218
+	anim	35.d, 0.w
+	anim	36.d, 0.w
+	anim	44.d, 0.w
+	anim	45.d, 0.w
+	wait	@time, 15.w
+	anim	35.d, 1.w
+	anim	36.d, 1.w
+	anim	44.d, 1.w
+	anim	45.d, 1.w
+	wait	@time, 15.w
+	anim	35.d, 0.w
+	anim	36.d, 0.w
+	anim	44.d, 0.w
+	anim	45.d, 0.w
+	wait	@time, 15.w
+	anim	35.d, 1.w
+	anim	36.d, 1.w
+	anim	44.d, 1.w
+	anim	45.d, 1.w
+	wait	@time, 15.w
+	anim	35.d, 0.w
+	anim	36.d, 0.w
+	anim	44.d, 0.w
+	anim	45.d, 0.w
+	wait	@time, 15.w
+	anim	35.d, 1.w
+	anim	36.d, 1.w
+	anim	44.d, 1.w
+	anim	45.d, 1.w
+	camera	@unk227, 0.w, 3000.w, 0.w, 1.d, 100.w
+	wait	@cam
+	sfx	589824.d, 1.d
+	anim	16.d, 1.w
+	anim	18.d, 1.w
+	wait	@anim, 16.d, -1.d
+	disp	61.d, 1.d
+	anim	61.d, 4.w
+	wait	@anim, 61.d, -1.d
+	anim	61.d, 0.w
+loc_229:
+	break	*loc_193
+loc_230:
+	case	eq(var(40.d), 3.w), else *loc_193
+	if	not(flag(169.d)), else *loc_233
+	set	flag(169.d), 1.d
+	run	*sub_218
+	anim	37.d, 0.w
+	anim	38.d, 0.w
+	anim	46.d, 0.w
+	anim	47.d, 0.w
+	wait	@time, 15.w
+	anim	37.d, 1.w
+	anim	38.d, 1.w
+	anim	46.d, 1.w
+	anim	47.d, 1.w
+	wait	@time, 15.w
+	anim	37.d, 0.w
+	anim	38.d, 0.w
+	anim	46.d, 0.w
+	anim	47.d, 0.w
+	wait	@time, 15.w
+	anim	37.d, 1.w
+	anim	38.d, 1.w
+	anim	46.d, 1.w
+	anim	47.d, 1.w
+	wait	@time, 15.w
+	anim	37.d, 0.w
+	anim	38.d, 0.w
+	anim	46.d, 0.w
+	anim	47.d, 0.w
+	wait	@time, 15.w
+	anim	37.d, 1.w
+	anim	38.d, 1.w
+	anim	46.d, 1.w
+	anim	47.d, 1.w
+	camera	@unk227, 0.w, 3000.w, 0.w, 1.d, 100.w
+	wait	@cam
+	sfx	589824.d, 1.d
+	anim	17.d, 1.w
+	anim	19.d, 1.w
+	wait	@anim, 17.d, -1.d
+	disp	61.d, 1.d
+	anim	61.d, 3.w
+	wait	@anim, 61.d, -1.d
+	anim	61.d, 0.w
+loc_233:
+	break	*loc_193
+
+
+sub_218:
+	if	and(and(and(flag(166.d), flag(167.d)), flag(168.d)), flag(169.d)), else *loc_220
+	call	-27.d, 48.d, 40.d
+loc_220:
+	return
+
+
+sub_197:
+	case	eq(var(40.d), 0.w), else *loc_201
+	anim	61.d, 2.w, 4.w, 3.w, 0.w
+	break	*loc_199
+loc_199:
+	disp	10001.d, 0.d
+	disp	10002.d, 0.d
+	detach	15.d
+	color	14.d, @modulate, 255.w, 255.w, 255.w, 30.w
+	color	15.d, @modulate, 255.w, 255.w, 255.w, 30.w
+	color	16.d, @modulate, 255.w, 255.w, 255.w, 30.w
+	color	17.d, @modulate, 255.w, 255.w, 255.w, 30.w
+	color	18.d, @modulate, 255.w, 255.w, 255.w, 30.w
+	color	19.d, @modulate, 255.w, 255.w, 255.w, 30.w
+	color	20.d, @modulate, 255.w, 255.w, 255.w, 30.w
+	color	21.d, @modulate, 255.w, 255.w, 255.w, 30.w
+	color	14.d, @blend, 0.w, 0.w, 0.w, 30.w
+	color	15.d, @blend, 0.w, 0.w, 0.w, 30.w
+	color	16.d, @blend, 0.w, 0.w, 0.w, 30.w
+	color	17.d, @blend, 0.w, 0.w, 0.w, 30.w
+	color	18.d, @blend, 0.w, 0.w, 0.w, 30.w
+	color	19.d, @blend, 0.w, 0.w, 0.w, 30.w
+	color	20.d, @blend, 0.w, 0.w, 0.w, 30.w
+	color	21.d, @blend, 0.w, 0.w, 0.w, 30.w
+	lib	38.w
+	attach	49.d, *sub_235
+	sfx	589830.d, 1.d
+	msg	voice(28.b),
+		speed(6.b),
+		speed(0.b),
+		"Color-code authorization accepted!\n",
+		speed(0.b),
+		"Color-code authorization accepted!",
+		wait(255.b)
+	wait	@time, 30.w
+	msg	voice(28.b),
+		speed(6.b),
+		speed(0.b),
+		"Drive mode engaged! Temporal shifters activated!",
+		wait(255.b)
+	wait	@time, 60.w
+	msg	voice(28.b),
+		speed(6.b),
+		speed(0.b),
+		"Warp vessel ready for boarding!",
+		wait(255.b)
+	sfx	589830.d, 2.d, 200.w
+	detach	49.d
+	wait	@time, 60.w
+	pushbp
+	setsp	3.w
+	lib	259.w
+	popbp
+	sfx	589832.d, 1.d
+	pushbp
+	setsp	10.w
+	lib	186.w
+	popbp
+	disp	10003.d, 0.d
+	disp	10004.d, 0.d
+	disp	10005.d, 0.d
+	disp	10006.d, 0.d
+	disp	10007.d, 0.d
+	disp	10008.d, 0.d
+	disp	10009.d, 0.d
+	disp	10010.d, 0.d
+	pushbp
+	setsp	2.w
+	run	*sub_105
+	popbp
+	disp	30.d, 0.d
+	disp	31.d, 0.d
+	disp	32.d, 0.d
+	disp	33.d, 0.d
+	disp	34.d, 0.d
+	disp	35.d, 0.d
+	disp	36.d, 0.d
+	disp	37.d, 0.d
+	disp	38.d, 0.d
+	disp	40.d, 0.d
+	disp	41.d, 0.d
+	disp	42.d, 0.d
+	disp	43.d, 0.d
+	disp	44.d, 0.d
+	disp	45.d, 0.d
+	disp	46.d, 0.d
+	disp	47.d, 0.d
+	disp	14.d, 0.d
+	disp	15.d, 0.d
+	disp	16.d, 0.d
+	disp	17.d, 0.d
+	disp	18.d, 0.d
+	disp	19.d, 0.d
+	disp	20.d, 0.d
+	disp	21.d, 0.d
+	disp	22.d, 1.d
+	anim	22.d, 1.d
+	wait	@time, 5.w
+	scrn	@fade, 255.w, 255.w, 255.w, 255.w, 255.w, 255.w, 255.w, 0.w, 200.w
+	camera	@unk227, 0.w, 1000.w, -3000.d, 1.d, 600.w
+	mdir	49.d, @dir, 80.w, 600.w, -1.d
+	mdir	51.d, @dir, 50.w, 600.w, -1.d
+	mdir	52.d, @dir, -50.d, 600.w, -1.d
+	mdir	50.d, @dir, -80.d, 600.w, -1.d
+	moveto	20045.d, -3767.d, 200.w, -670.d, 600.w, -1.d, -1.d
+	moveto	20046.d, -2932.d, 200.w, -2472.d, 600.w, -1.d, -1.d
+	moveto	20047.d, 2936.w, 200.w, -2466.d, 600.w, -1.d, -1.d
+	moveto	20048.d, 3734.w, 200.w, -659.d, 600.w, -1.d, -1.d
+	anim	22.d, 2.d
+	moveto	22.d, 0.w, 0.w, -3000.d, 600.w, -1.d, -1.d
+	moveto	26.d, 0.w, -650.d, 0.w, 600.w, -1.d, -1.d
+	moveto	48.d, 0.w, -1650.d, 0.w, 600.w, -1.d, -1.d
+	wait	@time, 100.w
+	sfx	589833.d, 1.d
+	wait	@move, 22.d
+	disp	59.d, 1.d
+	anim	59.d, 1.w
+	sfx	589834.d, 1.d
+	anim	22.d, 3.d
+	wait	@anim, 22.d, -1.d
+	anim	22.d, 4.d
+	sfx	-65508.d, 3.d, 200.w
+	set	flag(8.d), 1.d
+	anim	20045.d, 22.d, 13.d
+	anim	20046.d, 22.d, 13.d
+	anim	20047.d, 22.d, 13.d
+	anim	20048.d, 22.d, 13.d
+	run	*sub_200
+	lib	39.w
+	return
+loc_201:
+	case	eq(var(40.d), 1.w), else *loc_203
+	anim	61.d, 4.w, 3.w, 1.w, 0.w
+	break	*loc_199
+loc_203:
+	case	eq(var(40.d), 2.w), else *loc_205
+	anim	61.d, 3.w, 1.w, 2.w, 0.w
+	break	*loc_199
+loc_205:
+	case	eq(var(40.d), 3.w), else *loc_199
+	anim	61.d, 1.w, 2.w, 4.w, 0.w
+	break	*loc_199
+
+
+sub_235:
+	while	1.d, else *loc_237
+	scrn	@fade, 255.w, 80.w, 80.w, 0.w, 255.w, 80.w, 80.w, 128.w, 30.w
+	wait	@fade
+	scrn	@fade, 255.w, 80.w, 80.w, 128.w, 255.w, 80.w, 80.w, 0.w, 30.w
+	wait	@fade
+	goto	*sub_235
+loc_237:
+	return
+
+
+sub_200:
+	msg	voice(17.b),
+		speed(6.b),
+		speed(0.b),
+		"You mustn't! No!",
+		wait(254.b)
+	return
+
+
+sub_157:
+	if	eq(flag(166.d), 0.d), else *loc_169
+	anim	31.d, 0.w
+	anim	32.d, 0.w
+	endif	*loc_159
+loc_169:
+	anim	31.d, 1.w
+	anim	32.d, 1.w
+loc_159:
+	if	eq(flag(167.d), 0.d), else *loc_168
+	anim	33.d, 0.w
+	anim	34.d, 0.w
+	endif	*loc_161
+loc_168:
+	anim	33.d, 1.w
+	anim	34.d, 1.w
+loc_161:
+	if	eq(flag(168.d), 0.d), else *loc_167
+	anim	35.d, 0.w
+	anim	36.d, 0.w
+	endif	*loc_163
+loc_167:
+	anim	35.d, 1.w
+	anim	36.d, 1.w
+loc_163:
+	if	eq(flag(169.d), 0.d), else *loc_166
+	anim	37.d, 0.w
+	anim	38.d, 0.w
+	endif	*loc_165
+loc_166:
+	anim	37.d, 1.w
+	anim	38.d, 1.w
+loc_165:
+	return
+
+
+sub_238:
+	disp	10002.d, 0.d
+	detach	26.d
+	detach	48.d
+	moveto	26.d, 0.w, 0.w, 0.w, 50.w, -1.d, -1.d
+	wait	@move, 26.d
+	run	*sub_157
+	color	14.d, @blend, 0.w, 0.w, 0.w, 0.w
+	color	15.d, @blend, 0.w, 0.w, 0.w, 0.w
+	color	16.d, @blend, 0.w, 0.w, 0.w, 0.w
+	color	17.d, @blend, 0.w, 0.w, 0.w, 0.w
+	color	18.d, @blend, 0.w, 0.w, 0.w, 0.w
+	color	19.d, @blend, 0.w, 0.w, 0.w, 0.w
+	color	20.d, @blend, 0.w, 0.w, 0.w, 0.w
+	color	21.d, @blend, 0.w, 0.w, 0.w, 0.w
+	disp	10001.d, 1.d
+	return
+
+
+sub_239:
+	if	and(ne(var(45.d), 1.w), ne(var(46.d), 5.w)), else *loc_285
+	pushbp
+	setsp	45.d
+	run	*sub_241
+	popbp
+	pushbp
+	setsp	46.d
+	run	*sub_241
+	popbp
+	set	var(45.d), 1.w
+	set	var(46.d), 5.w
+	sfx	589825.d, 1.d
+	anim	48.d, 1.w
+loc_285:
+	anim	40.d, 1.w
+	anim	41.d, 1.w
+	run	*sub_276
+	return
+
+
+sub_241:
+	case	eq(var(sp(0.b)), 0.w), else *loc_244
+	break	*loc_243
+loc_243:
+	return
+loc_244:
+	case	eq(var(sp(0.b)), 1.w), else *loc_248
+	if	eq(flag(166.d), 0.d), else *loc_247
+	anim	40.d, 0.w
+loc_247:
+	break	*loc_243
+loc_248:
+	case	eq(var(sp(0.b)), 2.w), else *loc_252
+	if	eq(flag(167.d), 0.d), else *loc_251
+	anim	42.d, 0.w
+loc_251:
+	break	*loc_243
+loc_252:
+	case	eq(var(sp(0.b)), 3.w), else *loc_256
+	if	eq(flag(168.d), 0.d), else *loc_255
+	anim	44.d, 0.w
+loc_255:
+	break	*loc_243
+loc_256:
+	case	eq(var(sp(0.b)), 4.w), else *loc_260
+	if	eq(flag(169.d), 0.d), else *loc_259
+	anim	46.d, 0.w
+loc_259:
+	break	*loc_243
+loc_260:
+	case	eq(var(sp(0.b)), 5.w), else *loc_264
+	if	eq(flag(166.d), 0.d), else *loc_263
+	anim	41.d, 0.w
+loc_263:
+	break	*loc_243
+loc_264:
+	case	eq(var(sp(0.b)), 6.w), else *loc_268
+	if	eq(flag(167.d), 0.d), else *loc_267
+	anim	43.d, 0.w
+loc_267:
+	break	*loc_243
+loc_268:
+	case	eq(var(sp(0.b)), 7.w), else *loc_272
+	if	eq(flag(168.d), 0.d), else *loc_271
+	anim	45.d, 0.w
+loc_271:
+	break	*loc_243
+loc_272:
+	case	eq(var(sp(0.b)), 8.w), else *loc_243
+	if	eq(flag(169.d), 0.d), else *loc_275
+	anim	47.d, 0.w
+loc_275:
+	break	*loc_243
+
+
+sub_276:
+	set	var(44.d), -1.d
+	if	or(and(eq(var(45.d), 1.w), eq(var(46.d), 5.w)), and(eq(var(45.d), 5.w), eq(var(46.d), 1.w))), else *loc_284
+	set	var(44.d), 0.w
+loc_284:
+	if	or(and(eq(var(45.d), 2.w), eq(var(46.d), 6.w)), and(eq(var(45.d), 6.w), eq(var(46.d), 2.w))), else *loc_283
+	set	var(44.d), 1.w
+loc_283:
+	if	or(and(eq(var(45.d), 3.w), eq(var(46.d), 7.w)), and(eq(var(45.d), 7.w), eq(var(46.d), 3.w))), else *loc_282
+	set	var(44.d), 2.w
+loc_282:
+	if	or(and(eq(var(45.d), 4.w), eq(var(46.d), 8.w)), and(eq(var(45.d), 8.w), eq(var(46.d), 4.w))), else *loc_281
+	set	var(44.d), 3.w
+loc_281:
+	return
+
+
+sub_286:
+	if	and(ne(var(45.d), 5.w), ne(var(46.d), 5.w)), else *loc_288
+	pushbp
+	setsp	45.d
+	run	*sub_241
+	popbp
+	pushbp
+	setsp	46.d
+	run	*sub_241
+	popbp
+	set	var(45.d), 1.w
+	set	var(46.d), 5.w
+	sfx	589825.d, 1.d
+	anim	48.d, 1.w
+loc_288:
+	anim	40.d, 1.w
+	anim	41.d, 1.w
+	run	*sub_276
+	return
+
+
+sub_289:
+	if	and(ne(var(45.d), 2.w), ne(var(46.d), 6.w)), else *loc_291
+	pushbp
+	setsp	45.d
+	run	*sub_241
+	popbp
+	pushbp
+	setsp	46.d
+	run	*sub_241
+	popbp
+	set	var(45.d), 2.w
+	set	var(46.d), 6.w
+	sfx	589825.d, 1.d
+	anim	48.d, 2.w
+loc_291:
+	anim	42.d, 1.w
+	anim	43.d, 1.w
+	run	*sub_276
+	return
+
+
+sub_292:
+	if	and(ne(var(45.d), 6.w), ne(var(46.d), 6.w)), else *loc_294
+	pushbp
+	setsp	45.d
+	run	*sub_241
+	popbp
+	pushbp
+	setsp	46.d
+	run	*sub_241
+	popbp
+	set	var(45.d), 2.w
+	set	var(46.d), 6.w
+	sfx	589825.d, 1.d
+	anim	48.d, 2.w
+loc_294:
+	anim	42.d, 1.w
+	anim	43.d, 1.w
+	run	*sub_276
+	return
+
+
+sub_295:
+	if	and(ne(var(45.d), 3.w), ne(var(46.d), 3.w)), else *loc_297
+	pushbp
+	setsp	45.d
+	run	*sub_241
+	popbp
+	pushbp
+	setsp	46.d
+	run	*sub_241
+	popbp
+	set	var(45.d), 3.w
+	set	var(46.d), 7.w
+	sfx	589825.d, 1.d
+	anim	48.d, 3.w
+loc_297:
+	anim	44.d, 1.w
+	anim	45.d, 1.w
+	run	*sub_276
+	return
+
+
+sub_298:
+	if	and(ne(var(45.d), 3.w), ne(var(46.d), 7.w)), else *loc_300
+	pushbp
+	setsp	45.d
+	run	*sub_241
+	popbp
+	pushbp
+	setsp	46.d
+	run	*sub_241
+	popbp
+	set	var(45.d), 3.w
+	set	var(46.d), 7.w
+	sfx	589825.d, 1.d
+	anim	48.d, 3.w
+loc_300:
+	anim	44.d, 1.w
+	anim	45.d, 1.w
+	run	*sub_276
+	return
+
+
+sub_301:
+	if	and(ne(var(45.d), 4.w), ne(var(46.d), 8.w)), else *loc_303
+	pushbp
+	setsp	45.d
+	run	*sub_241
+	popbp
+	pushbp
+	setsp	46.d
+	run	*sub_241
+	popbp
+	set	var(45.d), 4.w
+	set	var(46.d), 8.w
+	sfx	589825.d, 1.d
+	anim	48.d, 4.w
+loc_303:
+	anim	46.d, 1.w
+	anim	47.d, 1.w
+	run	*sub_276
+	return
+
+
+sub_304:
+	if	and(ne(var(45.d), 4.w), ne(var(46.d), 8.w)), else *loc_306
+	pushbp
+	setsp	45.d
+	run	*sub_241
+	popbp
+	pushbp
+	setsp	46.d
+	run	*sub_241
+	popbp
+	set	var(45.d), 4.w
+	set	var(46.d), 8.w
+	sfx	589825.d, 1.d
+	anim	48.d, 4.w
+loc_306:
+	anim	46.d, 1.w
+	anim	47.d, 1.w
+	run	*sub_276
+	return
+
+
+sub_120:
+	moveto	26.d, 0.w, 0.w, 0.w, 300.w, -1.d, -1.d
+	moveto	48.d, 0.w, 0.w, 0.w, 300.w, -1.d, -1.d
+	disp	58.d, 1.d
+	anim	58.d, 1.w
+	moveto	58.d, 0.w, -600.d, 0.w, 300.w, -1.d, -1.d
+	return
+
+
+sub_3:
+	return
+
+
+sub_4:
+	run	*sub_5
+	pushbp
+	setsp	0.w
+	setsp	31.d
+	setsp	14.d
+	run	*sub_7
+	popbp
+	pushbp
+	setsp	0.w
+	setsp	32.d
+	setsp	19.d
+	run	*sub_7
+	popbp
+	pushbp
+	setsp	0.w
+	setsp	33.d
+	setsp	16.d
+	run	*sub_7
+	popbp
+	pushbp
+	setsp	0.w
+	setsp	34.d
+	setsp	21.d
+	run	*sub_7
+	popbp
+	pushbp
+	setsp	0.w
+	setsp	35.d
+	setsp	15.d
+	run	*sub_7
+	popbp
+	pushbp
+	setsp	0.w
+	setsp	36.d
+	setsp	20.d
+	run	*sub_7
+	popbp
+	pushbp
+	setsp	0.w
+	setsp	37.d
+	setsp	17.d
+	run	*sub_7
+	popbp
+	pushbp
+	setsp	0.w
+	setsp	38.d
+	setsp	18.d
+	run	*sub_7
+	popbp
+	return
+
+
+sub_5:
+	run	*sub_6
+	return
+
+
+sub_6:
+	return
+
+
+sub_7:
+	set	var(sp(1.b)), sp(0.b)
+	if	eq(var(sp(1.b)), 1.w), else *loc_10
+	anim	sp(2.b), 2.w
+	endif	*loc_9
+loc_12:
+	elif	eq(sp(0.b), 3.w), else *loc_9
+	anim	sp(2.b), 6.w
+loc_9:
+	return
+loc_10:
+	elif	eq(sp(0.b), 2.w), else *loc_12
+	anim	sp(2.b), 4.w
+	endif	*loc_9
+
+
+sub_14:
+	run	*sub_23
+	run	*sub_31
+	if	eq(flag(817.d), 1.d), else *loc_22
+	call	-27.d, 20045.d, 57.d
+loc_22:
+	if	eq(flag(818.d), 1.d), else *loc_21
+	call	-27.d, 20046.d, 57.d
+loc_21:
+	if	eq(flag(819.d), 1.d), else *loc_20
+	call	-27.d, 20047.d, 57.d
+loc_20:
+	if	eq(flag(820.d), 1.d), else *loc_19
+	call	-27.d, 20048.d, 57.d
+loc_19:
+	return
+
+
+sub_23:
+	case	eq(map(1.d), 9.d), else *loc_26
+	camera	@pos, 0.w, 3127.w, 12845.w, 3.d, 0.w
+	camera	@unk227, 0.w, -322.d, 2380.w, 3.d, 0.w
+	camera	@unk229, 25.w, 3.d, 0.w
+	camera	@distance, 110.w, 3.d, 0.w
+	call	20000.d, 701.d
+	pos	20000.d, 0.w, 0.w, 5400.w
+	dir	20000.d, 0.w
+	mdir	20000.d, @dir, 180.w, 300.w, -1.d
+	sfx	589829.d, 1.d
+	anim1	20000.d, 1312.d
+	break	*loc_25
+loc_25:
+	return
+loc_26:
+	case	eq(map(1.d), 18.d), else *loc_28
+	ptcl	153.d, @pos, 0.w, 0.w, -3000.d, 100.w, 100.w, 100.w, 0.w
+	call	20000.d, 701.d
+	camera	@pos, -21.d, 3223.w, 5786.w, 3.d, 0.w
+	camera	@unk227, -69.d, 1000.w, -3881.d, 3.d, 0.w
+	camera	@unk229, 26.w, 3.d, 0.w
+	camera	@distance, 99.w, 3.d, 0.w
+	pos	20000.d, 0.w, 0.w, -2500.d
+	dir	20000.d, 0.w
+	call	20005.d, 1.d, 0.d
+	disp	20005.d, 1.d
+	pos	20005.d, 0.w, 1000.w, -2500.d
+	dir	20005.d, 0.w
+	break	*loc_25
+loc_28:
+	case	eq(map(1.d), 0.d), else *loc_30
+	camera	@pos, 0.w, 3127.w, 12845.w, 3.d, 0.w
+	camera	@unk227, 0.w, -322.d, 2380.w, 3.d, 0.w
+	camera	@unk229, 25.w, 3.d, 0.w
+	camera	@distance, 110.w, 3.d, 0.w
+	call	20000.d, 701.d
+	pos	20000.d, 0.w, 0.w, 5400.w
+	dir	20000.d, 0.w
+	mdir	20000.d, @dir, 180.w, 300.w, -1.d
+	anim1	20000.d, 1312.d
+	break	*loc_25
+loc_30:
+	break	*loc_25
+
+
+sub_31:
+	set	var(40.d), -1.d
+	if	eq(flag(7.d), 1.d), else *loc_52
+	set	flag(817.d), 1.d
+	set	flag(818.d), 1.d
+	set	flag(819.d), 1.d
+	set	flag(820.d), 1.d
+loc_52:
+	if	eq(flag(8.d), 1.d), else *loc_35
+	pos	20045.d, -3767.d, 200.w, -670.d
+	dir	20045.d, 74.w
+	pos	20046.d, -2932.d, 200.w, -2472.d
+	dir	20046.d, 46.w
+	pos	20047.d, 2936.w, 200.w, -2466.d
+	dir	20047.d, 345.w
+	pos	20048.d, 3734.w, 200.w, -659.d
+	dir	20048.d, 320.w
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	dir	49.d, 80.w
+	dir	51.d, 50.w
+	dir	52.d, -50.d
+	dir	50.d, -80.d
+	anim	49.d, 2.w
+	anim	51.d, 2.w
+	anim	52.d, 2.w
+	anim	50.d, 2.w
+	endif	*loc_34
+loc_51:
+	pos	20045.d, 1025.w, 0.w, 1281.w
+	dir	20045.d, -15.d
+	pos	20046.d, -903.d, 0.w, -1385.d
+	dir	20046.d, 50.w
+	pos	20047.d, -2152.d, 0.w, 2874.w
+	dir	20047.d, 58.w
+	pos	20048.d, 2258.w, 0.w, -392.d
+	dir	20048.d, 296.w
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	anim	49.d, 0.w
+	anim	51.d, 0.w
+	anim	52.d, 0.w
+	anim	50.d, 0.w
+loc_34:
+	return
+loc_35:
+	elif	eq(flag(7.d), 1.d), else *loc_37
+	pos	20045.d, -2670.d, 200.w, -2670.d
+	dir	20045.d, 74.w
+	pos	20046.d, -960.d, 200.w, -3620.d
+	dir	20046.d, 46.w
+	pos	20047.d, 960.w, 150.w, -3620.d
+	dir	20047.d, 345.w
+	pos	20048.d, 2670.w, 200.w, -2670.d
+	dir	20048.d, 320.w
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	anim	49.d, 2.w
+	anim	51.d, 2.w
+	anim	52.d, 2.w
+	anim	50.d, 2.w
+	endif	*loc_34
+loc_37:
+	elif	eq(flag(6.d), 1.d), else *loc_51
+	if	eq(flag(817.d), 1.d), else *loc_50
+	pos	20045.d, -2670.d, 200.w, -2670.d
+	dir	20045.d, 40.w
+	anim	49.d, 2.w
+	endif	*loc_40
+loc_50:
+	call	-26.d, 20045.d, 18.d
+	pos	20045.d, -2092.d, 0.w, 932.w
+	dir	20045.d, -15.d
+	call	-26.d, 20045.d, 28.d
+	call	-27.d, 20045.d, 40.d
+	anim	49.d, 0.w
+loc_40:
+	if	eq(flag(818.d), 1.d), else *loc_49
+	pos	20046.d, -960.d, 200.w, -3620.d
+	dir	20046.d, 15.w
+	anim	51.d, 2.w
+	endif	*loc_42
+loc_49:
+	call	-26.d, 20046.d, 18.d
+	pos	20046.d, -903.d, 0.w, -1385.d
+	dir	20046.d, 50.w
+	call	-26.d, 20046.d, 28.d
+	call	-27.d, 20046.d, 40.d
+	anim	51.d, 0.w
+loc_42:
+	if	eq(flag(819.d), 1.d), else *loc_48
+	pos	20047.d, 960.w, 150.w, -3620.d
+	dir	20047.d, 345.w
+	anim	52.d, 2.w
+	endif	*loc_44
+loc_48:
+	call	-26.d, 20047.d, 18.d
+	pos	20047.d, 1025.w, 0.w, 1281.w
+	dir	20047.d, 58.w
+	call	-26.d, 20047.d, 28.d
+	call	-27.d, 20047.d, 40.d
+	anim	52.d, 0.w
+loc_44:
+	set	flag(820.d), 1.d
+	if	eq(flag(820.d), 1.d), else *loc_47
+	pos	20048.d, 2670.w, 200.w, -2670.d
+	dir	20048.d, 320.w
+	anim	50.d, 2.w
+	endif	*loc_46
+loc_47:
+	pos	20048.d, 2258.w, 0.w, -392.d
+	dir	20048.d, 296.w
+	call	-26.d, 20048.d, 28.d
+	call	-27.d, 20048.d, 40.d
+	anim	50.d, 0.w
+loc_46:
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	endif	*loc_34
+
+
+sub_53:
+	born	10000.d, 1.d, 0.w, 0.w, 4800.w, 0.w, 200.w, 200.w, 150.w, *sub_307
+	disp	10000.d, 0.d
+	return
+
+
+sub_307:
+	lib	54.w
+	call	20000.d, 701.d
+	lib	152.w
+	sfx	589829.d, 1.d
+	moveto	20000.d, 0.w, 0.w, 5400.w, -50.d, -1.d, -1.d
+	wait	@move, 20000.d
+	mdir	20000.d, @dir, 180.w, -30.d, -1.d
+	anim1	20000.d, 1313.d
+	color	-2.d, @blend, 255.w, 255.w, 255.w, 80.w
+	color	20000.d, @blend, 0.w, 0.w, 0.w, 0.w
+	wait	@time, 80.w
+	pushbp
+	setsp	80.w
+	lib	64.w
+	popbp
+	sfx	589829.d, 2.d, 200.w
+	sfx	-65508.d, 2.d, 200.w
+	lib	21.w
+	run	*sub_308
+	call	20000.d, 700.d
+	camera	@unk232, -1.d
+	warp	9.d, 1.w
+	return
+
+
+sub_308:
+	lib	155.w
+	scrn	@hud, 1.d, 3.d
+	return
+
+
+sub_54:
+	return
+
+
+sub_55:
+	return
+
+
+sub_56:
+	sfx	-65508.d, 3.d, 200.w
+	if	eq(flag(6.d), 0.d), else *loc_94
+	run	*sub_92
+loc_94:
+	if	eq(map(1.d), 18.d), else *loc_91
+	run	*sub_59
+loc_91:
+	return
+
+
+sub_92:
+	call	20000.d, 701.d
+	pos	20000.d, 0.w, 0.w, 5460.w
+	dir	20000.d, 0.w
+	anim	20000.d, 17.d
+	disp	20000.d, 0.d
+	set	flag(31.d), 1.d
+	set	flag(6.d), 1.d
+	pushbp
+	setsp	0.d
+	setsp	1.d
+	setsp	0.w
+	lib	144.w
+	popbp
+	set	var(275.d), 1.w
+	set	var(276.d), 1.w
+	set	var(277.d), 1.w
+	set	var(278.d), 1.w
+	ptcl	77.d, @lead, 20045.d, 0.w, 3.w
+	color	20045.d, @blend, 85.w, 0.w, 0.w, 0.w
+	pushbp
+	setsp	0.d
+	setsp	0.w
+	setsp	276.d
+	setsp	20046.d
+	run	*sub_66
+	popbp
+	pushbp
+	setsp	0.d
+	setsp	0.w
+	setsp	277.d
+	setsp	20047.d
+	run	*sub_66
+	popbp
+	pushbp
+	setsp	0.d
+	setsp	0.w
+	setsp	278.d
+	setsp	20048.d
+	run	*sub_66
+	popbp
+	anim	20045.d, 9.d
+	anim	20046.d, 13.d
+	anim	20047.d, 9.d
+	anim	20048.d, 13.d
+	pos	20045.d, 1186.w, 0.w, -1050.d
+	dir	20045.d, 134.w
+	pos	20047.d, 0.w, -2000.d, 5400.w
+	dir	20047.d, 180.w
+	camera	@pos, -1096.d, 984.w, 5260.w, 3.d, 0.w
+	camera	@unk227, -4698.d, 125.w, -5117.d, 3.d, 0.w
+	camera	@unk229, 28.w, 3.d, 0.w
+	camera	@distance, 110.w, 3.d, 0.w
+	camera	@pos, 752.w, 1027.w, 4551.w, 1.d, 800.w
+	camera	@unk227, 2594.w, 92.w, -6271.d, 1.d, 800.w
+	camera	@unk229, 24.w, 1.d, 800.w
+	camera	@distance, 110.w, 1.d, 800.w
+	pushbp
+	setsp	150.w
+	lib	185.w
+	popbp
+	wait	@time, 350.w
+	pushbp
+	setsp	20045.d
+	run	*sub_93
+	popbp
+	anim	60.d, 2.w
+	anim	20045.d, 26.d
+	wait	@anim, 20045.d, -1.d
+	anim	60.d, 3.w
+	anim	20045.d, 27.d
+	sfx	589841.d, 1.d
+	anim	60.d, 4.w
+	anim	20045.d, 28.d
+	wait	@anim, 20045.d, -1.d
+	anim	60.d, 5.w, 6.w, 0.w
+	anim	20045.d, 29.d, 30.d, 9.d
+	wait	@time, 50.w
+	sfx	589841.d, 2.d, 300.w
+	pushbp
+	setsp	1.w
+	lib	259.w
+	popbp
+	set	flag(820.d), 1.d
+	call	-27.d, 20048.d, 57.d
+	call	-27.d, 20048.d, 28.d
+	call	-26.d, 20048.d, 40.d
+	sfx	589843.d, 1.d
+	anim	50.d, 1.w, 2.w
+	sfx	589839.d, 1.d
+	anim	57.d, 3.w
+	wait	@anim, 57.d, -1.d
+	disp	57.d, 0.d
+	anim	20048.d, 15.d
+	wait	@anim, 20048.d, -1.d
+	anim	20048.d, 9.d
+	mdir	20048.d, @pos, 2670.w, -2670.d, 40.w, 10.d
+	wait	@dir, 20048.d
+	anim	50.d, 3.w, 2.w
+	moveto	20048.d, 2670.w, 200.w, -2670.d, 500.w, 10.d, -1.d
+	wait	@move, 20048.d
+	mdir	20048.d, @dir, 320.w, 40.w, 10.d
+	wait	@dir, 20048.d
+	anim	20048.d, 12.d
+	wait	@anim, 20048.d, -1.d
+	anim	20048.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20048.w, 14.d),
+		speed(0.b),
+		"Earth. Bad air... Processed food...\n",
+		speed(0.b),
+		"Too much soda... Sickness. Sickness...",
+		anim(0.b, 20048.w, 13.d),
+		wait(254.b)
+	mdir	20045.d, @obj, 20000.d, 30.w, 10.d
+	wait	@dir, 20045.d
+	anim	20045.d, 9.d
+	wait	@time, 40.w
+	disp	20000.d, 1.d
+	pos	20000.d, 0.w, 0.w, 5460.w
+	dir	20000.d, 0.w
+	mdir	20000.d, @dir, 180.w, 300.w, -1.d
+	anim1	20000.d, 1312.d
+	sfx	589829.d, 1.d
+	camera	@pos, 4946.w, 1728.w, 6050.w, 3.d, 0.w
+	camera	@unk227, -2975.d, -520.d, 4702.w, 3.d, 0.w
+	camera	@unk229, 25.w, 3.d, 0.w
+	camera	@distance, 83.w, 3.d, 0.w
+	camera	@pos, 8464.w, 5645.w, 12011.w, 2.d, 600.w
+	camera	@unk227, 3977.w, 2638.w, 5651.w, 2.d, 600.w
+	camera	@unk229, 25.w, 2.d, 600.w
+	camera	@distance, 83.w, 2.d, 600.w
+	wait	@anim, 20000.d, -1.d
+	sfx	589829.d, 2.d, 100.w
+	anim	20000.d, 17.d
+	move	20000.d, 1300.w, 250.w, 3.d, -1.d
+	moveto	20047.d, 0.w, 0.w, 5400.w, 400.w, 9.d, -1.d
+	wait	@move, 20000.d
+	disp	10000.d, 1.d
+	call	20000.d, 700.d
+	wait	@move, 20047.d
+	mdir	20047.d, @pos, -1200.d, 3850.w, 30.w, 10.d
+	wait	@dir, 20047.d
+	moveto	20047.d, -1200.d, 0.w, 3850.w, 240.w, 10.d, -2.d
+	wait	@cam
+	wait	@move, 20047.d
+	mdir	20047.d, @dir, 180.w, 60.w, -1.d
+	anim	20047.d, 12.d
+	wait	@anim, 20047.d, -1.d
+	anim	20047.d, 13.d
+	wait	@time, 100.w
+	camera	@pos, 3674.w, 1984.w, 4929.w, 3.d, 0.w
+	camera	@unk227, -66.d, 291.w, -2325.d, 3.d, 0.w
+	camera	@unk229, 28.w, 3.d, 0.w
+	camera	@distance, 83.w, 3.d, 0.w
+	pushbp
+	setsp	actor_name(20055.d)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20046.w, 14.d),
+		speed(0.b),
+		"Friend. Dead. Disappointed...\n",
+		speed(0.b),
+		"Everyone sick...",
+		anim(0.b, 20046.w, 13.d),
+		wait(254.b)
+	popbp
+	pushbp
+	setsp	actor_name(20047.d)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 11.d),
+		speed(0.b),
+		"Ganymede...",
+		anim(0.b, 20045.w, 9.d),
+		wait(254.b)
+	popbp
+	camera	@pos, 619.w, 1018.w, 5308.w, 1.d, 400.w
+	camera	@unk227, -1920.d, 180.w, -2586.d, 1.d, 400.w
+	camera	@unk229, 28.w, 1.d, 400.w
+	camera	@distance, 83.w, 1.d, 400.w
+	moveto	20045.d, 296.w, 0.w, 2371.w, 300.w, 10.d, -2.d
+	wait	@move, 20045.d
+	wait	@cam
+	mdir	20045.d, @obj, 20000.d, 20.w, 10.d
+	mdir	20000.d, @obj, 20045.d, 30.w, 3.d
+	wait	@dir, 20045.d
+	pushbp
+	setsp	actor_name(20047.d)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 11.d),
+		speed(0.b),
+		"Thank you for helping Ganymede.",
+		anim(0.b, 20045.w, 9.d),
+		wait(254.b)
+	popbp
+	pushbp
+	setsp	20045.d
+	setsp	1.d
+	setsp	0.w
+	setsp	26.d
+	setsp	0.w
+	lib	210.w
+	popbp
+	mdir	20045.d, @dir, 340.w, 30.w, 10.d
+	wait	@dir, 20045.d
+	camera	@pos, -1541.d, 2267.w, 8370.w, 1.d, 400.w
+	camera	@unk227, -140.d, -558.d, 646.w, 1.d, 400.w
+	camera	@unk229, 28.w, 1.d, 400.w
+	camera	@distance, 83.w, 1.d, 400.w
+	moveto	20045.d, -413.d, 0.w, 3017.w, 300.w, 10.d, -2.d
+	wait	@move, 20045.d
+	mdir	20000.d, @obj, 20045.d, 40.w, 3.d
+	mdir	20045.d, @dir, 350.w, 30.w, 10.d
+	wait	@dir, 20045.d
+	anim	20045.d, 9.d
+	wait	@cam
+	wait	@time, 30.w
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20047.w, 14.d),
+		speed(0.b),
+		"Called for help...",
+		anim(0.b, 20047.w, 13.d),
+		wait(254.b)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 11.d),
+		speed(0.b),
+		"Good work. Falling down now...",
+		anim(0.b, 20045.w, 9.d),
+		wait(254.b)
+	anim	20045.d, 16.d, 9.d
+	wait	@time, 140.w
+	sfx	589837.d, 1.d
+	ptcl	77.d, @lead, 20047.d, 0.w, 3.w
+	wait	@time, 30.w
+	msg	voice(17.b),
+		speed(0.b),
+		"Burning up! Ow...",
+		wait(254.b)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 11.d),
+		speed(0.b),
+		"Must go to sleep...on bed...",
+		anim(0.b, 20045.w, 9.d),
+		wait(254.b)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20047.w, 14.d),
+		speed(0.b),
+		"Yes...",
+		anim(0.b, 20047.w, 13.d),
+		wait(254.b)
+	anim	20047.d, 15.d
+	wait	@anim, 20047.d, -1.d
+	anim	20047.d, 9.d
+	mdir	20045.d, @pos, -2092.d, 932.w, 40.w, 10.d
+	mdir	20047.d, @pos, 1025.w, 1281.w, 40.w, 10.d
+	wait	@dir, 20045.d
+	wait	@dir, 20047.d
+	camera	@pos, 4.w, 3005.w, 10707.w, 1.d, 300.w
+	camera	@unk227, -860.d, 1354.w, 3498.w, 1.d, 300.w
+	camera	@unk229, 26.w, 1.d, 300.w
+	camera	@distance, 74.w, 1.d, 300.w
+	mdir	20000.d, @obj, 20048.d, 30.w, 3.d
+	attach	20047.d, *sub_309
+	moveto	20045.d, -2092.d, 0.w, 932.w, 250.w, 10.d, -1.d
+	wait	@move, 20045.d
+	mdir	20000.d, @obj, 20045.d, 30.w, 3.d
+	mdir	20045.d, @pos, -2670.d, -2670.d, 40.w, 10.d
+	wait	@dir, 20045.d
+	anim	20045.d, 9.d
+	wait	@time, 40.w
+	camera	@pos, -7036.d, 2472.w, 4684.w, 3.d, 0.w
+	camera	@unk227, -2372.d, 376.w, -725.d, 3.d, 0.w
+	camera	@unk229, 26.w, 3.d, 0.w
+	camera	@distance, 74.w, 3.d, 0.w
+	pushbp
+	setsp	20045.d
+	run	*sub_93
+	popbp
+	anim	60.d, 2.w
+	anim	20045.d, 26.d
+	wait	@anim, 20045.d, -1.d
+	anim	60.d, 3.w
+	anim	20045.d, 27.d
+	sfx	589842.d, 1.d
+	anim	60.d, 4.w
+	anim	20045.d, 28.d
+	wait	@anim, 20045.d, -1.d
+	anim	60.d, 7.w, 0.w
+	anim	20045.d, 29.d, 29.d, 30.d
+	wait	@anim, 20045.d, -1.d
+	anim	20045.d, 9.d
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 11.d),
+		speed(0.b),
+		"Weak, sick, hot, dizzy...\n",
+		speed(0.b),
+		"No energy for blaster...",
+		anim(0.b, 20045.w, 9.d),
+		wait(254.b)
+	anim	20045.d, 12.d
+	wait	@anim, 20045.d, -1.d
+	anim	20045.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 14.d),
+		speed(0.b),
+		"Want to sleep on bed...\n",
+		speed(0.b),
+		"Comfy bed... Must open bed...",
+		anim(0.b, 20045.w, 13.d),
+		wait(254.b)
+	call	-26.d, 20045.d, 18.d
+	call	-26.d, 20046.d, 18.d
+	call	-26.d, 20047.d, 18.d
+	lib	88.w
+	camera	@unk211, 1.w, 0.w, 3.d, 0.w
+	camera	@unk230
+	lib	55.w
+	return
+
+
+sub_66:
+	if	ge(var(sp(2.b)), 4.w), else *loc_71
+	if	eq(sp(0.b), 1.d), else *loc_70
+	sfx	589837.d, 1.d
+	ptcl	77.d, @lead, sp(3.b), 0.w, 3.w
+loc_70:
+	color	sp(3.b), @blend, 200.w, 200.w, 200.w, sp(1.b)
+	anim	sp(3.b), 20.d, 13.d
+	endif	*loc_69
+loc_83:
+	if	eq(sp(0.b), 1.d), else *loc_85
+	sfx	589837.d, 1.d
+	ptcl	77.d, @lead, sp(3.b), 0.w, 3.w
+loc_85:
+	color	sp(3.b), @blend, 0.w, 0.w, 0.w, sp(1.b)
+	anim	sp(3.b), 20.d, 13.d
+loc_69:
+	return
+loc_71:
+	elif	ge(var(sp(2.b)), 3.w), else *loc_75
+	if	eq(sp(0.b), 1.d), else *loc_74
+	sfx	589837.d, 1.d
+	ptcl	77.d, @lead, sp(3.b), 0.w, 3.w
+loc_74:
+	color	sp(3.b), @blend, 255.w, 0.w, 0.w, sp(1.b)
+	anim	sp(3.b), 20.d, 13.d
+	endif	*loc_69
+loc_75:
+	elif	ge(var(sp(2.b)), 2.w), else *loc_79
+	if	eq(sp(0.b), 1.d), else *loc_78
+	sfx	589837.d, 1.d
+	ptcl	77.d, @lead, sp(3.b), 0.w, 3.w
+loc_78:
+	color	sp(3.b), @blend, 170.w, 0.w, 0.w, sp(1.b)
+	endif	*loc_69
+loc_79:
+	elif	ge(var(sp(2.b)), 1.w), else *loc_83
+	if	eq(sp(0.b), 1.d), else *loc_82
+	sfx	589837.d, 1.d
+	ptcl	77.d, @lead, sp(3.b), 0.w, 3.w
+loc_82:
+	color	sp(3.b), @blend, 85.w, 0.w, 0.w, sp(1.b)
+	anim	sp(3.b), 20.d, 13.d
+	endif	*loc_69
+
+
+sub_93:
+	set	var(0.d), obj(@dir, sp(0.b))
+	set	var(1.d), obj(@pos_x, sp(0.b))
+	set	var(2.d), obj(@pos_y, sp(0.b))
+	set	var(3.d), obj(@pos_z, sp(0.b))
+	pos	60.d, var(1.d), var(2.d), var(3.d)
+	dir	60.d, var(0.d)
+	anim	60.d, 0.w
+	disp	60.d, 1.d
+	return
+
+
+sub_309:
+	moveto	20047.d, 1025.w, 0.w, 1281.w, 400.w, 10.d, -2.d
+	wait	@move, 20047.d
+	anim	20047.d, 12.d, 13.d
+	return
+
+
+sub_59:
+	set	flag(31.d), 1.d
+	pushbp
+	setsp	0.d
+	setsp	1.d
+	setsp	0.w
+	lib	144.w
+	popbp
+	scrn	@wipe, 0.d, 0.d, 320.w, 240.w, 0.w, 0.w, 255.w, 255.w, 255.w, 255.w, 0.w, 0.w, 255.w, 255.w, 255.w, 0.w, 0.w
+	run	*sub_60
+	anim	20045.d, 22.d
+	anim	20046.d, 22.d
+	anim	20047.d, 22.d
+	anim	20048.d, 22.d
+	msg	voice(17.b),
+		speed(6.b),
+		speed(0.b),
+		"Alien tech dangerous!",
+		wait(254.b)
+	anim	20005.d, 1013.d
+	msg	voice(17.b),
+		speed(6.b),
+		speed(0.b),
+		"You not hurt?",
+		wait(254.b)
+	msg	voice(17.b),
+		speed(6.b),
+		speed(0.b),
+		"Must not use again!",
+		wait(254.b)
+	wait	@anim, 20045.d, -1.d
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	mdir	20005.d, @obj, 20000.d, 30.w, 1.d
+	wait	@dir, 20005.d
+	pushbp
+	setsp	20005.d
+	setsp	1.w
+	lib	93.w
+	popbp
+	run	*sub_90
+	wait	@time, 60.w
+	anim	20005.d, 1.d
+	lib	95.w
+	wait	@time, 100.w
+	anim	20005.d, 1.d
+	camera	@reset, 2.d, 200.w
+	call	20005.d, 1.d, 1.d
+	lib	55.w
+	return
+
+
+sub_60:
+	if	and(eq(flag(7.d), 1.d), eq(flag(8.d), 0.d)), else *loc_89
+	camera	@unk238, -1.d
+loc_89:
+	if	eq(map(1.d), 18.d), else *loc_88
+	move	20000.d, 1500.w, 100.w, 3.d, -1.d
+loc_88:
+	color	-2.d, @blend, 255.w, 255.w, 255.w, 0.w
+	color	20000.d, @blend, 0.w, 0.w, 0.w, 0.w
+	if	eq(flag(6.d), 0.d), else *loc_87
+	color	20047.d, @blend, 0.w, 0.w, 0.w, 0.w
+loc_87:
+	pushbp
+	setsp	150.w
+	lib	185.w
+	popbp
+	if	eq(map(1.d), 18.d), else *loc_86
+	ptcl	153.d, @unk210
+	moveto	20005.d, 700.w, 1000.w, -1200.d, 200.w, 1.d, -1.d
+	endif	*loc_65
+loc_86:
+	wait	@anim, 20000.d, -1.d
+	sfx	589829.d, 2.d, 100.w
+	anim	20000.d, 17.d
+	move	20000.d, 1200.w, 100.w, 3.d, -1.d
+loc_65:
+	camera	@unk211, 1.w, 0.w, 1.d, 200.w
+	color	-2.d, @blend, 0.w, 0.w, 0.w, 200.w
+	pushbp
+	setsp	0.d
+	setsp	200.w
+	setsp	275.d
+	setsp	20045.d
+	run	*sub_66
+	popbp
+	pushbp
+	setsp	0.d
+	setsp	200.w
+	setsp	276.d
+	setsp	20046.d
+	run	*sub_66
+	popbp
+	pushbp
+	setsp	0.d
+	setsp	200.w
+	setsp	277.d
+	setsp	20047.d
+	run	*sub_66
+	popbp
+	pushbp
+	setsp	0.d
+	setsp	200.w
+	setsp	278.d
+	setsp	20048.d
+	run	*sub_66
+	popbp
+	wait	@time, 200.w
+	wait	@move, 20000.d
+	disp	10000.d, 1.d
+	call	20000.d, 700.d
+	camera	@unk230
+	return
+
+
+sub_90:
+	anim	20005.d, 1012.d
+	msg	voice(0.b),
+		speed(0.b),
+		"We traveled through time! That was amazing!",
+		wait(254.b)
+	anim	20005.d, 1007.d
+	msg	voice(0.b),
+		speed(0.b),
+		"Aliens can do neat stuff!",
+		wait(254.b)
+	return
+
+
+sub_95:
+	if	not(flag(31.d)), else *loc_97
+	pushbp
+	setsp	0.d
+	setsp	1.d
+	setsp	0.w
+	lib	144.w
+	popbp
+	run	*sub_60
+	lib	55.w
+loc_97:
+	set	flag(31.d), 0.d
+	return
+
+
+	.dead	*evt_dead
+evt_dead:
+	lib	243.w
+	if	result, else *loc_312
+	return
+loc_312:
+	lib	0.w
+	return
+
+
+	.pose	*evt_pose
+evt_pose:
+	pushbp
+	setsp	13.d
+	setsp	12.d
+	setsp	11.d
+	setsp	10.d
+	setsp	9.d
+	setsp	8.d
+	setsp	7.d
+	lib	104.w
+	popbp
+	if	eq(result, 0.d), else *loc_315
+	return
+loc_315:
+	lib	69.w
+	return
+
+
+	.time_cycle  *evt_time_cycle
+evt_time_cycle:
+	return
+
+
+	.interact  3.d, *evt_npc_et_1_3
+evt_npc_et_1_3:
+	if	or(eq(hit, 2000.d), eq(hit, 2001.d)), else *loc_319
+	return
+loc_319:
+	elif	ne(hit, -1.d), else *loc_341
+	wait	@anim, 20000.d, -1.d
+	wait	@time, 1.w
+	anim	20000.d, 1.d
+loc_341:
+	lib	38.w
+	if	eq(flag(817.d), 0.d), else *loc_322
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 14.d),
+		speed(0.b),
+		"Weak, disoriented, hot, achy...\n",
+		speed(0.b),
+		"No energy for blaster...",
+		anim(0.b, 20045.w, 13.d),
+		wait(254.b)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 14.d),
+		speed(0.b),
+		"Cannot open bed.",
+		anim(0.b, 20045.w, 13.d),
+		wait(254.b)
+	lib	55.w
+	return
+loc_322:
+	case	eq(hit, add(3000.d, 3.d)), else *loc_327
+	if	ge(var(275.d), 1.w), else *loc_326
+	set	var(275.d), 0.w
+	pushbp
+	setsp	1.d
+	setsp	200.w
+	setsp	275.d
+	setsp	20045.d
+	run	*sub_66
+	popbp
+	wait	@time, 200.w
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 14.d),
+		speed(0.b),
+		"Cooling down. Thank you.",
+		anim(0.b, 20045.w, 13.d),
+		wait(254.b)
+	pushbp
+	setsp	20045.d
+	setsp	0.d
+	setsp	0.w
+	setsp	5.d
+	setsp	0.w
+	lib	210.w
+	popbp
+	endif	*loc_325
+loc_326:
+	set	var(275.d), add(var(275.d), 2.w)
+	pushbp
+	setsp	1.d
+	setsp	200.w
+	setsp	275.d
+	setsp	20045.d
+	run	*sub_66
+	popbp
+	wait	@time, 200.w
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 14.d),
+		speed(0.b),
+		"Water cold. Fever returning.",
+		anim(0.b, 20045.w, 13.d),
+		wait(254.b)
+loc_325:
+	lib	39.w
+	return
+loc_327:
+	case	eq(hit, add(3000.d, 1.d)), else *loc_329
+	anim	20045.d, 21.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Saccharides!",
+		wait(254.b)
+	pushbp
+	setsp	20045.d
+	setsp	0.d
+	setsp	0.w
+	setsp	2.w
+	setsp	0.w
+	lib	210.w
+	popbp
+	lib	39.w
+	return
+loc_329:
+	case	eq(hit, add(3000.d, 5.d)), else *loc_332
+	run	*sub_331
+	lib	39.w
+	return
+loc_332:
+	case	eq(hit, add(3000.d, 6.d)), else *loc_334
+	anim	20045.d, 22.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Too sick for funkiness...",
+		wait(254.b)
+	lib	39.w
+	return
+loc_334:
+	break	*loc_335
+loc_335:
+	if	ge(var(275.d), 1.w), else *loc_340
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 14.d),
+		speed(0.b),
+		"Burning up. Need cool down.",
+		anim(0.b, 20045.w, 13.d),
+		wait(254.b)
+loc_340:
+	if	eq(flag(18.d), 0.d), else *loc_339
+	pushbp
+	setsp	actor_name(20055.d)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 14.d),
+		speed(0.b),
+		"Activate friend...",
+		anim(0.b, 20045.w, 13.d),
+		wait(254.b)
+	popbp
+	endif	*loc_338
+loc_339:
+	pushbp
+	setsp	actor_name(20055.d)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 14.d),
+		speed(0.b),
+		"Friend activated. Thank you.",
+		anim(0.b, 20045.w, 13.d),
+		wait(254.b)
+	popbp
+loc_338:
+	lib	39.w
+	return
+
+
+sub_331:
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 14.d),
+		speed(0.b),
+		"What this?",
+		anim(0.b, 20045.w, 13.d),
+		wait(254.b)
+	return
+
+
+	.interact  4.d, *evt_npc_et_1_4
+evt_npc_et_1_4:
+	if	or(eq(hit, 2000.d), eq(hit, 2001.d)), else *loc_344
+	return
+loc_344:
+	elif	ne(hit, -1.d), else *loc_363
+	wait	@anim, 20000.d, -1.d
+	wait	@time, 1.w
+	anim	20000.d, 1.d
+loc_363:
+	lib	38.w
+	if	eq(flag(818.d), 0.d), else *loc_347
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20046.w, 14.d),
+		speed(0.b),
+		"Weak, disoriented... Must lay here.\n",
+		speed(0.b),
+		"Must lay here. No energy for blaster...",
+		anim(0.b, 20046.w, 13.d),
+		wait(254.b)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20046.w, 14.d),
+		speed(0.b),
+		"Cannot open bed...",
+		anim(0.b, 20046.w, 13.d),
+		wait(254.b)
+	lib	55.w
+	return
+loc_347:
+	case	eq(hit, add(3000.d, 3.d)), else *loc_352
+	if	ge(var(276.d), 1.w), else *loc_351
+	set	var(276.d), 0.w
+	pushbp
+	setsp	1.d
+	setsp	200.w
+	setsp	276.d
+	setsp	20046.d
+	run	*sub_66
+	popbp
+	wait	@time, 200.w
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20046.w, 14.d),
+		speed(0.b),
+		"Cooling down. Thank you...",
+		anim(0.b, 20046.w, 13.d),
+		wait(254.b)
+	pushbp
+	setsp	20046.d
+	setsp	0.d
+	setsp	0.w
+	setsp	5.d
+	setsp	0.w
+	lib	210.w
+	popbp
+	endif	*loc_350
+loc_351:
+	set	var(276.d), add(var(276.d), 2.w)
+	pushbp
+	setsp	1.d
+	setsp	200.w
+	setsp	276.d
+	setsp	20046.d
+	run	*sub_66
+	popbp
+	wait	@time, 200.w
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20046.w, 14.d),
+		speed(0.b),
+		"Water freezing. Fever returning...",
+		anim(0.b, 20046.w, 13.d),
+		wait(254.b)
+loc_350:
+	lib	39.w
+	return
+loc_352:
+	case	eq(hit, add(3000.d, 1.d)), else *loc_354
+	anim	20046.d, 21.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Saccharides!",
+		wait(254.b)
+	pushbp
+	setsp	20046.d
+	setsp	0.d
+	setsp	0.w
+	setsp	2.w
+	setsp	0.w
+	lib	210.w
+	popbp
+	lib	39.w
+	return
+loc_354:
+	case	eq(hit, add(3000.d, 5.d)), else *loc_357
+	run	*sub_356
+	lib	39.w
+	return
+loc_357:
+	case	eq(hit, add(3000.d, 6.d)), else *loc_359
+	anim	20046.d, 22.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Too sick for funkiness...",
+		wait(254.b)
+	lib	39.w
+	return
+loc_359:
+	break	*loc_360
+loc_360:
+	if	ge(var(276.d), 1.w), else *loc_362
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20046.w, 14.d),
+		speed(0.b),
+		"Need cool down...",
+		anim(0.b, 20046.w, 13.d),
+		wait(254.b)
+loc_362:
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20046.w, 14.d),
+		speed(0.b),
+		"Earth air bad. For us. Get sick...",
+		anim(0.b, 20046.w, 13.d),
+		wait(254.b)
+	lib	39.w
+	return
+
+
+sub_356:
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20046.w, 14.d),
+		speed(0.b),
+		"Petroleum hydrocarbons!",
+		anim(0.b, 20046.w, 13.d),
+		wait(254.b)
+	return
+
+
+	.interact  5.d, *evt_npc_et_1_5
+evt_npc_et_1_5:
+	if	or(eq(hit, 2000.d), eq(hit, 2001.d)), else *loc_366
+	return
+loc_366:
+	elif	ne(hit, -1.d), else *loc_385
+	wait	@anim, 20000.d, -1.d
+	wait	@time, 1.w
+	anim	20000.d, 1.d
+loc_385:
+	lib	38.w
+	if	eq(flag(819.d), 0.d), else *loc_369
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20046.w, 14.d),
+		speed(0.b),
+		"Weak, shaky, disoriented, head\n",
+		speed(0.b),
+		"on fire... No energy for blaster...",
+		anim(0.b, 20046.w, 13.d),
+		wait(254.b)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20047.w, 14.d),
+		speed(0.b),
+		"Cannot open bed...",
+		anim(0.b, 20047.w, 13.d),
+		wait(254.b)
+	lib	55.w
+	return
+loc_369:
+	case	eq(hit, add(3000.d, 3.d)), else *loc_374
+	if	ge(var(277.d), 1.w), else *loc_373
+	set	var(277.d), 0.w
+	pushbp
+	setsp	1.d
+	setsp	200.w
+	setsp	277.d
+	setsp	20047.d
+	run	*sub_66
+	popbp
+	wait	@time, 200.w
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20047.w, 14.d),
+		speed(0.b),
+		"Cooling down. Thank you...",
+		anim(0.b, 20047.w, 13.d),
+		wait(254.b)
+	pushbp
+	setsp	20047.d
+	setsp	0.d
+	setsp	0.w
+	setsp	5.d
+	setsp	0.w
+	lib	210.w
+	popbp
+	endif	*loc_372
+loc_373:
+	set	var(277.d), add(var(277.d), 2.w)
+	pushbp
+	setsp	1.d
+	setsp	200.w
+	setsp	277.d
+	setsp	20047.d
+	run	*sub_66
+	popbp
+	wait	@time, 200.w
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20047.w, 14.d),
+		speed(0.b),
+		"Water too cold. Fever returning...",
+		anim(0.b, 20047.w, 13.d),
+		wait(254.b)
+loc_372:
+	lib	39.w
+	return
+loc_374:
+	case	eq(hit, add(3000.d, 1.d)), else *loc_376
+	anim	20047.d, 21.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Saccharides!",
+		wait(254.b)
+	pushbp
+	setsp	20047.d
+	setsp	0.d
+	setsp	0.w
+	setsp	2.w
+	setsp	0.w
+	lib	210.w
+	popbp
+	lib	39.w
+	return
+loc_376:
+	case	eq(hit, add(3000.d, 5.d)), else *loc_379
+	run	*sub_378
+	lib	39.w
+	return
+loc_379:
+	case	eq(hit, add(3000.d, 6.d)), else *loc_381
+	anim	20047.d, 22.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Too sick for funkiness...",
+		wait(254.b)
+	lib	39.w
+	return
+loc_381:
+	break	*loc_382
+loc_382:
+	if	ge(var(277.d), 1.w), else *loc_384
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20047.w, 14.d),
+		speed(0.b),
+		"Must lower temperature...\n",
+		speed(0.b),
+		"Must not overheat... Body hot...",
+		anim(0.b, 20047.w, 13.d),
+		wait(254.b)
+loc_384:
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20047.w, 14.d),
+		speed(0.b),
+		"Miss home. Earth stinks.",
+		anim(0.b, 20047.w, 13.d),
+		wait(254.b)
+	lib	39.w
+	return
+
+
+sub_378:
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20047.w, 14.d),
+		speed(0.b),
+		"Petroleum hydrocarbons!",
+		anim(0.b, 20047.w, 13.d),
+		wait(254.b)
+	return
+
+
+	.interact  6.d, *evt_npc_et_1_6
+evt_npc_et_1_6:
+	if	or(eq(hit, 2000.d), eq(hit, 2001.d)), else *loc_388
+	return
+loc_388:
+	elif	ne(hit, -1.d), else *loc_407
+	wait	@anim, 20000.d, -1.d
+	wait	@time, 1.w
+	anim	20000.d, 1.d
+loc_407:
+	lib	38.w
+	if	eq(flag(820.d), 0.d), else *loc_391
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20048.w, 14.d),
+		speed(0.b),
+		"Dizzy dizzy. World spin. Round\n",
+		speed(0.b),
+		"and round. No energy for blaster...",
+		anim(0.b, 20048.w, 13.d),
+		wait(254.b)
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20048.w, 14.d),
+		speed(0.b),
+		"Cannot open bed...",
+		anim(0.b, 20048.w, 13.d),
+		wait(254.b)
+	lib	55.w
+	return
+loc_391:
+	case	eq(hit, add(3000.d, 3.d)), else *loc_396
+	if	ge(var(278.d), 1.w), else *loc_395
+	set	var(278.d), 0.w
+	pushbp
+	setsp	1.d
+	setsp	200.w
+	setsp	278.d
+	setsp	20048.d
+	run	*sub_66
+	popbp
+	wait	@time, 200.w
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20048.w, 14.d),
+		speed(0.b),
+		"Cooling down. Thank you...",
+		anim(0.b, 20048.w, 13.d),
+		wait(254.b)
+	pushbp
+	setsp	20048.d
+	setsp	0.d
+	setsp	0.w
+	setsp	5.d
+	setsp	0.w
+	lib	210.w
+	popbp
+	endif	*loc_394
+loc_395:
+	set	var(278.d), add(var(278.d), 2.w)
+	pushbp
+	setsp	1.d
+	setsp	200.w
+	setsp	278.d
+	setsp	20048.d
+	run	*sub_66
+	popbp
+	wait	@time, 200.w
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20048.w, 14.d),
+		speed(0.b),
+		"Water too cold. Fever returning...",
+		anim(0.b, 20048.w, 13.d),
+		wait(254.b)
+loc_394:
+	lib	39.w
+	return
+loc_396:
+	case	eq(hit, add(3000.d, 1.d)), else *loc_398
+	anim	20048.d, 21.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Saccharides!",
+		wait(254.b)
+	pushbp
+	setsp	20048.d
+	setsp	0.d
+	setsp	0.w
+	setsp	2.w
+	setsp	0.w
+	lib	210.w
+	popbp
+	lib	39.w
+	return
+loc_398:
+	case	eq(hit, add(3000.d, 5.d)), else *loc_401
+	run	*sub_400
+	lib	39.w
+	return
+loc_401:
+	case	eq(hit, add(3000.d, 6.d)), else *loc_403
+	anim	20048.d, 22.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		speed(0.b),
+		"Too sick for funkiness...",
+		wait(254.b)
+	lib	39.w
+	return
+loc_403:
+	break	*loc_404
+loc_404:
+	if	ge(var(278.d), 1.w), else *loc_406
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20048.w, 14.d),
+		speed(0.b),
+		"Need cool down...",
+		anim(0.b, 20048.w, 13.d),
+		wait(254.b)
+loc_406:
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20048.w, 14.d),
+		speed(0.b),
+		"Must blow this pop stand. Need alien mommy.",
+		anim(0.b, 20048.w, 13.d),
+		wait(254.b)
+	lib	39.w
+	return
+
+
+sub_400:
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20048.w, 14.d),
+		speed(0.b),
+		"Petroleum hydrocarbons!",
+		anim(0.b, 20048.w, 13.d),
+		wait(254.b)
+	return
+
+
+	.interact  22.d, *evt_ufo_time_mc_22
+evt_ufo_time_mc_22:
+	if	eq(flag(595.d), 0.d), else *loc_418
+	run	*sub_410
+	return
+loc_418:
+	if	eq(hit, 2001.d), else *loc_420
+	return
+loc_420:
+	if	eq(hit, 2000.d), else *loc_422
+	return
+loc_422:
+	lib	38.w
+	anim	20045.d, 22.d, 13.d
+	anim	20046.d, 22.d, 13.d
+	anim	20047.d, 22.d, 13.d
+	anim	20048.d, 22.d, 13.d
+	run	*sub_200
+	if	eq(flag(595.d), 1.d), else *loc_424
+	msg	voice(0.b),
+		speed(0.b),
+		"Chibi-Robo!",
+		wait(255.b)
+	disp	20005.d, 1.d
+	moveto	20005.d, 1000.w, 1200.w, 0.w, 100.w, 1.d, -1.d
+	wait	@move, 20005.d
+	msg	voice(0.b),
+		speed(0.b),
+		"What is this?!!",
+		wait(254.b)
+	sfx	589840.d, 1.d
+	pushbp
+	setsp	100.w
+	lib	189.w
+	popbp
+	camera	@pos, -17.d, 1291.w, 1422.w, 2.d, 400.w
+	camera	@unk227, -17.d, -2008.d, -5042.d, 2.d, 400.w
+	camera	@unk229, 174.w, 2.d, 400.w
+	camera	@distance, 72.w, 2.d, 400.w
+	sfx	-65508.d, 2.d, 300.w
+	wait	@time, 100.w
+	msg	voice(0.b),
+		size(34.b),
+		shake(31.b, 4.b, 4.b),
+		speed(0.b),
+		"Oh my golly-goodness!",
+		wait(5.b)
+	pushbp
+	setsp	200.w
+	lib	186.w
+	popbp
+	scrn	@wipe, 0.d, 1.d, 320.w, 240.w, 0.w, 0.w, 255.w, 255.w, 255.w, 0.w, 0.w, 0.w, 255.w, 255.w, 255.w, 255.w, 0.w
+	wait	@time, 30.w
+	camera	@unk232, -1.d
+	warp	18.d, 1.w
+loc_424:
+	lib	39.w
+	return
+
+
+sub_410:
+	set	var(0.d), obj(@pos_z, 20000.d)
+	if	gt(var(0.d), 4000.w), else *loc_412
+	return
+loc_412:
+	if	eq(hit, 2001.d), else *loc_415
+	lib	54.w
+	pushbp
+	setsp	1.w
+	lib	259.w
+	popbp
+	camera	@unk232, 0.d
+	set	flag(595.d), 1.d
+	camera	@unk227, 0.w, 1000.w, -3000.d, 1.d, 200.w
+	camera	@unk229, 26.w, 1.d, 200.w
+	sfx	589839.d, 1.d
+	anim	59.d, 3.w
+	wait	@anim, 59.d, -1.d
+	disp	59.d, 0.d
+	call	-26.d, 22.d, 57.d
+	disp	53.d, 1.d
+	pos	53.d, 0.w, 1200.w, -3200.d
+	call	-27.d, 22.d, 57.d
+	born	10011.d, 3.d, 0.w, 0.w, -3530.d, 0.w, 1300.w, 2000.w, 500.w, 0.w
+	born	10012.d, 3.d, -650.d, 0.w, -2830.d, 0.w, 200.w, 2000.w, 1400.w, 0.w
+	born	10013.d, 3.d, 650.w, 0.w, -2830.d, 0.w, 200.w, 2000.w, 1400.w, 0.w
+	attach	53.d, *sub_133
+	disp	62.d, 1.d
+	pos	62.d, 0.w, 0.w, -3000.d
+	anim	62.d, 1.w
+	sfx	589835.d, 1.d
+	anim	22.d, 5.d, 6.d
+	wait	@time, 140.w
+	moveto	53.d, 0.w, 800.w, -3200.d, 70.w, -1.d, -1.d
+	scrn	@mono, 255.w, 255.w, 255.w, 0.w, 255.w, 0.w, 0.w, 255.w, 30.w
+	wait	@time, 30.w
+	scrn	@mono, 255.w, 0.w, 0.w, 255.w, 0.w, 255.w, 0.w, 255.w, 30.w
+	wait	@time, 30.w
+	scrn	@mono, 0.w, 255.w, 0.w, 255.w, 0.w, 0.w, 255.w, 255.w, 30.w
+	wait	@time, 30.w
+	scrn	@mono, 0.w, 0.w, 255.w, 255.w, 255.w, 255.w, 0.w, 255.w, 30.w
+	wait	@time, 30.w
+	scrn	@mono, 255.w, 255.w, 0.w, 255.w, 0.w, 255.w, 255.w, 255.w, 30.w
+	wait	@time, 30.w
+	scrn	@mono, 0.w, 255.w, 255.w, 255.w, 255.w, 255.w, 255.w, 0.w, 30.w
+	wait	@time, 30.w
+	camera	@unk238, -1.d
+	camera	@reset, 1.d, 100.w
+	lib	55.w
+	endif	*loc_414
+loc_417:
+	lib	38.w
+	anim	20045.d, 14.d
+	anim	20046.d, 14.d
+	anim	20047.d, 14.d
+	anim	20048.d, 14.d
+	msg	voice(17.b),
+		speed(6.b),
+		speed(0.b),
+		"Dangerous! Disastrous!",
+		wait(254.b)
+	run	*sub_200
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	lib	55.w
+loc_414:
+	return
+loc_415:
+	elif	eq(hit, 2000.d), else *loc_417
+	sfx	589838.d, 1.d
+	anim	59.d, 2.w, 1.w
+	endif	*loc_414
+
+
+	.interact  24.d, *evt_npc_tonpy_24
+evt_npc_tonpy_24:
+	if	or(eq(hit, 2000.d), eq(hit, 2001.d)), else *loc_427
+	return
+loc_427:
+	elif	ne(hit, -1.d), else *loc_429
+	wait	@anim, 20000.d, -1.d
+	wait	@time, 1.w
+	anim	20000.d, 1.d
+loc_429:
+	lib	38.w
+	run	*sub_90
+	wait	@time, 60.w
+	anim	20005.d, 1.d
+	lib	55.w
+	return
+
+
+	.interact  48.d, *evt_ufo_game_botan_2_48
+evt_ufo_game_botan_2_48:
+	if	or(or(or(not(flag(166.d)), not(flag(167.d))), not(flag(168.d))), not(flag(169.d))), else *loc_433
+	if	eq(flag(175.d), 1.d), else *loc_433
+	set	flag(174.d), 1.d
+	set	flag(175.d), 0.d
+	call	-27.d, 48.d, 40.d
+	detach	48.d
+loc_433:
+	return
+
+
+	.interact  49.d, *evt_ufo_bed_49
+evt_ufo_bed_49:
+	if	eq(flag(817.d), 1.d), else *loc_436
+	run	*evt_npc_et_1_3
+loc_436:
+	return
+
+
+	.interact  50.d, *evt_ufo_bed_4_50
+evt_ufo_bed_4_50:
+	if	eq(flag(820.d), 1.d), else *loc_439
+	run	*evt_npc_et_1_6
+loc_439:
+	return
+
+
+	.interact  51.d, *evt_ufo_bed_2_51
+evt_ufo_bed_2_51:
+	if	eq(flag(818.d), 1.d), else *loc_442
+	run	*evt_npc_et_1_4
+loc_442:
+	return
+
+
+	.interact  52.d, *evt_ufo_bed_3_52
+evt_ufo_bed_3_52:
+	if	eq(flag(819.d), 1.d), else *loc_445
+	run	*evt_npc_et_1_5
+loc_445:
+	return
+
+
+	.interact  53.d, *evt_fx_warpzone_53
+evt_fx_warpzone_53:
+	lib	54.w
+	call	-27.d, 53.d, 57.d
+	call	20000.d, 701.d
+	moveto	20000.d, 0.w, 200.w, -2900.d, 60.w, 3.d, -2.d
+	wait	@move, 20000.d
+	set	cur_atc, 0.d
+	anim	20045.d, 22.d, 13.d
+	anim	20046.d, 22.d, 13.d
+	anim	20047.d, 22.d, 13.d
+	anim	20048.d, 22.d, 13.d
+	run	*sub_200
+	if	eq(flag(595.d), 1.d), else *loc_454
+	msg	voice(0.b),
+		speed(0.b),
+		"Chibi-Robo!",
+		wait(255.b)
+	if	eq(flag(657.d), 0.d), else *loc_453
+	set	flag(657.d), 1.d
+	mdir	20000.d, @obj, 20005.d, 30.w, 3.d
+	disp	20005.d, 1.d
+	moveto	20005.d, 200.w, 1000.w, -2000.d, 150.w, 1.d, -1.d
+	wait	@move, 20005.d
+	msg	voice(0.b),
+		speed(0.b),
+		"I've never seen anything like this!",
+		wait(254.b)
+	msg	voice(0.b),
+		speed(0.b),
+		"Can I go with you?",
+		wait(254.b),
+		stay
+	endif	*loc_449
+loc_453:
+	mdir	20000.d, @obj, 20005.d, 30.w, 3.d
+	disp	20005.d, 1.d
+	moveto	20005.d, 200.w, 1000.w, -2000.d, 150.w, 1.d, -1.d
+	wait	@move, 20005.d
+	msg	voice(0.b),
+		speed(0.b),
+		"I want to go again!",
+		wait(254.b),
+		stay
+loc_449:
+	lib	3.w
+	if	eq(result, 0.w), else *loc_452
+	msg	voice(0.b),
+		speed(0.b),
+		"I'll just squeeze in then! Don't worry, I'll fit!",
+		wait(254.b)
+	endif	*loc_451
+loc_452:
+	msg	voice(0.b),
+		speed(0.b),
+		"Oh, pish posh! I'm coming!",
+		wait(254.b)
+	msg	voice(0.b),
+		speed(0.b),
+		"Let me just squeeze in then!",
+		wait(254.b)
+loc_451:
+	detach	53.d
+	call	20005.d, 1.d, 0.d
+	call	-27.d, 20005.d, 57.d
+	moveto	20005.d, 230.w, 1000.w, -2900.d, 60.w, 1.d, -2.d
+	moveto	20000.d, -230.d, 200.w, -2900.d, 60.w, 3.d, -2.d
+	wait	@move, 20000.d
+	mdir	20000.d, @dir, 0.w, 60.w, 3.d
+	mdir	20005.d, @dir, 0.w, 60.w, 1.d
+	wait	@time, 100.w
+	sfx	589836.d, 1.d
+	anim	22.d, 7.d
+	wait	@anim, 22.d, -1.d
+	disp	20000.d, 0.d
+	disp	20005.d, 0.d
+	anim	53.d, 0.w
+	disp	53.d, 0.d
+	sfx	589840.d, 1.d
+	pushbp
+	setsp	100.w
+	lib	189.w
+	popbp
+	camera	@pos, -17.d, 1291.w, 1422.w, 2.d, 500.w
+	camera	@unk227, -17.d, -2008.d, -5042.d, 2.d, 500.w
+	camera	@unk229, 174.w, 2.d, 500.w
+	camera	@distance, 72.w, 2.d, 500.w
+	wait	@time, 100.w
+	pushbp
+	setsp	1.w
+	lib	259.w
+	popbp
+	scrn	@shake, 60.w, 60.w, 60.w, 0.w, 0.w, 0.w, 400.w
+	msg	voice(0.b),
+		size(34.b),
+		shake(31.b, 4.b, 4.b),
+		speed(0.b),
+		"EEEEEEEEEEEEEEEEEK!",
+		wait(5.b)
+	ptcl	152.d, @lead, 22.d, 0.w, 0.w
+	pushbp
+	setsp	3.w
+	lib	259.w
+	popbp
+	anim	22.d, 8.d
+	scrn	@shake, 0.w, 200.w, 0.w, 0.w, 0.w, 0.w, 130.w
+	pushbp
+	setsp	200.w
+	lib	186.w
+	popbp
+	scrn	@wipe, 0.d, 1.d, 320.w, 240.w, 0.w, 0.w, 255.w, 255.w, 255.w, 0.w, 0.w, 0.w, 255.w, 255.w, 255.w, 255.w, 0.w
+	wait	@time, 30.w
+	camera	@unk232, -1.d
+	warp	18.d, 1.w
+loc_454:
+	lib	39.w
+	return
+
+
+	.interact  54.d, *evt_fx_tm_barrier_54
+evt_fx_tm_barrier_54:
+	set	var(0.d), obj(@pos_z, 20000.d)
+	if	gt(var(0.d), 4000.w), else *loc_457
+	return
+loc_457:
+	if	eq(flag(817.d), 0.d), else *loc_460
+	if	or(eq(hit, 2000.d), eq(hit, 2001.d)), else *loc_465
+	pushbp
+	setsp	1.w
+	lib	259.w
+	popbp
+	camera	@unk232, 0.d
+	lib	54.w
+	set	flag(817.d), 1.d
+	call	-27.d, 20045.d, 57.d
+	call	-27.d, 20045.d, 18.d
+	call	-27.d, 20045.d, 28.d
+	call	-26.d, 20045.d, 40.d
+	call	20000.d, 701.d
+	sfx	589843.d, 1.d
+	anim	49.d, 1.w, 2.w
+	sfx	589839.d, 1.d
+	anim	54.d, 3.w
+	wait	@anim, 54.d, -1.d
+	disp	54.d, 0.d
+	set	var(0.d), obj(@pos_x, 20045.d)
+	set	var(1.d), obj(@pos_z, 20045.d)
+	camera	@unk227, var(0.d), 600.w, var(1.d), 1.d, 200.w
+	wait	@cam
+	anim	20045.d, 15.d
+	wait	@anim, 20045.d, -1.d
+	anim	20045.d, 9.d
+	mdir	20045.d, @pos, -2670.d, -2670.d, 40.w, 10.d
+	wait	@dir, 20045.d
+	camera	@unk227, -2670.d, 600.w, -2670.d, 1.d, 400.w
+	anim	49.d, 3.w, 2.w
+	moveto	20045.d, -2670.d, 200.w, -2670.d, 400.w, 10.d, -1.d
+	wait	@move, 20045.d
+	mdir	20045.d, @dir, 40.w, 40.w, 10.d
+	wait	@dir, 20045.d
+	anim	20045.d, 12.d
+	wait	@anim, 20045.d, -1.d
+	anim	20045.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20045.w, 14.d),
+		speed(0.b),
+		"Thank you, thank you.",
+		anim(0.b, 20045.w, 13.d),
+		wait(254.b)
+	pushbp
+	setsp	20045.d
+	setsp	0.d
+	setsp	0.w
+	setsp	26.d
+	setsp	0.w
+	lib	210.w
+	popbp
+	run	*sub_461
+	call	20000.d, 700.d
+	camera	@reset, 1.d, 100.w
+	lib	55.w
+	endif	*loc_460
+loc_465:
+	lib	38.w
+	anim	20045.d, 14.d
+	anim	20046.d, 14.d
+	anim	20047.d, 14.d
+	anim	20048.d, 14.d
+	msg	voice(17.b),
+		speed(6.b),
+		speed(0.b),
+		"Must break energy seal!",
+		wait(254.b)
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	lib	55.w
+loc_460:
+	return
+
+
+sub_461:
+	if	and(and(and(eq(flag(817.d), 1.d), eq(flag(818.d), 1.d)), eq(flag(819.d), 1.d)), eq(flag(820.d), 1.d)), else *loc_464
+	set	flag(7.d), 1.d
+	run	*sub_463
+loc_464:
+	return
+
+
+sub_463:
+	attach	49.d, *sub_235
+	sfx	589830.d, 1.d
+	msg	voice(28.b),
+		speed(6.b),
+		speed(0.b),
+		"All beds deployed!\n",
+		speed(0.b),
+		"All beds deployed!",
+		wait(255.b)
+	wait	@time, 30.w
+	msg	voice(28.b),
+		speed(6.b),
+		speed(0.b),
+		"This vessel will now enter drive mode!",
+		wait(255.b)
+	wait	@time, 60.w
+	msg	voice(28.b),
+		speed(6.b),
+		speed(0.b),
+		"Color-code authorization required!",
+		wait(255.b)
+	sfx	589830.d, 2.d, 200.w
+	detach	49.d
+	wait	@time, 60.w
+	sfx	-65508.d, 2.d, 200.w
+	camera	@unk227, 0.w, 600.w, 0.w, 1.d, 200.w
+	camera	@unk229, 26.w, 1.d, 200.w
+	wait	@cam
+	camera	@unk238, -1.d
+	pushbp
+	setsp	1.w
+	lib	259.w
+	popbp
+	sfx	589831.d, 1.d
+	pushbp
+	setsp	10.w
+	lib	186.w
+	popbp
+	run	*sub_120
+	pushbp
+	setsp	200.w
+	lib	185.w
+	popbp
+	sfx	-65508.d, 3.d, 200.w
+	wait	@move, 26.d
+	return
+
+
+	.interact  55.d, *evt_fx_tm_barrier_55
+evt_fx_tm_barrier_55:
+	set	var(0.d), obj(@pos_z, 20000.d)
+	if	gt(var(0.d), 4000.w), else *loc_468
+	return
+loc_468:
+	if	eq(flag(818.d), 0.d), else *loc_471
+	if	or(eq(hit, 2000.d), eq(hit, 2001.d)), else *loc_472
+	pushbp
+	setsp	1.w
+	lib	259.w
+	popbp
+	camera	@unk232, 0.d
+	lib	54.w
+	set	flag(818.d), 1.d
+	call	-27.d, 20046.d, 57.d
+	call	-27.d, 20046.d, 18.d
+	call	-27.d, 20046.d, 28.d
+	call	-26.d, 20046.d, 40.d
+	call	20000.d, 701.d
+	sfx	589843.d, 1.d
+	anim	51.d, 1.w, 2.w
+	sfx	589839.d, 1.d
+	anim	55.d, 3.w
+	wait	@anim, 55.d, -1.d
+	disp	55.d, 0.d
+	set	var(0.d), obj(@pos_x, 20046.d)
+	set	var(1.d), obj(@pos_z, 20046.d)
+	camera	@unk227, var(0.d), 600.w, var(1.d), 1.d, 200.w
+	wait	@cam
+	anim	20046.d, 15.d
+	wait	@anim, 20046.d, -1.d
+	anim	20046.d, 9.d
+	mdir	20046.d, @pos, -900.d, -3620.d, 40.w, 10.d
+	wait	@dir, 20046.d
+	camera	@unk227, -900.d, 600.w, -3620.d, 1.d, 150.w
+	anim	51.d, 3.w, 2.w
+	moveto	20046.d, -900.d, 200.w, -3620.d, 150.w, 10.d, -1.d
+	wait	@move, 20046.d
+	mdir	20046.d, @dir, 15.w, 40.w, 10.d
+	wait	@dir, 20046.d
+	anim	20046.d, 12.d
+	wait	@anim, 20046.d, -1.d
+	anim	20046.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20046.w, 14.d),
+		speed(0.b),
+		"Thank you, thank you.",
+		anim(0.b, 20046.w, 13.d),
+		wait(254.b)
+	pushbp
+	setsp	20046.d
+	setsp	0.d
+	setsp	0.w
+	setsp	26.d
+	setsp	0.w
+	lib	210.w
+	popbp
+	run	*sub_461
+	call	20000.d, 700.d
+	camera	@reset, 1.d, 100.w
+	lib	55.w
+	endif	*loc_471
+loc_472:
+	lib	38.w
+	anim	20045.d, 14.d
+	anim	20046.d, 14.d
+	anim	20047.d, 14.d
+	anim	20048.d, 14.d
+	msg	voice(17.b),
+		speed(6.b),
+		speed(0.b),
+		"Open bed!",
+		wait(254.b)
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	lib	55.w
+loc_471:
+	return
+
+
+	.interact  56.d, *evt_fx_tm_barrier_56
+evt_fx_tm_barrier_56:
+	set	var(0.d), obj(@pos_z, 20000.d)
+	if	gt(var(0.d), 4000.w), else *loc_475
+	return
+loc_475:
+	if	eq(flag(819.d), 0.d), else *loc_478
+	if	or(eq(hit, 2000.d), eq(hit, 2001.d)), else *loc_479
+	pushbp
+	setsp	1.w
+	lib	259.w
+	popbp
+	camera	@unk232, 0.d
+	lib	54.w
+	set	flag(819.d), 1.d
+	call	-27.d, 20047.d, 57.d
+	call	-27.d, 20047.d, 18.d
+	call	-27.d, 20047.d, 28.d
+	call	-26.d, 20047.d, 40.d
+	call	20000.d, 701.d
+	sfx	589843.d, 1.d
+	anim	52.d, 1.w, 2.w
+	sfx	589839.d, 1.d
+	anim	56.d, 3.w
+	wait	@anim, 56.d, -1.d
+	disp	56.d, 0.d
+	set	var(0.d), obj(@pos_x, 20047.d)
+	set	var(1.d), obj(@pos_z, 20047.d)
+	camera	@unk227, var(0.d), 600.w, var(1.d), 1.d, 200.w
+	wait	@cam
+	anim	20047.d, 15.d
+	wait	@anim, 20047.d, -1.d
+	anim	20047.d, 9.d
+	mdir	20047.d, @pos, 960.w, -3620.d, 40.w, 10.d
+	wait	@dir, 20047.d
+	camera	@unk227, 960.w, 600.w, -3620.d, 1.d, 500.w
+	anim	52.d, 3.w, 2.w
+	moveto	20047.d, 960.w, 150.w, -3620.d, 300.w, 10.d, -1.d
+	wait	@move, 20047.d
+	mdir	20047.d, @dir, 345.w, 40.w, 10.d
+	wait	@dir, 20047.d
+	anim	20047.d, 12.d
+	wait	@anim, 20047.d, -1.d
+	anim	20047.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20047.w, 14.d),
+		speed(0.b),
+		"Thank you, thank you.",
+		anim(0.b, 20047.w, 13.d),
+		wait(254.b)
+	pushbp
+	setsp	20047.d
+	setsp	0.d
+	setsp	0.w
+	setsp	26.d
+	setsp	0.w
+	lib	210.w
+	popbp
+	run	*sub_461
+	call	20000.d, 700.d
+	camera	@reset, 1.d, 100.w
+	lib	55.w
+	endif	*loc_478
+loc_479:
+	lib	38.w
+	anim	20045.d, 14.d
+	anim	20046.d, 14.d
+	anim	20047.d, 14.d
+	anim	20048.d, 14.d
+	msg	voice(17.b),
+		speed(6.b),
+		speed(0.b),
+		"Open bed!",
+		wait(254.b)
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	lib	55.w
+loc_478:
+	return
+
+
+	.interact  57.d, *evt_fx_tm_barrier_57
+evt_fx_tm_barrier_57:
+	set	var(0.d), obj(@pos_z, 20000.d)
+	if	gt(var(0.d), 4000.w), else *loc_482
+	return
+loc_482:
+	if	eq(flag(820.d), 0.d), else *loc_485
+	if	or(eq(hit, 2000.d), eq(hit, 2001.d)), else *loc_486
+	pushbp
+	setsp	1.w
+	lib	259.w
+	popbp
+	camera	@unk232, 0.d
+	lib	54.w
+	set	flag(820.d), 1.d
+	call	-27.d, 20048.d, 57.d
+	sfx	589843.d, 1.d
+	anim	50.d, 1.w, 2.w
+	sfx	589839.d, 1.d
+	anim	57.d, 3.w
+	wait	@anim, 57.d, -1.d
+	disp	57.d, 0.d
+	set	var(0.d), obj(@pos_x, 20048.d)
+	set	var(1.d), obj(@pos_z, 20048.d)
+	camera	@unk227, var(0.d), 600.w, var(1.d), 1.d, 100.w
+	wait	@cam
+	anim	20048.d, 15.d
+	wait	@anim, 20048.d, -1.d
+	anim	20048.d, 9.d
+	mdir	20048.d, @pos, 2670.w, -2670.d, 40.w, 10.d
+	wait	@dir, 20048.d
+	camera	@unk227, 2670.w, 600.w, -2670.d, 1.d, 500.w
+	anim	50.d, 3.w, 2.w
+	moveto	20048.d, 2670.w, 200.w, -2670.d, 500.w, 10.d, -1.d
+	wait	@move, 20048.d
+	mdir	20048.d, @dir, 320.w, 40.w, 10.d
+	wait	@dir, 20048.d
+	anim	20048.d, 12.d
+	wait	@anim, 20048.d, -1.d
+	anim	20048.d, 13.d
+	msg	voice(17.b),
+		speed(4.b),
+		anim(0.b, 20048.w, 14.d),
+		speed(0.b),
+		"Thank you, thank you.",
+		anim(0.b, 20048.w, 13.d),
+		wait(254.b)
+	pushbp
+	setsp	20048.d
+	setsp	0.d
+	setsp	0.w
+	setsp	26.d
+	setsp	0.w
+	lib	210.w
+	popbp
+	run	*sub_461
+	camera	@reset, 1.d, 100.w
+	lib	55.w
+	endif	*loc_485
+loc_486:
+	lib	38.w
+	anim	20045.d, 14.d
+	anim	20046.d, 14.d
+	anim	20047.d, 14.d
+	anim	20048.d, 14.d
+	msg	voice(17.b),
+		speed(6.b),
+		speed(0.b),
+		"Open bed!",
+		wait(254.b)
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	lib	55.w
+loc_485:
+	return
+
+
+	.interact  58.d, *evt_fx_tm_barrier_58
+evt_fx_tm_barrier_58:
+	set	var(0.d), obj(@pos_z, 20000.d)
+	if	gt(var(0.d), 4000.w), else *loc_489
+	return
+loc_489:
+	if	eq(flag(940.d), 0.d), else *loc_492
+	if	or(eq(hit, 2000.d), eq(hit, 2001.d)), else *loc_494
+	pushbp
+	setsp	1.w
+	lib	259.w
+	popbp
+	camera	@unk232, 0.d
+	lib	54.w
+	set	flag(940.d), 1.d
+	run	*sub_493
+	camera	@reset, 1.d, 100.w
+	lib	55.w
+	endif	*loc_492
+loc_494:
+	lib	38.w
+	anim	20045.d, 14.d
+	anim	20046.d, 14.d
+	anim	20047.d, 14.d
+	anim	20048.d, 14.d
+	msg	voice(17.b),
+		speed(6.b),
+		speed(0.b),
+		"Stop. Dangerous!",
+		wait(254.b)
+	anim	20045.d, 13.d
+	anim	20046.d, 13.d
+	anim	20047.d, 13.d
+	anim	20048.d, 13.d
+	lib	55.w
+loc_492:
+	return
+
+
+sub_493:
+	sfx	-65508.d, 2.d, 200.w
+	camera	@unk227, 0.w, 1000.w, 0.w, 1.d, 200.w
+	camera	@unk229, 40.w, 1.d, 200.w
+	sfx	589839.d, 1.d
+	anim	58.d, 3.w
+	wait	@anim, 58.d, -1.d
+	disp	58.d, 0.d
+	pushbp
+	setsp	3.w
+	lib	259.w
+	popbp
+	sfx	589831.d, 1.d
+	pushbp
+	setsp	10.w
+	lib	186.w
+	popbp
+	pushbp
+	setsp	1.w
+	run	*sub_105
+	popbp
+	pushbp
+	setsp	200.w
+	lib	185.w
+	popbp
+	sfx	-65508.d, 3.d, 200.w
+	sfx	589825.d, 1.d
+	anim	31.d, 1.w
+	anim	32.d, 1.w
+	disp	31.d, 1.d
+	disp	32.d, 1.d
+	wait	@time, 30.w
+	sfx	589825.d, 1.d
+	anim	33.d, 1.w
+	anim	34.d, 1.w
+	disp	33.d, 1.d
+	disp	34.d, 1.d
+	wait	@time, 30.w
+	sfx	589825.d, 1.d
+	anim	35.d, 1.w
+	anim	36.d, 1.w
+	disp	35.d, 1.d
+	disp	36.d, 1.d
+	wait	@time, 30.w
+	sfx	589825.d, 1.d
+	anim	37.d, 1.w
+	anim	38.d, 1.w
+	disp	37.d, 1.d
+	disp	38.d, 1.d
+	wait	@time, 30.w
+	sfx	589825.d, 1.d
+	anim	40.d, 1.w
+	anim	41.d, 1.w
+	disp	40.d, 1.d
+	disp	41.d, 1.d
+	wait	@time, 30.w
+	sfx	589825.d, 1.d
+	anim	42.d, 1.w
+	anim	43.d, 1.w
+	disp	42.d, 1.d
+	disp	43.d, 1.d
+	wait	@time, 30.w
+	sfx	589825.d, 1.d
+	anim	44.d, 1.w
+	anim	45.d, 1.w
+	disp	44.d, 1.d
+	disp	45.d, 1.d
+	wait	@time, 30.w
+	sfx	589825.d, 1.d
+	anim	46.d, 1.w
+	anim	47.d, 1.w
+	disp	46.d, 1.d
+	disp	47.d, 1.d
+	wait	@time, 100.w
+	camera	@unk238, -2.d
+	anim	31.d, 0.w
+	anim	32.d, 0.w
+	anim	33.d, 0.w
+	anim	34.d, 0.w
+	anim	35.d, 0.w
+	anim	36.d, 0.w
+	anim	37.d, 0.w
+	anim	38.d, 0.w
+	anim	40.d, 0.w
+	anim	41.d, 0.w
+	anim	42.d, 0.w
+	anim	43.d, 0.w
+	anim	44.d, 0.w
+	anim	45.d, 0.w
+	anim	46.d, 0.w
+	anim	47.d, 0.w
+	born	10001.d, 1.d, 0.w, 360.w, 0.w, 0.w, 1000.w, 50.w, 1000.w, *sub_137
+	born	10002.d, 1.d, 0.w, 0.w, 0.w, 0.w, 10000.w, 50.w, 10000.w, *sub_238
+	disp	10002.d, 0.d
+	born	10003.d, 1.d, 0.w, 0.w, 3250.w, 0.w, 1200.w, 50.w, 500.w, *sub_239
+	born	10004.d, 1.d, 0.w, 0.w, -3250.d, 0.w, 1200.w, 50.w, 500.w, *sub_286
+	born	10005.d, 1.d, -2300.d, 0.w, 2300.w, -45.d, 1200.w, 50.w, 500.w, *sub_289
+	born	10006.d, 1.d, 2300.w, 0.w, -2300.d, -45.d, 1200.w, 50.w, 500.w, *sub_292
+	born	10007.d, 1.d, -3250.d, 0.w, 0.w, -90.d, 1200.w, 50.w, 500.w, *sub_295
+	born	10008.d, 1.d, 3250.w, 0.w, 0.w, -90.d, 1200.w, 50.w, 500.w, *sub_298
+	born	10009.d, 1.d, -2300.d, 0.w, -2300.d, -135.d, 1200.w, 50.w, 500.w, *sub_301
+	born	10010.d, 1.d, 2300.w, 0.w, 2300.w, -135.d, 1200.w, 50.w, 500.w, *sub_304
+	set	var(44.d), -1.d
+	return
+
+
+	.interact  59.d, *evt_fx_tm_barrier_59
+evt_fx_tm_barrier_59:
+	if	eq(flag(595.d), 0.d), else *loc_497
+	run	*sub_410
+loc_497:
+	return

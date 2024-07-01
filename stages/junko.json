@@ -1,0 +1,191 @@
+{
+  "objects": [
+    {
+      "id": 0,
+      "object": "cb_robo",
+      "position": {"x": 82.3, "y": 0.0, "z": 54.87},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "botcam", "reflect", "interact"]
+    },
+    {
+      "id": 1,
+      "object": "living_map",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "botcam", "interact"]
+    },
+    {
+      "id": 2,
+      "object": "test_box_12",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 45, "z": 0},
+      "scale": {"x": 10.0, "y": 10.0, "z": 10.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 3,
+      "object": "test_box_12",
+      "position": {"x": 0.0, "y": 0.0, "z": 200.0},
+      "rotation": {"x": 0, "y": 45, "z": 0},
+      "scale": {"x": 10.0, "y": 10.0, "z": 10.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 4,
+      "object": "test_box_12",
+      "position": {"x": -257.75, "y": 0.0, "z": 143.57},
+      "rotation": {"x": 0, "y": 45, "z": 0},
+      "scale": {"x": 10.0, "y": 10.0, "z": 10.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 5,
+      "object": "test_box_12",
+      "position": {"x": 0.0, "y": 0.0, "z": -200.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 10.0, "y": 10.0, "z": 10.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 6,
+      "object": "test_box_12",
+      "position": {"x": 269.71, "y": 0.0, "z": 113.91},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 10.0, "y": 10.0, "z": 10.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 7,
+      "object": "test_box_12",
+      "position": {"x": 200.0, "y": 0.0, "z": 200.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 10.0, "y": 10.0, "z": 10.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 8,
+      "object": "test_box_12",
+      "position": {"x": 200.0, "y": 0.0, "z": -200.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 10.0, "y": 10.0, "z": 10.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 9,
+      "object": "test_box_12",
+      "position": {"x": -235.78, "y": 0.0, "z": 58.63},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 10.0, "z": 50.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 10,
+      "object": "npc_keath",
+      "position": {"x": -163.0, "y": 0.0, "z": -81.03},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 11,
+      "object": "npc_keath",
+      "position": {"x": -158.36, "y": 0.0, "z": -11.27},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 12,
+      "object": "npc_keath",
+      "position": {"x": -156.69, "y": 0.0, "z": 61.25},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 13,
+      "object": "npc_primo_467",
+      "position": {"x": -102.5, "y": 0.0, "z": -72.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 14,
+      "object": "item_snack_bone",
+      "position": {"x": 70.25, "y": 0.0, "z": 70.03},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 15,
+      "object": "npc_tyou_bb",
+      "position": {"x": -81.55, "y": 0.0, "z": 99.48},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 16,
+      "object": "item_kairozu",
+      "position": {"x": 116.01, "y": 0.0, "z": 82.96},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": 1,
+      "variant": 0,
+      "flags": ["spawn", "lift", "interact"]
+    }
+  ]
+}

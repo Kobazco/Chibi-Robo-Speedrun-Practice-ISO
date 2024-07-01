@@ -1,0 +1,301 @@
+{
+  "objects": [
+    {
+      "id": 0,
+      "object": "cb_robo",
+      "position": {"x": 40.0, "y": 0.0, "z": 20.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "reflect", "interact"]
+    },
+    {
+      "id": 1,
+      "object": "house_r_chibi_h_main",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "grab", "interact"]
+    },
+    {
+      "id": 2,
+      "object": "house_r_chibi_h_dai",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "pushthru", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 3,
+      "object": "house_r_chibi_h_hasigo",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "pushthru", "ladder", "interact"]
+    },
+    {
+      "id": 4,
+      "object": "npc_keath",
+      "position": {"x": -20.0, "y": 0.0, "z": 42.13},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 5,
+      "object": "npc_jenny",
+      "position": {"x": -109.33, "y": 0.0, "z": -27.47},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 71,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 6,
+      "object": "living_hat",
+      "position": {"x": -60.0, "y": 0.0, "z": -33.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 7,
+      "object": "npc_mama",
+      "position": {"x": -13.76, "y": 0.0, "z": -148.48},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 8,
+      "object": "living_sakana",
+      "position": {"x": 250.0, "y": 101.5, "z": -287.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 9,
+      "object": "living_sakana",
+      "position": {"x": 249.0, "y": 101.5, "z": -279.0},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 10,
+      "object": "living_sakana",
+      "position": {"x": 250.0, "y": 98.2, "z": -283.0},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 11,
+      "object": "living_sakana",
+      "position": {"x": 249.0, "y": 98.0, "z": -290.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 12,
+      "object": "living_sakana",
+      "position": {"x": 249.0, "y": 98.0, "z": -276.0},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 13,
+      "object": "living_sakana",
+      "position": {"x": 248.0, "y": 94.0, "z": -289.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 14,
+      "object": "living_sakana",
+      "position": {"x": 248.0, "y": 94.0, "z": -277.0},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 15,
+      "object": "living_sakana",
+      "position": {"x": 247.0, "y": 90.5, "z": -287.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 16,
+      "object": "living_sakana",
+      "position": {"x": 247.0, "y": 90.5, "z": -279.0},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 17,
+      "object": "living_sakana",
+      "position": {"x": 246.0, "y": 87.5, "z": -283.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 18,
+      "object": "living_sakana_esa",
+      "position": {"x": 233.2, "y": 120.0, "z": -280.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["interact"]
+    },
+    {
+      "id": 19,
+      "object": "unk_free_284",
+      "position": {"x": 243.55, "y": 80.19, "z": -285.12},
+      "rotation": {"x": 0, "y": -90, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 20,
+      "object": "living_shelf_slope",
+      "position": {"x": 241.84, "y": 0.0, "z": -271.03},
+      "rotation": {"x": 0, "y": -90, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 21,
+      "object": "house_r_chibi_h_warp",
+      "position": {"x": 29.8, "y": 0.0, "z": 0.81},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["climb", "clamber", "interact"]
+    },
+    {
+      "id": 22,
+      "object": "npc_zobin",
+      "position": {"x": 29.8, "y": 0.0, "z": 0.81},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["interact"]
+    },
+    {
+      "id": 23,
+      "object": "npc_bb",
+      "position": {"x": 70.31, "y": 0.0, "z": 9.52},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 24,
+      "object": "rouka_tuta_a",
+      "position": {"x": -74.65, "y": 0.0, "z": 58.15},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 25,
+      "object": "rouka_tuta_ara",
+      "position": {"x": -74.01, "y": -0.01, "z": 57.97},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "rope", "interact"]
+    },
+    {
+      "id": 26,
+      "object": "npc_deca_robo",
+      "position": {"x": 29.8, "y": 0.0, "z": 0.81},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    }
+  ]
+}

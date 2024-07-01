@@ -1,0 +1,3476 @@
+{
+  "batteryGlobals": {
+    "idle": 2,
+    "idleAnim": 5,
+    "walk": 10,
+    "jog": 20,
+    "run": 30,
+    "slide": 10,
+    "equip": 10,
+    "lift": 30,
+    "drop": 10,
+    "leticker": 500,
+    "ledgeGrab": 60,
+    "ledgeSlide": 30,
+    "ledgeClimb": 60,
+    "ledgeDrop": 10,
+    "ledgeTeeter": 30,
+    "jump": 60,
+    "fall": 2000,
+    "ladderGrab": 30,
+    "ladderAscend": 60,
+    "ladderDescend": 60,
+    "ladderTop": 60,
+    "ladderBottom": 10,
+    "ropeGrab": 30,
+    "ropeAscend": 60,
+    "ropeDescend": 10,
+    "ropeTop": 60,
+    "ropeBottom": 10,
+    "push": 60,
+    "copterHover": 1000,
+    "copterDescend": 30,
+    "popperShoot": 100,
+    "popperShootCharged": 500,
+    "radarScan": 150,
+    "radarFollow": 80,
+    "brush": 250,
+    "spoon": 250,
+    "mug": 500,
+    "squirterSuck": 100,
+    "squirterSpray": 100
+  },
+  "popperGlobals": {
+    "rangeDefault": 600,
+    "rangeUpgraded": 1000,
+    "projectileSpeed": 10,
+    "maxProjectiles": 2
+  },
+  "copterGlobals": {
+    "hoverDuration": 120,
+    "gravity": 2,
+    "terminalVelocity": 40
+  },
+  "radarGlobals": {
+    "redRange": 2000,
+    "yellowRange": 6000
+  },
+  "playerGlobals": {
+    "climbDuration": 27,
+    "climbRate": 0,
+    "gentleClimbPercent": 0,
+    "autoPlugPickupTime": 20
+  },
+  "defaultAtcs": {
+    "copter": true,
+    "popper": false,
+    "radar": false
+  },
+  "coinValues": {
+    "coinG": 100,
+    "coinS": 50,
+    "coinC": 10,
+    "junkA": 100,
+    "junkB": 50,
+    "junkC": 10,
+    "junkUnko": 0,
+    "energyb": 10,
+    "happyHeart": 10
+  },
+  "pickupSounds": [
+    "robo_head_get",
+    "robo_kami2",
+    "robo_kami3",
+    "kitchen_hamburg_pan_oku"
+  ],
+  "collectSounds": [
+    "system_item_get",
+    "system_juyo_item_get",
+    "npc_deca_p_get"
+  ],
+  "items": [
+    {
+      "id": 0,
+      "name": "Frog Ring",
+      "description": "Give all ten to Jenny and\nsee what happens!",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 1,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 2,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 30,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 3,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 40,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 4,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 50,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 5,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 60,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 6,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 70,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 7,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 80,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 8,
+      "name": "Giga-Battery",
+      "description": "Giga-Robo's rechargeable\nbattery.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 90,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 2
+    },
+    {
+      "id": 9,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 100,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 10,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 110,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 11,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 120,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 12,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 130,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 13,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 140,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 14,
+      "name": "Dog Bone",
+      "description": "Tao's favorite food.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 150,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 15,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 160,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 16,
+      "name": "Toothbrush",
+      "description": "Used to remove unsightly\nstains.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 170,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": -1
+    },
+    {
+      "id": 17,
+      "name": "",
+      "description": "A capsule containing a costume.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 18,
+      "name": "Wastepaper",
+      "description": "Jenny used it to doodle...\nDad used it as a handkerchief!",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 1,
+      "junkMoney": 10,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 19,
+      "name": "Cookie Crumbs",
+      "description": "Leftover garbage from Dad.",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 1,
+      "junkMoney": 10,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 20,
+      "name": "Chibi-Battery",
+      "description": "Chibi-Robo's spare battery.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 980,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 21,
+      "name": "Spoon",
+      "description": "Chibi-Robo can use this as a\nshovel.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": -1
+    },
+    {
+      "id": 22,
+      "name": "Mug",
+      "description": "Chibi-Robo can wear this like\na suit of armor.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": -1
+    },
+    {
+      "id": 23,
+      "name": "Rose",
+      "description": "A fine gift for Jenny.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 2,
+      "collectSound": 0
+    },
+    {
+      "id": 24,
+      "name": "Drake Redcrest Suit",
+      "description": "Lets you transform into\nDrake Redcrest!",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 25,
+      "name": "Tao Suit",
+      "description": "Lets you transform into Tao!",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 26,
+      "name": "Frog Suit",
+      "description": "Lets you transform into a frog!",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 27,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 28,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 29,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 30,
+      "name": "Pajamas",
+      "description": "Pose in these to end your day\nor night.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 31,
+      "name": "Super Chibi-Robo Suit",
+      "description": "The most wanted suit of all!",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 32,
+      "name": "Trauma Suit",
+      "description": "Lets you transform into an\ninjured...robot? Ouch!",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 911,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 33,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 34,
+      "name": "Ghost Suit",
+      "description": "Lets you transform into a ghost!\nWhooooooo!",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 35,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 1
+    },
+    {
+      "id": 36,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 37,
+      "name": "",
+      "description": "Tonpy's million-selling hit song.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 38,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 39,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 40,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 41,
+      "name": "Treasure Map A",
+      "description": "\"When the exalted one stands...\"",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 42,
+      "name": "Treasure Map B",
+      "description": "\"To find this treasure, you will\nneed many keys.\"",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 43,
+      "name": "Treasure Map C",
+      "description": "\"Fly from the Great Tree's branch\nand dig at the hollow point.\"",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 44,
+      "name": "Sugar Cube",
+      "description": "A must with tea.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 45,
+      "name": "Cookie",
+      "description": "A must with tea.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 46,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 47,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 48,
+      "name": "Giga-Charger",
+      "description": "Used to recharge Giga-Robo's\nbattery.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 2
+    },
+    {
+      "id": 49,
+      "name": "Popper Trash",
+      "description": "Clean up after yourself!\nCelebrations ain't free!",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 3,
+      "junkMoney": 30,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 50,
+      "name": "Empty Bottle",
+      "description": "Don't cut yourself while\nthrowing it away!",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 10,
+      "junkMoney": 100,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 51,
+      "name": "Broken Bottle",
+      "description": "Don't cut yourself while\nthrowing it away!",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 20,
+      "junkMoney": 100,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 52,
+      "name": "Broken Bottle",
+      "description": "Don't cut yourself while\nthrowing it away!",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 20,
+      "junkMoney": 100,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 53,
+      "name": "Charge Chip",
+      "description": "Enables the Chibi-Blaster to fire\na charged shot.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 860,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 54,
+      "name": "Range Chip",
+      "description": "Enables the Chibi-Blaster to fire\nlong-distance shots.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 1120,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 55,
+      "name": "Toy Receipt",
+      "description": "A receipt that Dad had hidden.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 1
+    },
+    {
+      "id": 56,
+      "name": "Squirter",
+      "description": "Used to suck up and spray liquids.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": -1
+    },
+    {
+      "id": 57,
+      "name": "Mom's Letter",
+      "description": "Mmm... This letter contains some\nbad news...",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 1
+    },
+    {
+      "id": 58,
+      "name": "D Battery",
+      "description": "Used to operate the castle.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 59,
+      "name": "C Battery",
+      "description": "Used to operate the castle.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 60,
+      "name": "AA Battery",
+      "description": "Used to operate the castle.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 61,
+      "name": "Red Shoe",
+      "description": "Lost by someone.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 62,
+      "name": "Alien Ear Chip",
+      "description": "\"Now friend can understand our\nalien tongue.\"",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 2150,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 63,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 64,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 65,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 66,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 67,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 68,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 69,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 70,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 71,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 72,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 73,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 74,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 75,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 1
+    },
+    {
+      "id": 76,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 1
+    },
+    {
+      "id": 77,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 1
+    },
+    {
+      "id": 78,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 79,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 80,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 81,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 82,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 83,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 1
+    },
+    {
+      "id": 84,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 1
+    },
+    {
+      "id": 85,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 86,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 87,
+      "name": "Timer 5",
+      "description": "Five minutes for half a day.\nThe initial time setting.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 5,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 88,
+      "name": "Dinah Teeth",
+      "description": "\"My teef! My beautiful teef!\nI can't bite without 'em!\"",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 89,
+      "name": "Timer 10",
+      "description": "Ten minutes for half a day.\nFor a leisurely pace.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 10,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 90,
+      "name": "Timer 15",
+      "description": "Fifteen minutes for half a day.\nFor a truly leisurely pace.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 15,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 91,
+      "name": "Twig",
+      "description": "Garbage that Tao dragged in.",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 2,
+      "junkMoney": 20,
+      "pickupSound": 2,
+      "collectSound": 0
+    },
+    {
+      "id": 92,
+      "name": "Pink Flower Seed",
+      "description": "A pink flower will grow from\nthis seed.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 30,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 93,
+      "name": "Blue Flower Seed",
+      "description": "A blue flower will grow from\nthis seed.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 30,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 94,
+      "name": "White Flower Seed",
+      "description": "A white flower will grow from\nthis seed.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 30,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 95,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 96,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 97,
+      "name": "Dried Flower",
+      "description": "Why did it wither?",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 98,
+      "name": "Gunpowder",
+      "description": "BOOM!!!",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 99,
+      "name": "Snorkle & Goggles",
+      "description": "Needed to move around in water.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 100,
+      "name": "Love Letter",
+      "description": "Hopefully it gets delivered soon.\nTrue love cannot wait.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 101,
+      "name": "Dog Tags",
+      "description": "\"Private First Class Memphis.\"",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 102,
+      "name": "Ticket Stub",
+      "description": "\"The Horrific Mort:\nA Love Story.\"",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 103,
+      "name": "Bandage",
+      "description": "Used to mend injuries or horrify\nbystanders.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 2,
+      "collectSound": 0
+    },
+    {
+      "id": 104,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 105,
+      "name": "Drake Redcrest Album",
+      "description": "Looks like a best seller.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 106,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 107,
+      "name": "Space Scrambler",
+      "description": "A remote-control space fighter.\nPerhaps YOU can use it someday.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 2980,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 108,
+      "name": "Free Rangers Photo",
+      "description": "A group photo of the soldiers.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 109,
+      "name": "Giga-Robo's Left Leg",
+      "description": "One of Giga-Robo's legs.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 2
+    },
+    {
+      "id": 110,
+      "name": "Circuit Schematic",
+      "description": "Electronic plans for increasing\nthe Chibi-Blaster's strength.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 1
+    },
+    {
+      "id": 111,
+      "name": "Giga-Battery (Full)",
+      "description": "Giga-Robo's battery.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 2
+    },
+    {
+      "id": 112,
+      "name": "Small Handkerchief",
+      "description": "Jenny's old handkerchief.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 2,
+      "collectSound": 0
+    },
+    {
+      "id": 113,
+      "name": "Pink Flower",
+      "description": "So pretty!",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 114,
+      "name": "The Scurvy Splinter",
+      "description": "Yar! Avast, mateys! Time to\nhunt for treasure!",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 100,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 115,
+      "name": "Old Boxers",
+      "description": "Old underpants worn by Dad.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 2,
+      "collectSound": 0
+    },
+    {
+      "id": 116,
+      "name": "Outdated Scarf",
+      "description": "A scarf worn by Mom when\nshe was young.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 2,
+      "collectSound": 0
+    },
+    {
+      "id": 117,
+      "name": "Blue Block",
+      "description": "A building block.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 1,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 118,
+      "name": "Purple Block",
+      "description": "A building block.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 119,
+      "name": "White Block",
+      "description": "A building block.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 120,
+      "name": "Green Block",
+      "description": "A building block.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 121,
+      "name": "Yellow Block",
+      "description": "A building block.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 122,
+      "name": "Red Block",
+      "description": "A building block.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 123,
+      "name": "Hot Rod",
+      "description": "A popular car among racers.\nPerhaps YOU will race one day.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 100,
+      "price": 2740,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 124,
+      "name": "Dad's Wedding Ring",
+      "description": "The number \"200667\" is engraved\non the inside.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 2
+    },
+    {
+      "id": 125,
+      "name": "Weeds",
+      "description": "Boring old weeds.",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 3,
+      "junkMoney": 30,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 126,
+      "name": "Block Layout",
+      "description": "What will be built?",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 127,
+      "name": "Passed-out Frog",
+      "description": "It looks like he's only passed out...\nWhew!",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 2,
+      "collectSound": 0
+    },
+    {
+      "id": 128,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 100,
+      "price": 9800,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 129,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 130,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 131,
+      "name": "Chibi-Blaster",
+      "description": "Allows you to fire sonic blasts.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 1110,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 132,
+      "name": "Chibi-Radar",
+      "description": "Lets you see things that are\nhidden from normal view.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 1730,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 1
+    },
+    {
+      "id": 133,
+      "name": "Tamagotchi",
+      "description": "A popular toy.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 134,
+      "name": "Primopuel",
+      "description": "A popular toy.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 100,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 135,
+      "name": "Empty Can",
+      "description": "Garbage left by Dad.",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 5,
+      "junkMoney": 50,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 136,
+      "name": "Candy Wrapper",
+      "description": "Garbage left by Jenny.",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 1,
+      "junkMoney": 10,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 137,
+      "name": "Candy Bag",
+      "description": "Garbage left by Jenny.",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 5,
+      "junkMoney": 50,
+      "pickupSound": 1,
+      "collectSound": 0
+    },
+    {
+      "id": 138,
+      "name": "Cookie Box",
+      "description": "Garbage left by Dad.",
+      "flags": {
+        "junk": true,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 5,
+      "junkMoney": 50,
+      "pickupSound": 2,
+      "collectSound": 0
+    },
+    {
+      "id": 139,
+      "name": "Super Eggplant",
+      "description": "A vegetable with lots of nutrition.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 140,
+      "name": "Legendary Flower Seed",
+      "description": "It takes ten years for this flower\nto grow!",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 141,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 142,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 143,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 144,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 145,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 146,
+      "name": "",
+      "description": "",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 0,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 2,
+      "collectSound": 0
+    },
+    {
+      "id": 147,
+      "name": "Red Crayon",
+      "description": "A crayon left by Jenny.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 148,
+      "name": "Blue Crayon",
+      "description": "A crayon left by Jenny.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 149,
+      "name": "Yellow Crayon",
+      "description": "A crayon left by Jenny.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 150,
+      "name": "Green Crayon",
+      "description": "A crayon left by Jenny.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 151,
+      "name": "Purple Crayon",
+      "description": "A crayon left by Jenny.",
+      "flags": {
+        "junk": false,
+        "chibiVision": true,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 152,
+      "name": "Nectar Flower Seed",
+      "description": "A cute nectar flower will grow\nfrom this seed.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 0,
+      "price": 777,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 153,
+      "name": "Philly",
+      "description": "Funky Phil's child.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 154,
+      "name": "Freaky Phil",
+      "description": "Funky Phil's child. Not like\nthe other children...",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 155,
+      "name": "Funky Seed",
+      "description": "Funky Phil's seed.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 60,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 156,
+      "name": "Blue Flowers",
+      "description": "So pretty!",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 157,
+      "name": "White Flowers",
+      "description": "So pretty!",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": true
+      },
+      "pickupDelay": 40,
+      "price": 0,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    },
+    {
+      "id": 158,
+      "name": "Chibi-Battery",
+      "description": "Chibi-Robo's spare battery.",
+      "flags": {
+        "junk": false,
+        "chibiVision": false,
+        "inventory": false
+      },
+      "pickupDelay": 60,
+      "price": 980,
+      "junkExp": 0,
+      "junkMoney": 0,
+      "pickupSound": 0,
+      "collectSound": 0
+    }
+  ],
+  "actors": [
+    {
+      "id": 0,
+      "name": "Chibi-Robo"
+    },
+    {
+      "id": 1,
+      "name": "Dad"
+    },
+    {
+      "id": 2,
+      "name": "Mom"
+    },
+    {
+      "id": 3,
+      "name": "Jenny"
+    },
+    {
+      "id": 4,
+      "name": "Tao"
+    },
+    {
+      "id": 5,
+      "name": "Telly"
+    },
+    {
+      "id": 6,
+      "name": "Mr. Prongs"
+    },
+    {
+      "id": 7,
+      "name": "Giga-Robo"
+    },
+    {
+      "id": 8,
+      "name": "Space Hunter Drake Redcrest"
+    },
+    {
+      "id": 9,
+      "name": "Captain Plankbeard"
+    },
+    {
+      "id": 10,
+      "name": "Sunshine"
+    },
+    {
+      "id": 11,
+      "name": "The Great Peekoe"
+    },
+    {
+      "id": 12,
+      "name": "Sophie"
+    },
+    {
+      "id": 13,
+      "name": "Funky Phil"
+    },
+    {
+      "id": 14,
+      "name": "Dinah"
+    },
+    {
+      "id": 15,
+      "name": "Mort"
+    },
+    {
+      "id": 16,
+      "name": "Princess Pitts"
+    },
+    {
+      "id": 17,
+      "name": "Sarge"
+    },
+    {
+      "id": 18,
+      "name": "Tex"
+    },
+    {
+      "id": 19,
+      "name": "Frisco"
+    },
+    {
+      "id": 20,
+      "name": "Jersey"
+    },
+    {
+      "id": 21,
+      "name": "Nawlins"
+    },
+    {
+      "id": 22,
+      "name": "Denver"
+    },
+    {
+      "id": 23,
+      "name": "Vegas"
+    },
+    {
+      "id": 24,
+      "name": "Tucson"
+    },
+    {
+      "id": 25,
+      "name": "Houston"
+    },
+    {
+      "id": 26,
+      "name": "Fairbanks"
+    },
+    {
+      "id": 27,
+      "name": "Bama"
+    },
+    {
+      "id": 28,
+      "name": "Fargo"
+    },
+    {
+      "id": 29,
+      "name": "Montana"
+    },
+    {
+      "id": 30,
+      "name": "Macon"
+    },
+    {
+      "id": 31,
+      "name": "Cincy"
+    },
+    {
+      "id": 32,
+      "name": "Detroit"
+    },
+    {
+      "id": 33,
+      "name": "Orlando"
+    },
+    {
+      "id": 34,
+      "name": "Memphis"
+    },
+    {
+      "id": 35,
+      "name": "Idaho"
+    },
+    {
+      "id": 36,
+      "name": "Maui"
+    },
+    {
+      "id": 37,
+      "name": "Oregon"
+    },
+    {
+      "id": 38,
+      "name": "Fairbanks"
+    },
+    {
+      "id": 39,
+      "name": "Bama"
+    },
+    {
+      "id": 40,
+      "name": "Macon"
+    },
+    {
+      "id": 41,
+      "name": "Cincy"
+    },
+    {
+      "id": 42,
+      "name": "Idaho"
+    },
+    {
+      "id": 43,
+      "name": "Maui"
+    },
+    {
+      "id": 44,
+      "name": "Vegas"
+    },
+    {
+      "id": 45,
+      "name": "Titan"
+    },
+    {
+      "id": 46,
+      "name": "Io"
+    },
+    {
+      "id": 47,
+      "name": "Ganymede"
+    },
+    {
+      "id": 48,
+      "name": "Little Bang"
+    },
+    {
+      "id": 49,
+      "name": ""
+    },
+    {
+      "id": 50,
+      "name": "Mini Mort"
+    },
+    {
+      "id": 51,
+      "name": "Li'l Pitts"
+    },
+    {
+      "id": 52,
+      "name": ""
+    },
+    {
+      "id": 53,
+      "name": ""
+    },
+    {
+      "id": 54,
+      "name": ""
+    },
+    {
+      "id": 55,
+      "name": ""
+    },
+    {
+      "id": 56,
+      "name": ""
+    },
+    {
+      "id": 57,
+      "name": "Freida"
+    },
+    {
+      "id": 58,
+      "name": "Fred"
+    },
+    {
+      "id": 59,
+      "name": ""
+    },
+    {
+      "id": 60,
+      "name": ""
+    },
+    {
+      "id": 61,
+      "name": ""
+    },
+    {
+      "id": 62,
+      "name": ""
+    },
+    {
+      "id": 63,
+      "name": "Cheebo"
+    }
+  ],
+  "atcs": [
+    {
+      "id": 0,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 1,
+      "name": "Chibi-Copter",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 2,
+      "name": "Chibi-Blaster",
+      "description": "",
+      "price": 300
+    },
+    {
+      "id": 3,
+      "name": "Chibi-Radar",
+      "description": "",
+      "price": 500
+    },
+    {
+      "id": 4,
+      "name": "Toothbrush",
+      "description": "",
+      "price": 2000
+    },
+    {
+      "id": 5,
+      "name": "Spoon",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 6,
+      "name": "Mug",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 7,
+      "name": "Squirter",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 8,
+      "name": "",
+      "description": "",
+      "price": 0
+    }
+  ],
+  "suits": [
+    {
+      "id": 0,
+      "name": ""
+    },
+    {
+      "id": 1,
+      "name": "Drake Redcrest Suit"
+    },
+    {
+      "id": 2,
+      "name": "Frog Suit"
+    },
+    {
+      "id": 3,
+      "name": "Tao Suit"
+    },
+    {
+      "id": 4,
+      "name": "Trauma Suit"
+    },
+    {
+      "id": 5,
+      "name": ""
+    },
+    {
+      "id": 6,
+      "name": "Ghost Suit"
+    },
+    {
+      "id": 7,
+      "name": "Pajamas"
+    },
+    {
+      "id": 8,
+      "name": "Super Chibi-Robo Suit"
+    }
+  ],
+  "stages": [
+    {
+      "id": 0,
+      "name": "",
+      "description": "(debug)"
+    },
+    {
+      "id": 1,
+      "name": "Kitchen",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "name": "Foyer",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "name": "Basement",
+      "description": ""
+    },
+    {
+      "id": 4,
+      "name": "Jenny's Room",
+      "description": ""
+    },
+    {
+      "id": 5,
+      "name": "Chibi-House",
+      "description": ""
+    },
+    {
+      "id": 6,
+      "name": "Bedroom",
+      "description": ""
+    },
+    {
+      "id": 7,
+      "name": "Living Room",
+      "description": ""
+    },
+    {
+      "id": 8,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 9,
+      "name": "Backyard",
+      "description": ""
+    },
+    {
+      "id": 10,
+      "name": "",
+      "description": "Staff Credit"
+    },
+    {
+      "id": 11,
+      "name": "Drain",
+      "description": ""
+    },
+    {
+      "id": 12,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 13,
+      "name": "Chibi-Manual",
+      "description": ""
+    },
+    {
+      "id": 14,
+      "name": "",
+      "description": "Living Room (Birthday)"
+    },
+    {
+      "id": 15,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 16,
+      "name": "UFO",
+      "description": ""
+    },
+    {
+      "id": 17,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 18,
+      "name": "Bedroom",
+      "description": " (Past)"
+    },
+    {
+      "id": 19,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 20,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 21,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 22,
+      "name": "",
+      "description": "Mother Spider's Room"
+    },
+    {
+      "id": 23,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 24,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 25,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 26,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 27,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 28,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 29,
+      "name": "",
+      "description": ""
+    }
+  ],
+  "letickers": [
+    {
+      "id": 0,
+      "name": "Living Room Ladder",
+      "description": "A ladder that reaches high places.\nPlaced near the Chibi-Robo House.",
+      "price": 300
+    },
+    {
+      "id": 1,
+      "name": "Kitchen Ladder",
+      "description": "A ladder that reaches high places.\nPlaced near the sink.",
+      "price": 300
+    },
+    {
+      "id": 2,
+      "name": "Foyer Ladder",
+      "description": "A ladder that reaches high places.\nPlaced near the stairs.",
+      "price": 300
+    },
+    {
+      "id": 3,
+      "name": "Foyer Warp",
+      "description": "Warps you from place to place.\nPlaced on both ends of the stairs.",
+      "price": 300
+    },
+    {
+      "id": 4,
+      "name": "Living Room Bridge",
+      "description": "A bridge that stretches far.\nPlaced on top of the bookcase.",
+      "price": 300
+    },
+    {
+      "id": 5,
+      "name": "Kitchen Bridge",
+      "description": "A bridge that stretches far.\nPlaced near the planter.",
+      "price": 300
+    },
+    {
+      "id": 6,
+      "name": "Bedroom Bridge",
+      "description": "A bridge that stretches far.\nPlaced on the ceiling beam.",
+      "price": 300
+    },
+    {
+      "id": 7,
+      "name": "Basement Warp",
+      "description": "Warps you from place to place.\nPlaced on both ends of the stairs.",
+      "price": 300
+    },
+    {
+      "id": 8,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 9,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 10,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 11,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 12,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 13,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 14,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 15,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 16,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 17,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 18,
+      "name": "",
+      "description": "",
+      "price": 0
+    },
+    {
+      "id": 19,
+      "name": "",
+      "description": "",
+      "price": 0
+    }
+  ],
+  "stickers": [
+    {
+      "id": 0,
+      "name": "Giga-Robo",
+      "description": "",
+      "flagIndex": 19
+    },
+    {
+      "id": 1,
+      "name": "Telly",
+      "description": "",
+      "flagIndex": 1000
+    },
+    {
+      "id": 2,
+      "name": "Chibi-Door",
+      "description": "",
+      "flagIndex": 1181
+    },
+    {
+      "id": 3,
+      "name": "Utilibot",
+      "description": "",
+      "flagIndex": 321
+    },
+    {
+      "id": 4,
+      "name": "Frog Ring",
+      "description": "",
+      "flagIndex": 1612
+    },
+    {
+      "id": 5,
+      "name": "Frog",
+      "description": "",
+      "flagIndex": 667
+    },
+    {
+      "id": 6,
+      "name": "Bluebird",
+      "description": "",
+      "flagIndex": 1083
+    },
+    {
+      "id": 7,
+      "name": "Mr. Prongs",
+      "description": "",
+      "flagIndex": 1090
+    },
+    {
+      "id": 8,
+      "name": "Drake Redcrest",
+      "description": "",
+      "flagIndex": 1617
+    },
+    {
+      "id": 9,
+      "name": "Sophie",
+      "description": "",
+      "flagIndex": 1523
+    },
+    {
+      "id": 10,
+      "name": "Free Rangers",
+      "description": "",
+      "flagIndex": 936
+    },
+    {
+      "id": 11,
+      "name": "Captain Plankbeard",
+      "description": "",
+      "flagIndex": 1530
+    },
+    {
+      "id": 12,
+      "name": "The Great Peekoe",
+      "description": "",
+      "flagIndex": 1071
+    },
+    {
+      "id": 13,
+      "name": "Sunshine",
+      "description": "",
+      "flagIndex": 1509
+    },
+    {
+      "id": 14,
+      "name": "Mort & Princess",
+      "description": "",
+      "flagIndex": 815
+    },
+    {
+      "id": 15,
+      "name": "Dinah",
+      "description": "",
+      "flagIndex": 1085
+    },
+    {
+      "id": 16,
+      "name": "Funky Phil",
+      "description": "",
+      "flagIndex": 1084
+    },
+    {
+      "id": 17,
+      "name": "Queen Spydor",
+      "description": "",
+      "flagIndex": 17
+    },
+    {
+      "id": 18,
+      "name": "Hot Rod",
+      "description": "",
+      "flagIndex": 1225
+    },
+    {
+      "id": 19,
+      "name": "Space Scrambler",
+      "description": "",
+      "flagIndex": 1226
+    },
+    {
+      "id": 20,
+      "name": "Cooking",
+      "description": "",
+      "flagIndex": 1227
+    },
+    {
+      "id": 21,
+      "name": "Kid Eggplant",
+      "description": "",
+      "flagIndex": 1615
+    },
+    {
+      "id": 22,
+      "name": "Primopuel",
+      "description": "",
+      "flagIndex": 1618
+    },
+    {
+      "id": 23,
+      "name": "Tamagotchi",
+      "description": "",
+      "flagIndex": 1619
+    }
+  ],
+  "stats": [
+    {
+      "id": 0,
+      "name": "Chibi-Robo Ranking",
+      "description": ""
+    },
+    {
+      "id": 1,
+      "name": "",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "name": "Happy Points",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "name": "Moolah",
+      "description": ""
+    },
+    {
+      "id": 4,
+      "name": "Scrap",
+      "description": ""
+    },
+    {
+      "id": 5,
+      "name": "Charge Chip",
+      "description": ""
+    },
+    {
+      "id": 6,
+      "name": "Range Chip",
+      "description": ""
+    },
+    {
+      "id": 7,
+      "name": "Alien Ear Chip",
+      "description": ""
+    },
+    {
+      "id": 8,
+      "name": "Chibi-Battery",
+      "description": ""
+    },
+    {
+      "id": 9,
+      "name": "Giga-Battery",
+      "description": ""
+    },
+    {
+      "id": 10,
+      "name": "Giga-Charger",
+      "description": ""
+    },
+    {
+      "id": 11,
+      "name": "Giga-Robo's Left Leg",
+      "description": ""
+    },
+    {
+      "id": 12,
+      "name": "Password: 200667",
+      "description": ""
+    }
+  ]
+}

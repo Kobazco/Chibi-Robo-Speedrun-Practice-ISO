@@ -1,0 +1,290 @@
+{
+  "objects": [
+    {
+      "id": 0,
+      "object": "cb_robo",
+      "position": {"x": 177.44, "y": -0.01, "z": 164.27},
+      "rotation": {"x": 0, "y": 90, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 1,
+      "object": "socket",
+      "position": {"x": 162.37, "y": 0.0, "z": 172.39},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 0.19},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 2,
+      "object": "npc_tonpy",
+      "position": {"x": 154.95, "y": 11.06, "z": 171.63},
+      "rotation": {"x": 0, "y": -175, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact", "atc", "projectile"]
+    },
+    {
+      "id": 3,
+      "object": "npc_jenny",
+      "position": {"x": 104.82, "y": 0.0, "z": 157.87},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 0.3, "y": 0.3, "z": 0.3},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact", "atc", "projectile"]
+    },
+    {
+      "id": 4,
+      "object": "map_jump_box",
+      "position": {"x": 116.59, "y": 2.82, "z": 207.08},
+      "rotation": {"x": 0, "y": 20, "z": 0},
+      "scale": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 5,
+      "object": "npc_tao",
+      "position": {"x": 122.08, "y": 0.0, "z": 153.42},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.3, "y": 0.3, "z": 0.3},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact", "atc", "projectile"]
+    },
+    {
+      "id": 6,
+      "object": "map_jump_box",
+      "position": {"x": 30.83, "y": 0.0, "z": 149.14},
+      "rotation": {"x": 0, "y": 58, "z": 0},
+      "scale": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 7,
+      "object": "map_jump_box",
+      "position": {"x": 127.29, "y": 0.0, "z": 227.95},
+      "rotation": {"x": 0, "y": 58, "z": 0},
+      "scale": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 8,
+      "object": "npc_mama",
+      "position": {"x": 161.62, "y": 0.0, "z": 129.56},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.3, "y": 0.3, "z": 0.3},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact", "atc", "projectile"]
+    },
+    {
+      "id": 9,
+      "object": "npc_keath",
+      "position": {"x": 219.79, "y": 0.0, "z": 164.78},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact", "atc", "projectile"]
+    },
+    {
+      "id": 10,
+      "object": "npc_deca_robo",
+      "position": {"x": 72.07, "y": 0.0, "z": 76.97},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 11,
+      "object": "npc_papa",
+      "position": {"x": 127.92, "y": 0.0, "z": 122.08},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.3, "y": 0.3, "z": 0.3},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact", "atc", "projectile"]
+    },
+    {
+      "id": 12,
+      "object": "npc_fafa",
+      "position": {"x": 189.8, "y": 0.0, "z": 144.58},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact", "atc", "projectile"]
+    },
+    {
+      "id": 13,
+      "object": "item_frog_ring",
+      "position": {"x": 129.74, "y": 0.0, "z": 142.47},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "lift", "interact"]
+    },
+    {
+      "id": 14,
+      "object": "item_frog_ring",
+      "position": {"x": 135.59, "y": 0.0, "z": 162.45},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "lift", "interact"]
+    },
+    {
+      "id": 15,
+      "object": "item_frog_ring",
+      "position": {"x": 142.71, "y": 0.0, "z": 154.36},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "lift", "interact"]
+    },
+    {
+      "id": 16,
+      "object": "item_frog_ring",
+      "position": {"x": 146.58, "y": 0.0, "z": 173.1},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "lift", "interact"]
+    },
+    {
+      "id": 17,
+      "object": "npc_bb",
+      "position": {"x": 181.87, "y": 0.0, "z": 217.19},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 18,
+      "object": "npc_et_1",
+      "position": {"x": 10.25, "y": 0.0, "z": 12.81},
+      "rotation": {"x": 0, "y": -15, "z": 0},
+      "scale": {"x": 0.9, "y": 0.9, "z": 0.9},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 1,
+      "flags": ["spawn", "interact", "projectile"]
+    },
+    {
+      "id": 19,
+      "object": "npc_et_1",
+      "position": {"x": -9.03, "y": 0.0, "z": -13.85},
+      "rotation": {"x": 0, "y": 50, "z": 0},
+      "scale": {"x": 1.8, "y": 1.2, "z": 1.8},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 1,
+      "flags": ["spawn", "interact", "projectile"]
+    },
+    {
+      "id": 20,
+      "object": "npc_et_1",
+      "position": {"x": -21.52, "y": 0.0, "z": 28.74},
+      "rotation": {"x": 0, "y": 58, "z": 0},
+      "scale": {"x": 0.6, "y": 1.4, "z": 0.6},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 1,
+      "flags": ["spawn", "interact", "projectile"]
+    },
+    {
+      "id": 21,
+      "object": "npc_et_1",
+      "position": {"x": 22.73, "y": 0.0, "z": -4.13},
+      "rotation": {"x": 0, "y": 116, "z": 0},
+      "scale": {"x": 0.6, "y": 0.4, "z": 0.6},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 1,
+      "flags": ["spawn", "interact", "projectile"]
+    },
+    {
+      "id": 22,
+      "object": "npc_army_3",
+      "position": {"x": 104.82, "y": 0.0, "z": 57.87},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "cull", "interact", "projectile"]
+    },
+    {
+      "id": 23,
+      "object": "npc_army_4",
+      "position": {"x": 124.82, "y": 0.0, "z": 57.87},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact", "projectile"]
+    },
+    {
+      "id": 24,
+      "object": "npc_army_5",
+      "position": {"x": 154.82, "y": 0.0, "z": 57.87},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 25,
+      "object": "npc_army_2",
+      "position": {"x": 209.91, "y": 0.0, "z": 195.29},
+      "rotation": {"x": 0, "y": 155, "z": 0},
+      "scale": {"x": 3.0, "y": 3.0, "z": 3.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn"]
+    }
+  ]
+}

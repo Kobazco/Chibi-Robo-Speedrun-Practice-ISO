@@ -1,0 +1,158 @@
+{
+  "objects": [
+    {
+      "id": 0,
+      "object": "cb_robo",
+      "position": {"x": 61.24, "y": 39.9, "z": 44.69},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 1,
+      "object": "living_map",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["interact"]
+    },
+    {
+      "id": 2,
+      "object": "npc_keath",
+      "position": {"x": 104.22, "y": 39.9, "z": 76.5},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 0.5, "y": 0.5, "z": 0.5},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 3,
+      "object": "npc_deca_robo",
+      "position": {"x": 38.96, "y": 39.9, "z": 76.5},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 0.25, "y": 0.25, "z": 0.25},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 4,
+      "object": "npc_spider_2",
+      "position": {"x": 83.39, "y": 39.9, "z": 76.5},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.7, "y": 1.7, "z": 1.7},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 5,
+      "object": "backyard_tree_b",
+      "position": {"x": 17.86, "y": 39.9, "z": 76.5},
+      "rotation": {"x": 0, "y": 150, "z": 0},
+      "scale": {"x": 0.04, "y": 0.04, "z": 0.04},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 6,
+      "object": "living_cake",
+      "position": {"x": 61.27, "y": 42.76, "z": 76.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.39, "y": 0.39, "z": 0.39},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 7,
+      "object": "living_table",
+      "position": {"x": 71.65, "y": 0.0, "z": 61.37},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 8,
+      "object": "living_table_foot",
+      "position": {"x": 71.65, "y": 0.0, "z": 61.37},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 9,
+      "object": "npc_jenny",
+      "position": {"x": 67.04, "y": 0.0, "z": 130.53},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 0.9, "y": 0.9, "z": 0.9},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 10,
+      "object": "npc_mama",
+      "position": {"x": 2.08, "y": -7.58, "z": 132.23},
+      "rotation": {"x": 0, "y": 160, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 11,
+      "object": "npc_papa",
+      "position": {"x": 129.05, "y": -28.08, "z": 133.38},
+      "rotation": {"x": 0, "y": 165, "z": 0},
+      "scale": {"x": 1.1, "y": 1.1, "z": 1.1},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 12,
+      "object": "npc_tao",
+      "position": {"x": 31.49, "y": 0.0, "z": 138.27},
+      "rotation": {"x": 0, "y": 176, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 13,
+      "object": "npc_tonpy",
+      "position": {"x": 67.67, "y": 50.0, "z": 36.88},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "opaque", "interact"]
+    }
+  ]
+}
