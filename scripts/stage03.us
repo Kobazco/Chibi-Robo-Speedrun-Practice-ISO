@@ -255,7 +255,7 @@ loc_63:
 loc_57:
 	if	not(flag(31.d)), else *loc_60
 	lib	127.w
-	case	or(eq(map(1.d), 2.d), eq(map(1.d), 5.d)), else *loc_61
+	case	or(eq(map(1.d), 2.d), eq(flag(3013.d), 1.d)), else *loc_61
 	call	20000.d, 701.d
 	moveto	20000.d, -14282.d, 17012.w, 10218.w, 100.w, -1.d, -2.d
 	wait	@move, 20000.d
@@ -5627,7 +5627,7 @@ loc_129:
 	break	*loc_130
 loc_130:
 	attach	9.d, *sub_674
-	case	or(eq(map(1.d), 2.d), eq(map(1.d), 5.d)), else *loc_133
+	case	or(eq(map(1.d), 2.d), eq(flag(3013.d), 1.d)), else *loc_133
 	disp	4.d, 0.d
 	pos	20000.d, -17145.d, 17012.w, 10233.w
 	dir	20000.d, 90.w

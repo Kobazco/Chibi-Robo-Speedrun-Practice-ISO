@@ -18429,10 +18429,12 @@ debug_backyard:
 	warp	9.d, 1.w
 debug_basement:
 	case eq(result, 6.w), else *debug_drain
+	set	flag(3013.d), 1.w
 	run	*debug_exit_crm
 	warp	3.d, 1.w
 debug_drain:
 	case eq(result, 7.w), else *debug_chibi_house
+	set	flag(3014.d), 1.w
 	run	*debug_exit_crm
 	set	flag(1122.d), 1.w
 	warp	11.d, 1.w
