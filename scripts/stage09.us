@@ -5218,7 +5218,7 @@ loc_440:
 
 sub_333:
 	attach	5.d, *sub_858
-	case	or(eq(map(1.d), 7.d), eq(map(1.d), 5.d)), else *loc_339
+	case	or(eq(map(1.d), 7.d), eq(flag(3012.d), 1.d)), else *loc_339
 	if	flag(49.d), else *loc_338
 	call	20000.d, 701.d
 	disp	6.d, 0.d
