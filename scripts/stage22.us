@@ -635,7 +635,11 @@ sub_58:
 	disp	40.d, 1.d
 	mscale	40.d, 100.w, 100.w, 100.w, 30.w
 	camera	@unk230
-	lib	369.w
+	;lib	369.w
+	msg	voice(0.b),
+		speed(0.b),
+		"You did it, Chibi-Robo!! YOU DID IT!",
+		wait(254.b)
 	set	flag(1234.d), 1.d
 	if	eq(cur_atc, 2.d), else *loc_60
 	set	cur_atc, 0.d
