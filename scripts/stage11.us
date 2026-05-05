@@ -140,7 +140,7 @@ sub_9:
 
 
 sub_10:
-	case	or(eq(map(1.d), 1.d), eq(map(1.d), 5.d)), else *loc_16
+	case	or(eq(map(1.d), 1.d), eq(flag(3014.d), 1.d)), else *loc_16
 	if	eq(flag(1122.d), 1.w), else *loc_15
 	pos	20000.d, 2318.w, 3204.w, -245.d
 	dir	20000.d, 270.w

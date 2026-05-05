@@ -11440,7 +11440,7 @@ sub_148:
 	lib	144.w
 	popbp
 	lib	63.w
-	case	or(eq(map(1.d), 7.d), eq(map(1.d), 5.d)), else *loc_163
+	case	or(eq(map(1.d), 7.d), eq(flag(3012.d), 1.d)), else *loc_163
 	if	flag(49.d), else *loc_159
 	moveto	20000.d, 28256.w, 1176.w, 2634.w, 100.w, -1.d, -2.d
 	wait	@move, 20000.d

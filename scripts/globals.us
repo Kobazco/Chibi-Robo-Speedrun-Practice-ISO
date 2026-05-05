@@ -18346,6 +18346,8 @@ debug_lib:
 	set	flag(3010.d), 0.w	; Kitchen (From Living Room)
 	set	flag(3011.d), 0.w	; Foyer (From Living Room)
 	set	flag(3012.d), 0.w	; Backyard Warp
+	set	flag(3013.d), 0.w	; Basement Warp
+	set	flag(3014.d), 0.w	; Drain Warp
 	; Set some flags i don't wanna deal with while practicing
 	set	flag(430.d), 1.w
 	set	flag(429.d), 1.w
