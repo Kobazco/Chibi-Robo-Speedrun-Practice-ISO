@@ -7955,7 +7955,7 @@ loc_78:
 	return
 loc_79:
 	case	eq(flag(3008.d), 0.w), else *debug_storm_the_castle_2
-	case	or(eq(map(1.d), 2.d), eq(map(1.d), 5.d)), else *loc_81
+	case	eq(map(1.d), 2.d), else *loc_81
 	call	20000.d, 701.d
 	moveto	20000.d, -29091.d, 0.w, 8136.w, 100.w, -1.d, -2.d
 	wait	@move, 20000.d

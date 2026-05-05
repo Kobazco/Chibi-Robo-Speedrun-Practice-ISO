@@ -18333,6 +18333,17 @@ sub_3954:
 ; Move this here so all files can access our Practice Tool stuff
 	;.lib	376.w, *lib_376
 debug_lib:
+	; Unset Debug FLags
+	set	flag(3000.d), 0.w	; Kitchen (From Living Foyer)
+	set	flag(3001.d), 0.w
+	set	flag(3002.d), 0.w
+	set	flag(3003.d), 0.w
+	set	flag(3004.d), 0.w
+	set	flag(3005.d), 0.w
+	set	flag(3006.d), 0.w
+	set	flag(3007.d), 0.w
+	set	flag(3008.d), 0.w
+	set	flag(3010.d), 0.w	; Kitchen (From Living Room)
 	; Set some flags i don't wanna deal with while practicing
 	set	flag(430.d), 1.w
 	set	flag(429.d), 1.w
@@ -18380,6 +18391,7 @@ debug_option_2: ; Downstairs Warps
 		"Chibi-House"
 	case	eq(result, 0.w), else *debug_kitchen_foyer
 	run	*debug_exit_crm
+	set	flag(3010.d), 1.w
 	warp	1.d, 1.w ; Kitchen Warp
 	break *debug_option_break
 debug_option_break:

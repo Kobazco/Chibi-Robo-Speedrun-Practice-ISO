@@ -510,14 +510,16 @@ loc_150:
 loc_134:
 	if	not(flag(31.d)), else *loc_137
 	lib	127.w
-	if	flag(-2.d), else *loc_138
+	if	flag(-2.d), else *kitchen_to_foyer
 	lib	55.w
 	endif	*loc_137
 loc_137:
 	set	flag(31.d), 0.d
 	return
-loc_138:
-	case	eq(map(1.d), 2.d), else *loc_140
+kitchen_to_foyer:	; Enter From Foyer
+	case	or(eq(map(1.d), 2.d), eq(flag(3000.d), 1.w)), else *kitchen_to_living
+	; need to check twice in case we are doing debug warp from the Foyer
+	if	eq(flag(3000.d), 1.w), else *kitchen_to_living
 	call	20000.d, 701.d
 	moveto	20000.d, -17326.d, 0.w, 28848.w, 100.w, -1.d, -2.d
 	wait	@time, 100.w
@@ -527,8 +529,8 @@ loc_138:
 	camera	@unk211, 29.w, 1.w, 2.d, 100.w
 	camera	@unk230
 	break	*loc_137
-loc_140:
-	case	eq(map(1.d), 7.d), else *debug_chibi_house_foyer
+kitchen_to_living:	; Enter from Living Room
+	case	or(eq(map(1.d), 7.d), eq(flag(3010.d), 1.w)), else *loc_142
 	disp	18.d, 0.d
 	call	20000.d, 701.d
 	moveto	20000.d, 14822.w, 0.w, 26273.w, 100.w, -1.d, -2.d
@@ -539,38 +541,13 @@ loc_140:
 	camera	@unk211, 23.w, 1.w, 2.d, 100.w
 	camera	@unk230
 	break	*loc_137
-debug_chibi_house_foyer:
-	;case	eq(map(1.d), 5.d), else *loc_142
-	case	eq(flag(3000.d), 1.w), else *debug_chibi_house
-	call	20000.d, 701.d
-	moveto	20000.d, -17326.d, 0.w, 28848.w, 100.w, -1.d, -2.d
-	wait	@time, 100.w
-	call	20000.d, 700.d
-	disp	19.d, 1.d
-	lib	55.w
-	camera	@unk211, 29.w, 1.w, 2.d, 100.w
-	camera	@unk230
-	break	*loc_137
-debug_chibi_house:
-	case	eq(map(1.d), 5.d), else *loc_142
-	;case	eq(flag(1014.d), 0.w), else *loc_142
-	disp	18.d, 0.d
-	call	20000.d, 701.d
-	moveto	20000.d, 14822.w, 0.w, 26273.w, 100.w, -1.d, -2.d
-	wait	@move, 20000.d
-	call	20000.d, 700.d
-	disp	18.d, 1.d
-	lib	55.w
-	camera	@unk211, 23.w, 1.w, 2.d, 100.w
-	camera	@unk230
-	break	*loc_137
-loc_142:
+loc_142:	; Enter from Debug(?) Unused
 	case	eq(map(1.d), 15.d), else *loc_144
 	lib	55.w
 	camera	@unk211, 15.w, 3.w, 2.d, 100.w
 	camera	@unk230
 	break	*loc_137
-loc_144:
+loc_144:	; Enter from Drain
 	case	eq(map(1.d), 11.d), else *loc_149
 	lib	55.w
 	camera	@unk211, 34.w, 0.w, 2.d, 0.w
@@ -9493,12 +9470,14 @@ sub_1537:
 	lib	39.w
 	return
 
-
+; Camera/starting pos for loadzones
 sub_161:
-	if	eq(flag(451.d), 0.d), else *loc_175
+	if	eq(flag(451.d), 0.d), else *kitchen_to_foyer_cam
 	attach	16.d, *sub_1540
-loc_175:
-	case	eq(map(1.d), 2.d), else *loc_165
+kitchen_to_foyer_cam:	; Foyer
+	case	or(eq(map(1.d), 2.d), eq(flag(3000.d), 1.w)), else *kitchen_to_living_cam
+	; need to check twice in case we are doing debug warp from the Foyer
+	if	eq(flag(3000.d), 1.w), else *kitchen_to_living_cam
 	disp	19.d, 0.d
 	dir	20000.d, 180.w
 	pos	20000.d, -15112.d, 0.w, 30123.w
@@ -9511,8 +9490,8 @@ loc_175:
 	break	*loc_164
 loc_164:
 	return
-loc_165:
-	case	eq(map(1.d), 7.d), else *loc_167
+kitchen_to_living_cam:	; Living Room
+	case	or(eq(map(1.d), 7.d), eq(flag(3010.d), 1.w)), else *loc_167
 	dir	20000.d, 240.w
 	pos	20000.d, 18006.w, 0.w, 28625.w
 	wait	@time, 1.w
