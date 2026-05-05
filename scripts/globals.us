@@ -18334,16 +18334,17 @@ sub_3954:
 	;.lib	376.w, *lib_376
 debug_lib:
 	; Unset Debug FLags
-	set	flag(3000.d), 0.w	; Kitchen (From Living Foyer)
-	set	flag(3001.d), 0.w
-	set	flag(3002.d), 0.w
+	set	flag(3000.d), 0.w	; Kitchen (From Foyer)
+	set	flag(3001.d), 0.w	; Foyer (From Basement)
+	set	flag(3002.d), 0.w	; Foyer (From Kitchen)
 	set	flag(3003.d), 0.w
 	set	flag(3004.d), 0.w
 	set	flag(3005.d), 0.w
-	set	flag(3006.d), 0.w
+	set	flag(3006.d), 0.w	; Foyer (Upstairs Warp)
 	set	flag(3007.d), 0.w
 	set	flag(3008.d), 0.w
 	set	flag(3010.d), 0.w	; Kitchen (From Living Room)
+	set	flag(3011.d), 0.w	; Foyer (From Living Room)
 	; Set some flags i don't wanna deal with while practicing
 	set	flag(430.d), 1.w
 	set	flag(429.d), 1.w
@@ -18406,6 +18407,7 @@ debug_kitchen_foyer:
 	break *debug_option_break
 debug_foyer_living:
 	case eq(result, 2.w), else *debug_foyer_basement
+	set	flag(3011.d), 1.w
 	run	*debug_exit_crm
 	warp	2.d, 1.w
 debug_foyer_basement:

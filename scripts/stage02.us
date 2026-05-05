@@ -1462,7 +1462,13 @@ loc_226:
 	set	flag(31.d), 0.d
 	return
 loc_227:
-	case	eq(map(1.d), 7.d), else *loc_231
+	; Start of Warp Checks
+	if	eq(flag(3011.d), 0.d), else *foyer_living	; Coming from Living Room
+	if	eq(flag(3001.d), 0.d), else *debug_basement	; Coming from Living Room
+	if	eq(flag(3002.d), 0.d), else *debug_kitchen	; Coming from Kitchen
+	; End of debug checks
+	case	eq(map(1.d), 7.d), else *foyer_basement
+foyer_living:
 	if	eq(flag(52.d), 1.d), else *loc_230
 	set	flag(52.d), 0.d
 	pushbp
@@ -1480,8 +1486,9 @@ loc_230:
 	camera	@unk211, 5.w, 0.w, 2.d, 100.w
 	camera	@unk230
 	break	*loc_226
-loc_231:
-	case	eq(map(1.d), 3.d), else *debug_foyer_stairs_top
+foyer_basement:
+	case	eq(map(1.d), 3.d), else *loc_233
+debug_basement:
 	moveto	20000.d, -18128.d, 0.w, -35343.d, 120.w, -1.d, -2.d
 	wait	@move, 20000.d
 	anim	20000.d, 1.d
@@ -1489,59 +1496,11 @@ loc_231:
 	disp	20.d, 1.d
 	lib	55.w
 	camera	@unk211, 16.w, 1.w, 2.d, 100.w
-	camera	@unk230
-	break	*loc_226
-debug_foyer_stairs_top:
-	case	eq(flag(3006.d), 1.w), else *debug_foyer_bedroom_doors
-	call	20000.d, 700.d
-	disp	20.d, 1.d
-	lib	55.w
-	camera	@unk211, 16.w, 1.w, 2.d, 100.w
-	camera	@unk230
-	break	*loc_226
-debug_foyer_bedroom_doors:
-	case 	eq(flag(3003.d), 1.w), else *debug_foyer_jenny
-	goto	*loc_237
-debug_foyer_jenny:
-	case 	eq(flag(3005.d), 1.w), else *debug_foyer_basement
-	goto	*loc_235
-debug_foyer_basement:
-	case	eq(flag(3001.d), 1.w), else *debug_foyer_kitchen
-	moveto	20000.d, -18128.d, 0.w, -35343.d, 120.w, -1.d, -2.d
-	wait	@move, 20000.d
-	anim	20000.d, 1.d
-	call	20000.d, 700.d
-	disp	20.d, 1.d
-	lib	55.w
-	camera	@unk211, 16.w, 1.w, 2.d, 100.w
-	camera	@unk230
-	break	*loc_226
-debug_foyer_kitchen:
-	case	eq(flag(3002.d), 1.w), else *debug_foyer_living
-	lib	55.w
-	call	20000.d, 701.d
-	moveto	20000.d, 16564.w, 31.w, -36905.d, 100.w, -1.d, -2.d
-	wait	@move, 20000.d
-	anim	20000.d, 1.d
-	call	20000.d, 700.d
-	disp	21.d, 1.d
-	camera	@unk211, 1.w, 3.w, 2.d, 100.w
-	camera	@unk230
-	break	*loc_226
-debug_foyer_living:
-	case	eq(map(1.d), 5.d), else *loc_233
-	call	20000.d, 701.d
-	moveto	20000.d, 22510.w, 0.w, 24780.w, 100.w, -1.d, -2.d
-	wait	@move, 20000.d
-	anim	20000.d, 1.d
-	call	20000.d, 700.d
-	disp	19.d, 1.d
-	lib	55.w
-	camera	@unk211, 5.w, 0.w, 2.d, 100.w
 	camera	@unk230
 	break	*loc_226
 loc_233:
 	case	eq(map(1.d), 1.d), else *loc_235
+debug_kitchen:
 	lib	55.w
 	call	20000.d, 701.d
 	moveto	20000.d, 16564.w, 31.w, -36905.d, 100.w, -1.d, -2.d
@@ -15482,7 +15441,11 @@ loc_507:
 loc_509:
 	return
 loc_510:
+	if	eq(flag(3011.d), 0.d),	else *living_cam
+	if	eq(flag(3001.d), 0.d), 	else *cam_basement
+	if	eq(flag(3002.d), 0.d), 	else *cam_kitchen
 	case	eq(map(1.d), 7.d), else *loc_512
+living_cam:
 	disp	19.d, 0.d
 	dir	20000.d, -40.d
 	pos	20000.d, 24007.w, 0.w, 22455.w
@@ -15493,8 +15456,9 @@ loc_510:
 	camera	@distance, 69.w, 3.d, 0.w
 	camera	@lead, 20000.d
 	break	*loc_509
-loc_512:
+loc_512:	; Basement Check
 	case	eq(map(1.d), 3.d), else *loc_514
+cam_basement:
 	disp	20.d, 0.d
 	call	20000.d, 701.d
 	pos	20000.d, -18548.d, 0.w, -39500.d
@@ -15506,8 +15470,9 @@ loc_512:
 	camera	@distance, 56.w, 3.d, 0.w
 	camera	@lead, 20000.d
 	break	*loc_509
-loc_514:
+loc_514:	; Kitchen Check
 	case	eq(map(1.d), 1.d), else *loc_516
+cam_kitchen:
 	disp	21.d, 0.d
 	pos	20000.d, 13880.w, 0.w, -38608.d
 	dir	20000.d, 45.w
@@ -15517,7 +15482,7 @@ loc_514:
 	camera	@distance, 61.w, 3.d, 0.w
 	camera	@lead, 20000.d
 	break	*loc_509
-loc_516:
+loc_516:	; Jenny's Room/Upstairs
 	case	or(eq(map(1.d), 4.d), eq(flag(3005.d), 1.w)), else *debug_foyer_top_stairs
 	disp	23.d, 0.d
 	pos	20000.d, 23053.w, 27000.w, 24735.w
