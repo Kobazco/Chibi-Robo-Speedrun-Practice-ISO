@@ -18337,9 +18337,9 @@ debug_lib:
 	set	flag(3000.d), 0.w	; Kitchen (From Foyer)
 	set	flag(3001.d), 0.w	; Foyer (From Basement)
 	set	flag(3002.d), 0.w	; Foyer (From Kitchen)
-	set	flag(3003.d), 0.w
-	set	flag(3004.d), 0.w
-	set	flag(3005.d), 0.w
+	set	flag(3003.d), 0.w	; Foyer (From Bedroom)
+	set	flag(3004.d), 0.w	; Unused
+	set	flag(3005.d), 0.w	; Foyer (From Jenny's Room)
 	set	flag(3006.d), 0.w	; Foyer (Upstairs Warp)
 	set	flag(3007.d), 0.w
 	set	flag(3008.d), 0.w

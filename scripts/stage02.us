@@ -1466,6 +1466,10 @@ loc_227:
 	if	eq(flag(3011.d), 0.d), else *foyer_living	; Coming from Living Room
 	if	eq(flag(3001.d), 0.d), else *debug_basement	; Coming from Living Room
 	if	eq(flag(3002.d), 0.d), else *debug_kitchen	; Coming from Kitchen
+	; Upstairs
+	if	eq(flag(3006.d), 0.d), else *debug_foyer_stairs_top		; Foyer Warp
+	if	eq(flag(3003.d), 0.d), else *debug_bedroom	; Coming from Bedroom
+	if	eq(flag(3005.d), 0.d), else *debug_jenny	; Coming from Jenny's Room
 	; End of debug checks
 	case	eq(map(1.d), 7.d), else *foyer_basement
 foyer_living:
@@ -1512,7 +1516,8 @@ debug_kitchen:
 	camera	@unk230
 	break	*loc_226
 loc_235:
-	case	or(eq(map(1.d), 4.d), eq(flag(3005.d), 1.w)), else *loc_237
+	case	eq(map(1.d), 4.d), else *loc_237
+debug_jenny:
 	call	20000.d, 701.d
 	moveto	20000.d, 20413.w, 26969.w, 27030.w, 100.w, -1.d, -2.d
 	wait	@move, 20000.d
@@ -1523,7 +1528,8 @@ loc_235:
 	camera	@unk230
 	break	*loc_226
 loc_237:
-	case	or(eq(map(1.d), 6.d), eq(flag(3003.d), 1.w)), else *loc_244
+	case	eq(map(1.d), 6.d), else *loc_244
+debug_bedroom:
 	if	flag(486.d), else *loc_252
 	if	flag(41.d), else *loc_248
 	call	20000.d, 701.d
@@ -1547,7 +1553,7 @@ loc_250:
 	camera	@unk230
 loc_243:
 	endif	*loc_244
-loc_244:
+loc_244:	; Debug Stage 8
 	case	eq(map(1.d), 8.d), else *loc_246
 	lib	55.w
 	break	*loc_226
@@ -1579,6 +1585,13 @@ loc_708:
 	lib	42.w
 	endif	*loc_221
 
+debug_foyer_stairs_top:
+	call	20000.d, 700.d
+	disp	20.d, 1.d
+	lib	55.w
+	camera	@unk211, 16.w, 1.w, 2.d, 100.w
+	camera	@unk230
+	break	*loc_226
 
 sub_1050:
 	set	var(45.d), -1.d
@@ -15444,6 +15457,10 @@ loc_510:
 	if	eq(flag(3011.d), 0.d),	else *living_cam
 	if	eq(flag(3001.d), 0.d), 	else *cam_basement
 	if	eq(flag(3002.d), 0.d), 	else *cam_kitchen
+	; Upstairs
+	if	eq(flag(3003.d), 0.d), 	else *cam_bedroom
+	if	eq(flag(3005.d), 0.d), 	else *cam_jenny
+	if	eq(flag(3006.d), 0.d), 	else *debug_foyer_top_stairs
 	case	eq(map(1.d), 7.d), else *loc_512
 living_cam:
 	disp	19.d, 0.d
@@ -15482,8 +15499,9 @@ cam_kitchen:
 	camera	@distance, 61.w, 3.d, 0.w
 	camera	@lead, 20000.d
 	break	*loc_509
-loc_516:	; Jenny's Room/Upstairs
-	case	or(eq(map(1.d), 4.d), eq(flag(3005.d), 1.w)), else *debug_foyer_top_stairs
+loc_516:	; Jenny's Room
+	case	eq(map(1.d), 4.d), else *loc_518
+cam_jenny:
 	disp	23.d, 0.d
 	pos	20000.d, 23053.w, 27000.w, 24735.w
 	dir	20000.d, 270.w
@@ -15495,8 +15513,7 @@ loc_516:	; Jenny's Room/Upstairs
 	wait	@time, 1.w
 	wait	@cam
 	break	*loc_509
-debug_foyer_top_stairs:
-	case	eq(flag(3006.d), 1.w), else *loc_518
+debug_foyer_top_stairs:	; Upstairs Warp
 	disp	23.d, 0.d
 	pos	20000.d, 1600.d, 27000.w, -30144.d
 	dir	20000.d, 270.w
@@ -15508,8 +15525,9 @@ debug_foyer_top_stairs:
 	wait	@time, 1.w
 	wait	@cam
 	break	*loc_509
-loc_518:
+loc_518:	; Bedroom
 	case	or(eq(map(1.d), 6.d), eq(flag(3003.d), 1.w)), else *loc_531
+cam_bedroom:
 	if	flag(486.d), else *loc_525
 	if	flag(41.d), else *loc_524
 	pos	20000.d, -11354.d, 39247.d, -36144.d
