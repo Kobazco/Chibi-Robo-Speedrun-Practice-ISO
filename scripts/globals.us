@@ -18341,13 +18341,15 @@ debug_lib:
 	set	flag(3004.d), 0.w	; Unused
 	set	flag(3005.d), 0.w	; Foyer (From Jenny's Room)
 	set	flag(3006.d), 0.w	; Foyer (Upstairs Warp)
-	set	flag(3007.d), 0.w
-	set	flag(3008.d), 0.w
+	set	flag(3007.d), 0.w	; Rafters Skip
+	set	flag(3008.d), 0.w	; Storm the Castle
 	set	flag(3010.d), 0.w	; Kitchen (From Living Room)
 	set	flag(3011.d), 0.w	; Foyer (From Living Room)
 	set	flag(3012.d), 0.w	; Backyard Warp
 	set	flag(3013.d), 0.w	; Basement Warp
 	set	flag(3014.d), 0.w	; Drain Warp
+	set	flag(3015.d), 0.w	; Bedroom Warp
+	set	flag(3016.d), 0.w	; Jenny's Room Warp
 	; Set some flags i don't wanna deal with while practicing
 	set	flag(430.d), 1.w
 	set	flag(429.d), 1.w
@@ -18484,14 +18486,17 @@ debug_foyer_jenny:
 	warp	2.d, 1.w
 debug_jenny_room:
 	case eq(result, 4.w), else *debug_bedroom_door
+	set	flag(3016.d), 1.w
 	run	*debug_exit_crm
 	warp	4.d, 1.w
 debug_bedroom_door:
 	case eq(result, 5.w), else *debug_bedroom_slats
+	set	flag(3015.d), 1.w
 	run	*debug_exit_crm
 	warp	6.d, 1.w
 debug_bedroom_slats:
 	case eq(result, 6.w), else *debug_break
+	set	flag(3015.d), 1.w
 	set	flag(486.d), 1.w
 	set	flag(41.d), 1.w
 	run	*debug_exit_crm
