@@ -10917,7 +10917,7 @@ lib_154:
 	set	var(115.d), sp(0.b)
 	return
 
-
+; Resume Time
 	.lib	155.w, *lib_155
 lib_155:
 	set	time(2.d), var(115.d)
@@ -18353,6 +18353,7 @@ debug_lib:
 	; Set some flags i don't wanna deal with while practicing
 	set	flag(430.d), 1.w
 	set	flag(429.d), 1.w
+	win	@color, 0.w, 68.w, 151.w, 126.w
 	select	speed(0.b),
 		"Debug Room Warp\n",
 		speed(0.b),
@@ -18366,7 +18367,7 @@ debug_lib:
 		speed(0.b),
 		"Misc. Warps/Skips\n",
 		speed(0.b),
-		"Exit Chibi-House (In CRM)\n",
+		"Enable CRM\n",
 		speed(0.b),
 		"Disable Teriyaki Blues\n",
 		speed(0.b),
@@ -18537,6 +18538,7 @@ debug_misc_warps:
 	case eq(result, 0.w), else *debug_rafters_skip
 	set	flag(507.d), 1.w ; Frog Cutscene
 	set	flag(3007.d), 1.w ; Flag for pos setting in bedroom
+	run	*debug_enable_crm
 	warp	6.d, 1.w
 debug_rafters_skip:
 	case eq(result, 1.w), else *debug_storm_the_castle
@@ -18553,6 +18555,7 @@ debug_storm_the_castle:
 	set	item(54.d), 1.w
 	set	atc(2.d), 1.w
 	set	item(61.d), 1.w
+	run	*debug_enable_crm
 	warp	4.d, 1.w
 debug_storm_the_castle_no_crm:
 	case eq(result, 3.w), else *debug_break
@@ -18567,7 +18570,8 @@ debug_storm_the_castle_no_crm:
 	warp	4.d, 1.w
 debug_exit_house_crm:
 	case eq(result, 6.w), else *debug_teriyaki_blues_skip
-	warp 7.d, 1.w
+	run	*debug_enable_crm
+	;warp 	7.d, 1.w
 debug_teriyaki_blues_skip:
 	case eq(result, 7.w), else *debug_battery_selection
 	set	flag(335.d), 1.d
@@ -18675,4 +18679,16 @@ debug_exit_crm:
 	set	flag(1681.d), 0.w
 	call	20000.d, 800.d
 	set	time(2.d), var(115.d)
+	return
+
+debug_enable_crm:
+	call	10.d, 2.d, 1.d
+	set	flag(468.d), 1.d
+	set	flag(1574.d), 0.w
+	set	flag(1677.d), 1.w
+	set	flag(1681.d), 1.w
+	set	time(1.d), 0.d
+	; temp battery solution lol
+	set	battery(1.d), 99999.d
+	set	battery(0.d), battery(1.d)
 	return
