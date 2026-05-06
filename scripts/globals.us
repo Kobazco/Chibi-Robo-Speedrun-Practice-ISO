@@ -18522,11 +18522,7 @@ debug_pajamas:
 debug_misc_warps:
 	case eq(result, 5.w), else *debug_exit_house_crm
 	select	speed(0.b),
-		"Rafters Skip (CRM)\n",
-		speed(0.b),
 		"Rafters Skip\n",
-		speed(0.b),
-		"Storm the Castle (CRM)\n",
 		speed(0.b),
 		"Storm the Castle\n",
 		speed(0.b),
@@ -18535,30 +18531,13 @@ debug_misc_warps:
 		"Kitchen Table Hover (Not Implemented)\n",
 		speed(0.b),
 		"Kitchen Counter (Not Implemented)"
-	case eq(result, 0.w), else *debug_rafters_skip
-	set	flag(507.d), 1.w ; Frog Cutscene
-	set	flag(3007.d), 1.w ; Flag for pos setting in bedroom
-	run	*debug_enable_crm
-	warp	6.d, 1.w
-debug_rafters_skip:
-	case eq(result, 1.w), else *debug_storm_the_castle
+	case eq(result, 0.w), else *debug_storm_the_castle
 	set	flag(507.d), 1.w ; Frog Cutscene
 	set	flag(3007.d), 1.w ; Flag for pos setting in bedroom
 	run	*debug_exit_crm
 	warp	6.d, 1.w
 debug_storm_the_castle:
-	case eq(result, 2.w), else *debug_storm_the_castle_no_crm
-	set	flag(3008.d), 1.w
-	set	flag(950.d), 1.d ; Charge Chip flag
-	; Items
-	set	item(53.d), 1.w
-	set	item(54.d), 1.w
-	set	atc(2.d), 1.w
-	set	item(61.d), 1.w
-	run	*debug_enable_crm
-	warp	4.d, 1.w
-debug_storm_the_castle_no_crm:
-	case eq(result, 3.w), else *debug_break
+	case eq(result, 1.w), else *debug_break
 	set	flag(3008.d), 1.w
 	set	flag(950.d), 1.d; Charge Chip tutorial on return to house
 	; Items
@@ -18568,6 +18547,8 @@ debug_storm_the_castle_no_crm:
 	set	item(61.d), 1.w
 	run	*debug_exit_crm
 	warp	4.d, 1.w
+; Other Misc Stuff
+
 debug_exit_house_crm:
 	case eq(result, 6.w), else *debug_teriyaki_blues_skip
 	run	*debug_enable_crm

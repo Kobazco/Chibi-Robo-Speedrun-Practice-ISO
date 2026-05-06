@@ -20648,7 +20648,7 @@ sub_2610:
 		wait(255.b)
 	return
 
-
+; Drake Scene
 sub_2611:
 	read	@anim, 20008.d, 0.d
 	wait	@time, 1.w
