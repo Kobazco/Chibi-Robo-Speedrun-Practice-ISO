@@ -20686,6 +20686,7 @@ debug_drake_pose:
 drake_pose_game:
 	disp	168.d, 1.d
 	disp	9.d, 1.d
+	set	var(400.d), 0.d
 drake_are_you_ready:
 	while	1.d, else *drake_you_can_do_it
 	break	*drake_you_can_do_it
@@ -20699,11 +20700,12 @@ drake_you_can_do_it:
 	anim	20005.d, 1020.d
 	set	var(10.d), 0.w
 	set	var(103.d), 1.d
-drake_start_rng:
+drake_start_rng:	; Start staredown/RNG
 	while	1.d, else *drake_success
-	set	var(101.d), rand(50.w)
-	if	and(pad(0.d), 16.d), else *drake_result
-	; Pressed Z too soon
+	set	var(101.d), rand(50.w)	; Between 0 and 50
+	set var(400.d), add(var(400.d), 1.d)	; Keep track of Staredown
+	if	and(pad(0.d), 16.d), else *drake_result	; If pressed Z
+	; Pressed Z during staredown (frame window hasn't started yet)
 	printf	"×\n"
 	sfx	65550.d, 1.d
 	anim	20000.d, 1167.d
@@ -20719,8 +20721,8 @@ drake_start_rng:
 		wait(255.b)
 	set	var(101.d), 1.w	; Causes a reset
 drake_result:
-	if	eq(var(101.d), 0.w), else *drake_reset
-	run	*drake_z_pose_game
+	if	eq(var(101.d), 0.w), else *drake_reset	; If var(101.d) is NOT 0, reset the minigame
+	run	*drake_z_pose_game	; START Minigame (staredown already happened)
 	if	eq(result, 1.d), else *drake_too_slow
 	/*wait	@time, 60.w
 	lib	332.w
@@ -20750,6 +20752,8 @@ drake_success:
 	; Add 1 to account for 0 included
 	set    var(101.d), add(var(101.d), 1.w)
 	;
+	pushbp
+	setsp	var(400.d)	; Staredown Frames
 	setsp	var(103.d)	; Frame Difference
 	setsp	var(101.d)	; Frame Hit
 	msg	speed(0.b),
@@ -20760,9 +20764,15 @@ drake_success:
 		"(-5) | Frames Remaining = ",
 		color(3.b),	; Cyan
 		format("%d"),
+		color(0.b),	; Default
+		"\nStaredown was ",
+		color(1.b),	;
+		format("%d"),
+		" frames.",
 		wait(254.b)
 	popbp
 drake_ask_to_reset:
+	set	var(400.d), 0	; Reset Staredown frames
 	set	var(103.d), 1.d	; Reset difficulty
 	msg	voice(7.b),
 		anim(0.b, 20008.w, 1019.d),
@@ -20775,7 +20785,7 @@ drake_ask_to_reset:
 	return
 drake_too_slow:
 	set	var(103.d), 1.d	; Would normally add 1 to decrease Difficulty
-	if	lt(var(101.d), 36.w), else *drake_no_input
+	if	lt(var(101.d), 36.w), else *drake_no_input	; If frame is less than 36, we pressed Z but were too Late. If over 36 frames were taken, we didn't press Z at all.
 	wait	@time, 30.w
 	anim	20005.d, 1012.d
 	anim	20008.d, 6.d
@@ -20786,6 +20796,8 @@ drake_too_slow:
 	; Add 1 to account for 0 included
 	set    var(101.d), add(var(101.d), 1.w)
 	;
+	pushbp
+	setsp	var(400.d)	; Staredown Frames
 	setsp	var(103.d)	; Frame Difference
 	setsp	var(101.d)	; Frame Hit
 	msg	speed(0.b),
@@ -20796,9 +20808,15 @@ drake_too_slow:
 		"(-5) | Frames Late = ",
 		color(6.b),	; Magenta
 		format("%d"),
+		color(0.b),	; Default
+		"\nStaredown was ",
+		color(1.b),	;
+		format("%d"),
+		" frames.",
 		wait(254.b)
 	popbp
 	set	var(103.d), 1.d
+	set	var(400.d), 0	; Staredown Frames Reset
 	;
 	/*msg	voice(7.b),
 		anim(0.b, 20008.w, 1019.d),
@@ -20817,7 +20835,23 @@ drake_no_input:
 	anim	20008.d, 6.d
 	wait	@anim, 20008.d, -1.d
 	anim	20008.d, 1.d
-	msg	voice(7.b),
+	;
+	pushbp
+	setsp	var(400.d)	; Staredown Frames
+	msg	speed(0.b),
+		"Pressed ",
+		icon(10.b),
+		" past frame 37 or not at all. (Fail)",
+		"\nStaredown was ",
+		color(1.b),	;
+		format("%d"),
+		" frames.",
+		wait(254.b)
+	popbp
+	set	var(103.d), 1.d
+	set	var(400.d), 0	; Staredown Frames Reset
+	;
+	/*msg	voice(7.b),
 		anim(0.b, 20008.w, 1019.d),
 		speed(0.b),
 		"No! By the flaming gas clouds of Titan, no!\n",
@@ -20826,7 +20860,7 @@ drake_no_input:
 		icon(10.b),
 		"!",
 		anim(0.b, 20008.w, 1.d),
-		wait(255.b)
+		wait(255.b)*/
 	anim	20005.d, 1020.d
 drake_reset:
 	wait	@time, 1.w
@@ -20840,9 +20874,16 @@ drake_said_no:
 
 ; Hit frame 11
 drake_hit_exact_frame:
+	pushbp
+	setsp	var(400.d)	; Staredown Frames
 	msg	speed(0.b),
 		"Frame Hit = 12(-5) | Frames Remaining = 0",
+		"\nStaredown was ",
+		color(1.b),
+		format("%d"),
+		" frames",
 		wait(254.b)
+	popbp
 	goto	*drake_ask_to_reset
 
 ; Actual Drake Scene
@@ -21299,19 +21340,19 @@ sub_2944:
 	return
 
 
-drake_z_pose_game:
-	attach	20008.d, *sub_2945
-	attach	9.d, *sub_2946
-loc_2637:
-	while	1.d, else *loc_2638
-	if	and(pad(0.d), 16.d), else *loc_2634
-	if	gt(var(103.d), 4.w), else *loc_2633
+drake_z_pose_game:	; Drake Pose + JUSTICE! you have to react to
+	attach	20008.d, *drake_minigame_pose
+	attach	9.d, *drake_minigame_justice
+drake_minigame_input_state:
+	while	1.d, else *drake_fail_result
+	if	and(pad(0.d), 16.d), else *drake_no_z_press
+	if	gt(var(103.d), 4.w), else *drake_normal_difficulty
 	set	var(102.d), 34.w
-	endif	*loc_2630
-loc_2633:
+	endif	*drake_pressed_z
+drake_normal_difficulty:
 	set	var(102.d), 12.w
-loc_2630:	; fail (no input?)
-	if	ge(var(101.d), var(102.d)), else *loc_2632
+drake_pressed_z:	; Pressed Z
+	if	ge(var(101.d), var(102.d)), else *drake_minigame_success	; Went above the frame count (Too Slow)
 	pushbp
 	setsp	var(101.d)
 	printf	"×[%d]\n"
@@ -21323,7 +21364,7 @@ loc_2630:	; fail (no input?)
 	lib	105.w
 	set	result, 0.d
 	return
-loc_2632:	; success
+drake_minigame_success:	; Success
 	pushbp
 	setsp	var(101.d)
 	printf	"○[%d]\n"
@@ -21331,7 +21372,9 @@ loc_2632:	; success
 	sfx	136.d, 1.d
 	anim	20000.d, 3203.d
 	wait	@time, 30.w
+	; Skip anim if practice
 	if	not(flag(3017.d)), else *drake_minigame_skip
+	; Success Animation (skipped in practice mode)
 	scrn	@zblur, 0.w, 96.w, 10.w, 10.w, 10.w
 	scrn	@fade, 0.w, 0.w, 0.w, 0.w, 255.w, 255.w, 255.w, 255.w, 10.w
 	wait	@fade
@@ -21399,10 +21442,10 @@ loc_2632:	; success
 	scrn	@zblur, 96.w, 0.w, 10.w, 10.w, 60.w
 	set	result, 1.d
 	return
-loc_2634:	; Failed (pressed too slow)
-	set	var(101.d), add(var(101.d), 1.w)
-	wait	@time, 1.w
-	if	ge(var(101.d), 36.w), else *loc_2636
+drake_no_z_press:	; Have not pressed Z yet Loop & Failstate
+	set	var(101.d), add(var(101.d), 1.w)	; Add 1 to var(101.d) per frame
+	wait	@time, 1.w	; Wait 1 frame
+	if	ge(var(101.d), 36.w), else *drake_minigame_check_input	; If below 36 frames, keep checking for Z input
 	pushbp
 	setsp	var(101.d)
 	printf	"×[%d]\n"
@@ -21410,9 +21453,9 @@ loc_2634:	; Failed (pressed too slow)
 	sfx	65550.d, 1.d
 	set	result, 0.d
 	return
-loc_2636:
-	goto	*loc_2637
-loc_2638:
+drake_minigame_check_input:
+	goto	*drake_minigame_input_state
+drake_fail_result:
 	set	result, 0.d
 	return
 
@@ -21420,14 +21463,14 @@ drake_minigame_skip:
 	set	result, 1.d
 	return
 
-sub_2945:
+drake_minigame_pose:
 	anim2	20008.d, 4.d, 0.w, 85.w
 	wait	@anim, 20008.d, -1.d
 	anim	20008.d, 5.d
 	return
 
 
-sub_2946:
+drake_minigame_justice:
 	sfx	851971.d, 1.d
 	win	@letterbox
 	win	@color, 255.w, 255.w, 255.w, 0.w
