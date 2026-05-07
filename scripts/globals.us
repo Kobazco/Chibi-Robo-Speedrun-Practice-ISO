@@ -18769,4 +18769,4 @@ debug_menu_option_1_func:
 debug_menu_test:
 	menu 	0.d
 	;menu	1000, *debug_menu_option_1,	*debug_menu_option_1_func
-	return
+	break	*debug_menu_break
