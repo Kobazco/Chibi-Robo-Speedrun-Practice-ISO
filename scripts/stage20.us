@@ -1,3 +1,21 @@
 	.stage	"stage20"
 
+	; Start up scripts
+	.startup  *evt_startup
+evt_startup:
+	lib	375.w	; Enables Debug Menu additional options
+	if	not(flag(35.d)), else *startup_flags
+	lib	74.w
+startup_flags:
+	set	flag(160.d), 0.w
+	set	flag(161.d), 0.w
+	set	flag(162.d), 0.w
+	set	flag(163.d), 0.w
+	set	flag(164.d), 0.w
+	return
 
+	; Z Pose Scripts
+	.pose	*evt_pose
+evt_pose:
+	lib	369.w
+	return

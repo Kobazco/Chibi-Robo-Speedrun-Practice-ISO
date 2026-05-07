@@ -18772,6 +18772,7 @@ debug_menu_option_1_func:
 	menu	6*/
 
 debug_menu_test:
+	lib	375.w	; Write Extra Debug Functions
 	menu 	0.d
 	;menu	1000, *debug_menu_option_1,	*debug_menu_option_1_func
 	break	*debug_menu_break

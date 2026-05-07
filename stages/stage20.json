@@ -3,13 +3,46 @@
     {
       "id": 0,
       "object": "cb_robo",
-      "position": {"x": 0.0, "y": 0.0, "z": 80.0},
+      "position": {"x": 41.94, "y": 0.0, "z": 126.84},
+      "rotation": {"x": 0, "y": 70, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "unlit", "botcam", "reflect", "interact", "mirror"]
+    },
+    {
+      "id": 1,
+      "object": "living_map",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.31},
       "rotation": {"x": 0, "y": 0, "z": 0},
       "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
       "data": 0,
       "spawnFlag": null,
       "variant": 0,
-      "flags": ["spawn", "botcam", "reflect", "interact"]
+      "flags": ["spawn", "botcam", "interact", "mirror"]
+    },
+    {
+      "id": 2,
+      "object": "living_wall",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "reflect", "climb", "clamber", "interact", "mirror"]
+    },
+    {
+      "id": 3,
+      "object": "living_window",
+      "position": {"x": 318.23, "y": 2.0, "z": 134.0},
+      "rotation": {"x": 0, "y": -89, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "reflect", "climb", "clamber", "interact", "mirror"]
     }
   ]
 }
