@@ -18745,18 +18745,24 @@ debug_chibi_color_red:
 	color	20000.d, @modulate, 255.w, 0.w, 0.w, 100.w
 	set	flag(4000.d), 1.w	; Custom Color ON
 	set	var(410.d),	255	; Red
+	set	var(411.d),	0	; Green
+	set	var(412.d),	0	; Blue
 	return
 debug_chibi_color_blue:
 	case eq(result, 3.w), else *debug_chibi_color_default
 	color	20000.d, @modulate, 0.w, 0.w, 255.w, 100.w
 	set	flag(4000.d), 1.w	; Custom Color ON
+	set	var(410.d),	0	; Red
+	set	var(411.d),	0	; Green
 	set	var(412.d),	255	; Blue
 	return
 debug_chibi_color_green:
 	case eq(result, 2.w), else *debug_chibi_color_blue
 	color	20000.d, @modulate, 0.w, 255.w, 0.w, 100.w
 	set	flag(4000.d), 1.w	; Custom Color ON
+	set	var(410.d),	0	; Red
 	set	var(411.d),	255	; Green
+	set	var(412.d),	0	; Blue
 	return
 debug_chibi_color_default:
 	case eq(result, 4.w), else *debug_break
