@@ -18325,6 +18325,7 @@ debug_menu:
 	call	-200.d, *debug_stop_igt_text, *debug_stop_igt_func
 	call	-200.d, *debug_pause_igt_text, *debug_pause_igt_func
 	call	-200.d, *debug_play_igt_text, *debug_play_igt_func
+	call	-200.d, *debug_save_igt_text, *debug_save_igt_func
 	return
 
 advance_cycle_text:
@@ -18373,7 +18374,15 @@ debug_play_igt_func:
 	scrn	@hud, 4.d, -1.d		; Play IGT
 	break	*debug_menu_break
 
-debug_menu_break:
+debug_save_igt_text:
+	.db	"Save IGT Timer"
+
+debug_save_igt_func:
+	; Play IGT timer
+	;set	var(500.d),	(scrn	@hud,	4.d,	-4.d)
+	break	*debug_menu_break
+
+debug_menu_break:scrn	@hud,	4.d,	-4.d
 	scrn	@hud, 4.d, -1.d		; Play IGT
 	return
 
@@ -18404,7 +18413,7 @@ debug_lib:
 	; Set some flags i don't wanna deal with while practicing
 	set	flag(430.d), 1.w
 	set	flag(429.d), 1.w
-	win	@color, 0.w, 68.w, 151.w, 126.w
+	win	@color, 68.w, 151.w, 126.w, 100.w
 	select	speed(0.b),
 		"Debug Menu (Save Slots/IGT Functions)\n",
 		speed(0.b),
@@ -18682,7 +18691,9 @@ debug_page_2:
 		speed(0.b),
 		"All Chips\n",
 		speed(0.b),
-		"Advance day/night cycle"
+		"Advance day/night cycle\n",
+		speed(0.b),
+		"Change Chibi-Robo's Color"
 	case eq(result, 0.w), else *debug_chips
 ; All Utilibots
 	set	var(701.d), 1.d
@@ -18705,8 +18716,40 @@ debug_chips:
 	return
 ; Advance the cycle
 debug_option_4:
-	case eq(result, 2.w), else *debug_break
+	case eq(result, 2.w), else *debug_change_chibi_color
 	goto *debug_cycle_advance
+
+debug_change_chibi_color:
+	case eq(result, 3.w), else *debug_break
+	select	speed(0.b),
+		"Custom Color\n",
+		speed(0.b),
+		"Red\n",
+		speed(0.b),
+		"Green\n",
+		speed(0.b),
+		"Blue\n",
+		speed(0.b),
+		"Default"
+	case eq(result, 0.w), else *debug_chibi_color_red
+	goto	*debug_custom_color
+	return
+debug_chibi_color_red:
+	case eq(result, 1.w), else *debug_chibi_color_green
+	color	20000.d, @modulate, 255.w, 0.w, 0.w, 100.w
+	return
+debug_chibi_color_blue:
+	case eq(result, 3.w), else *debug_chibi_color_default
+	color	20000.d, @modulate, 0.w, 0.w, 255.w, 100.w
+	return
+debug_chibi_color_green:
+	case eq(result, 2.w), else *debug_chibi_color_blue
+	color	20000.d, @modulate, 0.w, 255.w, 0.w, 100.w
+	return
+debug_chibi_color_default:
+	case eq(result, 4.w), else *debug_break
+	color	20000.d, @modulate, 255.w, 255.w, 255.w, 30.w
+	return
 
 debug_break:
 	set	battery(0.d), battery(1.d)
@@ -18776,3 +18819,31 @@ debug_menu_test:
 	menu 	0.d
 	;menu	1000, *debug_menu_option_1,	*debug_menu_option_1_func
 	break	*debug_menu_break
+
+debug_custom_color:
+	msg	speed(0.b),
+		color(7.b),
+		"Red:\n",
+		size(24.b),
+		speed(0.b),
+		" ",
+		input(3.b, 3.b, 3.b)
+	set	var(410.d),	result	; Red
+	msg	speed(0.b),
+		color(4.b),
+		"Green:\n",
+		size(24.b),
+		speed(0.b),
+		" ",
+		input(3.b, 3.b, 3.b)
+	set	var(411.d),	result	; Green
+	msg	speed(0.b),
+		color(5.b),
+		"Blue:\n",
+		size(24.b),
+		speed(0.b),
+		" ",
+		input(3.b, 3.b, 3.b)
+	set	var(412.d),	result	; Blue
+	color	20000.d, @modulate, var(410.w), var(411.w), var(412.w), 100.w
+	return
