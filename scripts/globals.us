@@ -438,9 +438,11 @@ loc_143:
 	goto	*lib_305
 
 
+; Pressed Yes to Open Save Menu
 	.lib	41.w, *lib_41
 lib_41:
 	printf	"記録\n"
+	; save chibi's coords, etc
 	set	var(63.d), obj(@dir, 20000.d)
 	set	var(64.d), obj(@pos_x, 20000.d)
 	set	var(65.d), obj(@pos_y, 20000.d)
@@ -10708,7 +10710,7 @@ lib_140:
 	set	result, var(171.d)
 	return
 
-
+; Backround Subroutine that is always running to check if Chibi is low battery
 	.lib	141.w, *lib_141
 lib_141:
 	while	1.d, else *loc_2730
@@ -18322,7 +18324,7 @@ lib_372:
 ; Gets called on start up in every room (except for Chibi-House & Queen Spydor Fight)
 	.lib	375.w, *debug_menu
 debug_menu:
-	call	-200.d, *advance_cycle_text, *advance_cycle_func
+	;call	-200.d, *advance_cycle_text, *advance_cycle_func
 	call	-200.d, *debug_start_igt_text, *debug_start_igt_func
 	call	-200.d, *debug_stop_igt_text, *debug_stop_igt_func
 	call	-200.d, *debug_pause_igt_text, *debug_pause_igt_func
@@ -18352,6 +18354,7 @@ debug_start_igt_func:
 	scrn	@hud, 4.d, 3.d		; Fade In IGT
 	wait	@time, 30.d
 	scrn	@hud, 4.d, -1.d		; Play IGT
+	set	flag(4001.d),	1.w	; IGT is playing
 	break	*debug_menu_break
 
 debug_stop_igt_text:
@@ -18384,8 +18387,16 @@ debug_save_igt_text:
 	.db	"Save IGT Timer"
 
 debug_save_igt_func:
-	; Play IGT timer
-	;set	var(500.d),	(scrn	@hud,	4.d,	-4.d)
+	scrn	@hud, 4.d, -2.d		; Pause IGT
+	scrn	@hud,	4.d,	-4.d	; Get Timer Value
+	pushbp
+	setsp	result	; Timer Value
+	msg	speed(0.b),
+		"Timer Value = ",
+		format("%d"),
+		wait(255.b)
+	popbp
+	scrn	@hud, 4.d, -1.d		; Play IGT
 	break	*debug_menu_break
 
 debug_menu_break:scrn	@hud,	4.d,	-4.d
