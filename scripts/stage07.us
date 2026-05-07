@@ -1170,6 +1170,7 @@ loc_263:
 	lib	144.w
 	popbp
 	lib	127.w
+	if	not(flag(3017.d)), else	*debug_drake_pose
 	if	flag(-2.d), else *loc_270
 	run	*sub_267
 	lib	55.w
@@ -20648,7 +20649,8 @@ sub_2610:
 		wait(255.b)
 	return
 
-; Drake Scene
+; Drake Scene - Practice Practice Practice!
+debug_drake_pose:
 sub_2611:
 	read	@anim, 20008.d, 0.d
 	wait	@time, 1.w

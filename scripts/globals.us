@@ -18315,19 +18315,31 @@ lib_372:
 	return
 
 
-	.lib	375.w, *lib_375
-lib_375:
-	call	-200.d, *loc_3953, *sub_3954
+; Debug Menu 0
+	.lib	375.w, *debug_menu
+debug_menu:
+	call	-200.d, *advance_cycle_text, *advance_cycle_func
+	call	-200.d, *debug_test_option_text, *debug_test_option_func
 	return
 
+advance_cycle_text:
+	.db	"Advance Cycle"
 
-loc_3953:
-	.db	"DAY-NIGHT or NIGHT-DAY"
-
-
-sub_3954:
+advance_cycle_func:
 	run	*lib_73
 	run	*lib_121
+	return
+
+debug_test_option_text:
+	.db	"Test Option (Alaina was here!)"
+
+debug_test_option_func:
+	msg	voice(0.b),
+		speed(0.b),
+		"You've recharged ",
+		format("%d"),
+		" times!",
+		wait(254.b)
 	return
 
 ; Move this here so all files can access our Practice Tool stuff
@@ -18350,12 +18362,13 @@ debug_lib:
 	set	flag(3014.d), 0.w	; Drain Warp
 	set	flag(3015.d), 0.w	; Bedroom Warp
 	set	flag(3016.d), 0.w	; Jenny's Room Warp
+	set	flag(3017.d), 0.w	; Drake Redcrest Pose minigame
 	; Set some flags i don't wanna deal with while practicing
 	set	flag(430.d), 1.w
 	set	flag(429.d), 1.w
 	win	@color, 0.w, 68.w, 151.w, 126.w
 	select	speed(0.b),
-		"Debug Room Warp\n",
+		"Debug Menu (Save Slots/Debug Warps\n",
 		speed(0.b),
 		"Downstairs Warps\n",
 		speed(0.b),
@@ -18375,7 +18388,7 @@ debug_lib:
 		speed(0.b),
 		"Next Page"
 	case	eq(result, 0.w), else *debug_option_2 ; Downstairs Warps
-	warp	0.d, 1.w
+	goto	*debug_menu_test
 debug_option_2: ; Downstairs Warps
 	case eq(result, 1.w), else *debug_option_3
 	select speed(0.b),
@@ -18522,6 +18535,8 @@ debug_pajamas:
 debug_misc_warps:
 	case eq(result, 5.w), else *debug_exit_house_crm
 	select	speed(0.b),
+		"Drake Redcrest Pose\n",
+		speed(0.b),
 		"Rafters Skip\n",
 		speed(0.b),
 		"Storm the Castle\n",
@@ -18531,13 +18546,21 @@ debug_misc_warps:
 		"Kitchen Table Hover (Not Implemented)\n",
 		speed(0.b),
 		"Kitchen Counter (Not Implemented)"
-	case eq(result, 0.w), else *debug_storm_the_castle
+	case eq(result, 0.w), else *debug_rafters_skip
+;	Drake Redcrest Posing
+	set	flag(3017.d), 1.w	; Drake
+	set	item(24), 1.w	; Drake Suit
+	set	cur_suit, 1.d	; Equp the Suit
+	set	time(0.d), 1.d	; Set time to night
+	warp 7.d, 1.w
+debug_rafters_skip:
+	case eq(result, 1.w), else *debug_storm_the_castle
 	set	flag(507.d), 1.w ; Frog Cutscene
 	set	flag(3007.d), 1.w ; Flag for pos setting in bedroom
 	run	*debug_exit_crm
 	warp	6.d, 1.w
 debug_storm_the_castle:
-	case eq(result, 1.w), else *debug_break
+	case eq(result, 2.w), else *debug_break
 	set	flag(3008.d), 1.w
 	set	flag(950.d), 1.d; Charge Chip tutorial on return to house
 	; Items
@@ -18620,6 +18643,7 @@ debug_option_4:
 	goto *debug_cycle_advance
 
 debug_break:
+	set	battery(0.d), battery(1.d)
 	return
 
 debug_cycle_advance:
@@ -18672,4 +18696,15 @@ debug_enable_crm:
 	; temp battery solution lol
 	set	battery(1.d), 99999.d
 	set	battery(0.d), battery(1.d)
+	return
+
+/*debug_menu_option_1:
+	.db	"Test Option"
+
+debug_menu_option_1_func:
+	menu	6*/
+
+debug_menu_test:
+	menu 	0.d
+	;menu	1000, *debug_menu_option_1,	*debug_menu_option_1_func
 	return
