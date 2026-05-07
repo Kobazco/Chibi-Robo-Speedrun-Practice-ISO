@@ -2455,8 +2455,23 @@ sub_43:
 	if	eq(result, 0.w), else *loc_45
 	set	var(152.d), 5.d
 	lib	41.w
+	run	*debug_save_igt_func	; stores in var 420
 	menu	4.d
 loc_45:
+	return
+
+debug_save_igt_func:
+	scrn	@hud, 4.d, -2.d		; Pause IGT
+	scrn	@hud,	4.d,	-4.d	; Get Timer Value
+	/*pushbp
+	setsp	result	; Timer Value
+	msg	speed(0.b),
+		"Timer Value = ",
+		format("%d"),
+		wait(255.b)
+	popbp*/
+	scrn	@hud, 4.d, -1.d		; Play IGT
+	set	var(420.d), result	; Save IGT
 	return
 
 

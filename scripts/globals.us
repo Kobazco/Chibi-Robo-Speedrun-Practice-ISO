@@ -334,6 +334,13 @@ lib_146:
 	run	*lib_41
 	run	*lib_12
 	wait	@time, 60.w
+	; Opening Save Menu
+	run	*debug_save_igt_func	; stores in var 420
+	if	and(pad(0.d), 4.d),	else *normal_save_menu
+	menu	6.d
+	run	*lib_96
+	return
+normal_save_menu:
 	menu	4.d
 	run	*lib_96
 loc_104:
@@ -3521,7 +3528,7 @@ lib_54:
 	run	*sub_8
 	return
 
-
+; Letterbox func
 	.lib	55.w, *lib_55
 lib_55:
 	scrn	@letterbox, 0.d, 0.w, 0.w, 0.w, 255.w, 0.w, 0.w, 0.w, 0.w, 60.w
@@ -3530,6 +3537,8 @@ lib_55:
 	run	*lib_37
 	popbp
 	win	@reset
+	; Restore Stuff
+	run	*debug_resume_timer	; Resume IGT if applicable
 	if	not(flag(4000.d)), else *debug_reapply_custom_color	; Reapply Chibi's Custom Color
 	if	eq(map(0.d), 5.w), else *loc_1057
 	win	@color, 0.w, 0.w, 0.w, 255.w
@@ -18336,6 +18345,25 @@ debug_reapply_custom_color:
 	color	20000.d, @modulate, var(410.w), var(411.w), var(412.w), 100.w
 	return
 
+debug_resume_timer:
+	; Do a few checks to make sure the timer isn't already running/we don't have a stored time
+	scrn	@hud,	4.d,	-4.d	; Get Timer Value
+	if	eq(result, 0.d), else *debug_resume_timer_return
+	; if timer is 0, its empty. Next check var 420
+	if	eq(var(420.d), 0.d), else *debug_reload_timer
+	; var is also empty. We have no timer saved at ALL. Return.
+	return
+
+debug_reload_timer:
+	; Timer detected in var. Reload & Resume
+	scrn	@hud, 4.d, -3.d, var(420.d)	; Set timer
+	scrn	@hud, 4.d, 1.d		; Show IGT
+	scrn	@hud, 4.d, -1.d		; Play IGT
+	return
+
+debug_resume_timer_return:
+	return
+
 advance_cycle_text:
 	.db	"Advance Cycle"
 
@@ -18362,9 +18390,10 @@ debug_stop_igt_text:
 
 debug_stop_igt_func:
 	; Stop IGT timer
-	scrn	@hud, 4.d, -3.d, 0.d	; Reset IGT
 	scrn	@hud, 4.d, -2.d		; Pause IGT
+	scrn	@hud, 4.d, -3.d, 0.d	; Reset IGT
 	scrn	@hud, 4.d, 2.d		; Fade Out IGT
+	set	var(420.d), 0.d		; Reset IGT Var
 	break	*debug_menu_break
 
 debug_pause_igt_text:
@@ -18389,15 +18418,16 @@ debug_save_igt_text:
 debug_save_igt_func:
 	scrn	@hud, 4.d, -2.d		; Pause IGT
 	scrn	@hud,	4.d,	-4.d	; Get Timer Value
-	pushbp
+	/*pushbp
 	setsp	result	; Timer Value
 	msg	speed(0.b),
 		"Timer Value = ",
 		format("%d"),
 		wait(255.b)
-	popbp
+	popbp*/
 	scrn	@hud, 4.d, -1.d		; Play IGT
-	break	*debug_menu_break
+	set	var(420.d), result	; Save IGT
+	return
 
 debug_menu_break:scrn	@hud,	4.d,	-4.d
 	scrn	@hud, 4.d, -1.d		; Play IGT
