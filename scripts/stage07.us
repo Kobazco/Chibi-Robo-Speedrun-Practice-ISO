@@ -20651,6 +20651,201 @@ sub_2610:
 
 ; Drake Scene - Practice Practice Practice!
 debug_drake_pose:
+	disp	20008.d, 1.d
+	anim	20000.d, 17.d
+	pos	20008.d, -15366.d, 5000.w, 3508.w
+	dir	20008.d, 90.w
+	pos	20000.d, -11283.d, 40.w, -3047.d
+	dir	20000.d, 304.w
+	call	20000.d, -1.d
+	camera	@pos, -6227.d, 924.w, 8667.w, 2.d, 200.w
+	camera	@unk227, -19646.d, 1776.w, -3596.d, 2.d, 200.w
+	camera	@unk229, 32.w, 2.d, 200.w
+	camera	@distance, 181.w, 2.d, 200.w
+	wait	@cam
+	lib	13.w
+	moveto	20008.d, -14162.d, 0.w, 2786.w, 1.w, 14.d, -2.d
+	; Move Chibi into position
+	moveto	20000.d, -11501.d, 0.w, 2773.w, 1.w, 3.d, -1.d
+	; Telly Vision
+	pos	20005.d, -11071.d, 1100.w, -4315.d
+	moveto	20005.d, -11554.d, 1100.w, 652.w, 1.w, 1.d, -2.d
+	lib	12.w
+	wait	@move, 20000.d
+	mdir	20000.d, @obj, 20008.d, 30.w, 3.d
+	mdir	20008.d, @obj, 20000.d, 30.w, 1.d
+	wait	@dir, 3.d
+	anim	20008.d, 1020.d
+	read	@anim, 20000.d, *loc_2943
+	sfx	-65529.d, 1.d	; Drake Redcrest theme
+	run	*drake_pose_game
+	read	@anim, 20000.d, 0.d
+	return
+
+; Clone of the Minigame
+drake_pose_game:
+	disp	168.d, 1.d
+	disp	9.d, 1.d
+drake_are_you_ready:
+	while	1.d, else *drake_you_can_do_it
+	break	*drake_you_can_do_it
+drake_you_can_do_it:
+	msg	voice(7.b),
+		anim(0.b, 20008.w, 1019.d),
+		speed(0.b),
+		"...And we ride!",
+		anim(0.b, 20008.w, 1.d),
+		wait(255.b)
+	anim	20005.d, 1020.d
+	set	var(10.d), 0.w
+	set	var(103.d), 1.d
+drake_start_rng:
+	while	1.d, else *drake_success
+	set	var(101.d), rand(50.w)
+	if	and(pad(0.d), 16.d), else *drake_result
+	; Pressed Z too soon
+	printf	"×\n"
+	sfx	65550.d, 1.d
+	anim	20000.d, 1167.d
+	wait	@anim, 20000.d, -1.d
+	anim	20000.d, 17.d
+	msg	voice(7.b),
+		anim(0.b, 20008.w, 1019.d),
+		speed(0.b),
+		"Too soon! Too soon! Blast and double blast!\n",
+		speed(0.b),
+		"Drake Redcrest has not yet posed!",
+		anim(0.b, 20008.w, 1.d),
+		wait(255.b)
+	set	var(101.d), 1.w	; Causes a reset
+drake_result:
+	if	eq(var(101.d), 0.w), else *drake_reset
+	run	*drake_z_pose_game
+	if	eq(result, 1.d), else *drake_too_slow
+	/*wait	@time, 60.w
+	lib	332.w
+	wait	@time, 105.w
+	camera	@pos, -16474.d, 5072.w, 7290.w, 2.d, 200.w
+	camera	@unk227, -7227.d, -4323.d, -5210.d, 2.d, 200.w
+	camera	@unk229, 28.w, 2.d, 200.w
+	camera	@distance, 181.w, 2.d, 200.w
+	anim	20008.d, 6.d
+	anim	20000.d, 3205.d
+	wait	@anim, 20008.d, -1.d
+	wait	@anim, 20000.d, -1.d
+	anim	20008.d, 1.d
+	anim	20000.d, 17.d
+	lib	105.w*/
+	break	*drake_success
+drake_success:
+	; Pressed Z with correct timing
+	camera	@pos, -6227.d, 924.w, 8667.w, 2.d, 200.w
+	camera	@unk227, -19646.d, 1776.w, -3596.d, 2.d, 200.w
+	camera	@unk229, 32.w, 2.d, 200.w
+	camera	@distance, 181.w, 2.d, 200.w
+	wait	@cam
+	; Stats
+	if	le(var(101.d), 11.w), else *drake_hit_exact_frame
+	set	var(103.d), sub(11, var(101.d)); Difference
+	; Add 1 to account for 0 included
+	set    var(101.d), add(var(101.d), 1.w)
+	;
+	setsp	var(103.d)	; Frame Difference
+	setsp	var(101.d)	; Frame Hit
+	msg	speed(0.b),
+		"Frame Hit = ",
+		color(4.b),	; Greem
+		format("%d"),
+		color(0.b),	; Default
+		"(-5) | Frames Remaining = ",
+		color(3.b),	; Cyan
+		format("%d"),
+		wait(254.b)
+	popbp
+drake_ask_to_reset:
+	set	var(103.d), 1.d	; Reset difficulty
+	msg	voice(7.b),
+		anim(0.b, 20008.w, 1019.d),
+		speed(0.b),
+		"Pose for Justice again?",
+		anim(0.b, 20008.w, 1.d),
+		wait(255.b)
+	lib	3.w
+	if	eq(result, 1.w), else *drake_start_rng	; redo game
+	return
+drake_too_slow:
+	set	var(103.d), 1.d	; Would normally add 1 to decrease Difficulty
+	if	lt(var(101.d), 36.w), else *drake_no_input
+	wait	@time, 30.w
+	anim	20005.d, 1012.d
+	anim	20008.d, 6.d
+	wait	@anim, 20008.d, -1.d
+	anim	20008.d, 1.d
+	; Stats
+	set	var(103.d), sub(var(101.d), 11) ; Difference
+	; Add 1 to account for 0 included
+	set    var(101.d), add(var(101.d), 1.w)
+	;
+	setsp	var(103.d)	; Frame Difference
+	setsp	var(101.d)	; Frame Hit
+	msg	speed(0.b),
+		"Frame Hit = ",
+		color(7.b),	; Red
+		format("%d"),
+		color(0.b),	; Default
+		"(-5) | Frames Late = ",
+		color(6.b),	; Magenta
+		format("%d"),
+		wait(254.b)
+	popbp
+	set	var(103.d), 1.d
+	;
+	/*msg	voice(7.b),
+		anim(0.b, 20008.w, 1019.d),
+		speed(0.b),
+		"Too slow! Too slow! Curses and blast!\n",
+		speed(0.b),
+		"Let us try it again!",
+		anim(0.b, 20008.w, 1.d),
+		wait(255.b)*/
+	anim	20005.d, 1020.d
+	endif	*drake_reset
+drake_no_input:
+	wait	@time, 50.w
+	anim	20005.d, 1012.d
+	wait	@time, 100.w
+	anim	20008.d, 6.d
+	wait	@anim, 20008.d, -1.d
+	anim	20008.d, 1.d
+	msg	voice(7.b),
+		anim(0.b, 20008.w, 1019.d),
+		speed(0.b),
+		"No! By the flaming gas clouds of Titan, no!\n",
+		speed(0.b),
+		"Make sure that you press ",
+		icon(10.b),
+		"!",
+		anim(0.b, 20008.w, 1.d),
+		wait(255.b)
+	anim	20005.d, 1020.d
+drake_reset:
+	wait	@time, 1.w
+	goto	*drake_start_rng
+drake_said_no:
+	lib	105.w
+	anim	20008.d, 6.d
+	wait	@anim, 20008.d, -1.d
+	anim	20008.d, 1.d
+	goto	*drake_are_you_ready
+
+; Hit frame 11
+drake_hit_exact_frame:
+	msg	speed(0.b),
+		"Frame Hit = 12(-5) | Frames Remaining = 0",
+		wait(254.b)
+	goto	*drake_ask_to_reset
+
+; Actual Drake Scene
 sub_2611:
 	read	@anim, 20008.d, 0.d
 	wait	@time, 1.w
@@ -21029,7 +21224,7 @@ loc_2624:
 	set	var(101.d), 1.w
 loc_2639:
 	if	eq(var(101.d), 0.w), else *loc_2623
-	run	*sub_2626
+	run	*drake_z_pose_game
 	if	eq(result, 1.d), else *loc_2621
 	wait	@time, 60.w
 	lib	332.w
@@ -21104,7 +21299,7 @@ sub_2944:
 	return
 
 
-sub_2626:
+drake_z_pose_game:
 	attach	20008.d, *sub_2945
 	attach	9.d, *sub_2946
 loc_2637:
@@ -21115,7 +21310,7 @@ loc_2637:
 	endif	*loc_2630
 loc_2633:
 	set	var(102.d), 12.w
-loc_2630:
+loc_2630:	; fail (no input?)
 	if	ge(var(101.d), var(102.d)), else *loc_2632
 	pushbp
 	setsp	var(101.d)
@@ -21128,7 +21323,7 @@ loc_2630:
 	lib	105.w
 	set	result, 0.d
 	return
-loc_2632:
+loc_2632:	; success
 	pushbp
 	setsp	var(101.d)
 	printf	"○[%d]\n"
@@ -21136,6 +21331,7 @@ loc_2632:
 	sfx	136.d, 1.d
 	anim	20000.d, 3203.d
 	wait	@time, 30.w
+	if	not(flag(3017.d)), else *drake_minigame_skip
 	scrn	@zblur, 0.w, 96.w, 10.w, 10.w, 10.w
 	scrn	@fade, 0.w, 0.w, 0.w, 0.w, 255.w, 255.w, 255.w, 255.w, 10.w
 	wait	@fade
@@ -21203,7 +21399,7 @@ loc_2632:
 	scrn	@zblur, 96.w, 0.w, 10.w, 10.w, 60.w
 	set	result, 1.d
 	return
-loc_2634:
+loc_2634:	; Failed (pressed too slow)
 	set	var(101.d), add(var(101.d), 1.w)
 	wait	@time, 1.w
 	if	ge(var(101.d), 36.w), else *loc_2636
@@ -21220,6 +21416,9 @@ loc_2638:
 	set	result, 0.d
 	return
 
+drake_minigame_skip:
+	set	result, 1.d
+	return
 
 sub_2945:
 	anim2	20008.d, 4.d, 0.w, 85.w
