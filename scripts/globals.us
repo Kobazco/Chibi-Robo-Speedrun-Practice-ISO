@@ -18374,11 +18374,11 @@ debug_lib:
 		speed(0.b),
 		"Upstairs Warps\n",
 		speed(0.b),
+		"Misc. Practice\n",
+		speed(0.b),
 		"All Tools (No Flags)\n",
 		speed(0.b),
-		"Pajamas\n",
-		speed(0.b),
-		"Misc. Warps/Skips\n",
+		"All Suits (No Flags)\n",
 		speed(0.b),
 		"Enable CRM\n",
 		speed(0.b),
@@ -18462,7 +18462,7 @@ debug_chibi_house:
 	warp	5.d, 1.w
 ; Upstairs Warps
 debug_option_3:
-	case eq(result, 2.w), else *debug_all_tools
+	case eq(result, 2.w), else *debug_misc_warps
 	select 	speed(0.b),
 		"Foyer Warp\n",
 		speed(0.b),
@@ -18517,7 +18517,7 @@ debug_bedroom_slats:
 	warp	6.d, 1.w
 ; All Tools
 debug_all_tools:
-	case eq(result, 3.w), else *debug_pajamas
+	case eq(result, 4.w), else *debug_all_suits
 	set	item(16.d), 1.w
 	set	item(21.d), 1.w
 	set	item(22.d), 1.w
@@ -18526,14 +18526,24 @@ debug_all_tools:
 	set	atc(2.d), 1.w
 	set	atc(3.d), 1.w
 	return
+debug_all_suits:
+	case eq(result, 5.w), else *debug_exit_house_crm
+	set	item(24.d), 1.w	; Drake Redcrest Suit
+	set	item(25.d), 1.w	; Tao Suit
+	set	item(26.d), 1.w	; Frog Suit
+	set	item(30.d), 1.w	; Pajamas
+	set	item(31.d), 1.w	; Super Chibi-Robo
+	set	item(32.d), 1.w	; Trauma Suit
+	set	item(34.d), 1.w	; Ghost Suit
+	return
 ; Pajamas
-debug_pajamas:
+/*debug_pajamas:
 	case eq(result, 4.w), else *debug_misc_warps
 	set	item(30.d), 1.w
-	return
+	return*/
 ; Misc skips practice
 debug_misc_warps:
-	case eq(result, 5.w), else *debug_exit_house_crm
+	case eq(result, 3.w), else *debug_all_tools
 	select	speed(0.b),
 		"Drake Redcrest Pose\n",
 		speed(0.b),
