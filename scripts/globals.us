@@ -18418,13 +18418,14 @@ debug_save_igt_text:
 debug_save_igt_func:
 	scrn	@hud, 4.d, -2.d		; Pause IGT
 	scrn	@hud,	4.d,	-4.d	; Get Timer Value
-	/*pushbp
+	pushbp
 	setsp	result	; Timer Value
 	msg	speed(0.b),
 		"Timer Value = ",
 		format("%d"),
+		"\n              m:ss:ms",
 		wait(255.b)
-	popbp*/
+	popbp
 	scrn	@hud, 4.d, -1.d		; Play IGT
 	set	var(420.d), result	; Save IGT
 	return
