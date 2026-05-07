@@ -518,8 +518,7 @@ loc_137:
 	return
 kitchen_to_foyer:	; Enter From Foyer
 	case	or(eq(map(1.d), 2.d), eq(flag(3000.d), 1.w)), else *kitchen_to_living
-	; need to check twice in case we are doing debug warp from the Foyer
-	if	eq(flag(3000.d), 1.w), else *kitchen_to_living
+	case	eq(flag(3010.d), 0.w), else *kitchen_to_living
 	call	20000.d, 701.d
 	moveto	20000.d, -17326.d, 0.w, 28848.w, 100.w, -1.d, -2.d
 	wait	@time, 100.w
@@ -9476,8 +9475,7 @@ sub_161:
 	attach	16.d, *sub_1540
 kitchen_to_foyer_cam:	; Foyer
 	case	or(eq(map(1.d), 2.d), eq(flag(3000.d), 1.w)), else *kitchen_to_living_cam
-	; need to check twice in case we are doing debug warp from the Foyer
-	if	eq(flag(3000.d), 1.w), else *kitchen_to_living_cam
+	case	eq(flag(3010.d), 0.w), else *kitchen_to_living_cam
 	disp	19.d, 0.d
 	dir	20000.d, 180.w
 	pos	20000.d, -15112.d, 0.w, 30123.w
