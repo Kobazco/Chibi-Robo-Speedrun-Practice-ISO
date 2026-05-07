@@ -18332,15 +18332,19 @@ advance_cycle_func:
 	return
 
 debug_test_option_text:
-	.db	"Test Option (Alaina was here!)"
+	.db	"Start IGT Timer"
 
 debug_test_option_func:
-	msg	voice(0.b),
-		speed(0.b),
-		"You've recharged ",
-		format("%d"),
-		" times!",
-		wait(254.b)
+	; Set up IGT timer
+	;call	-100.d, 7.w, 1.d	; Display IGT
+	scrn	@hud, 4.d, -2.d	; Pause
+	scrn	@hud, 4.d, 3.d	; Fade In
+	wait	@time, 30.d
+	scrn	@hud, 4.d, -1.d	; Play
+	run	*sub_8
+	break	*debug_menu_break
+
+debug_menu_break:
 	return
 
 ; Move this here so all files can access our Practice Tool stuff
@@ -18576,6 +18580,7 @@ debug_day_2_tree:
 	set	time(0.d), 0.d	; Set time to Day
 	set	time(1.d), 55.d; % of cycle used
 	run	*debug_exit_crm
+	; Warp
 	warp 	9.d, 1.w
 debug_rafters_skip:
 	case eq(result, 2.w), else *debug_storm_the_castle

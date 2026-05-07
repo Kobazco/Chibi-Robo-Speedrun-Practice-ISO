@@ -1756,7 +1756,7 @@ loc_475:
 		speed(0.b),
 		"ON"
 	case	eq(result, 0.w), else *loc_480
-	call	-100.d, 7.w, 0.d
+	call	-100.d, 7.w, 0.d	; Display IGT in top right
 	break	*loc_478
 loc_478:
 	break	*loc_479
@@ -1764,7 +1764,7 @@ loc_479:
 	return
 loc_480:
 	case	eq(result, 1.w), else *loc_478
-	call	-100.d, 7.w, 1.d
+	call	-100.d, 7.w, 1.d	; Hide IGT in top right
 	break	*loc_478
 loc_482:
 	case	eq(result, 1.w), else *loc_488

@@ -11040,6 +11040,7 @@ sub_768:
 
 sub_365:
 	attach	24.d, *sub_1841
+	if	not(flag(3017.d)), else	*loc_367
 	case	eq(map(1.d), 2.d), else *loc_368
 	dir	20000.d, 140.w
 	pos	20000.d, -30729.d, 0.w, 27925.w
@@ -20651,6 +20652,7 @@ sub_2610:
 
 ; Drake Scene - Practice Practice Practice!
 debug_drake_pose:
+	; init
 	disp	20008.d, 1.d
 	anim	20000.d, 17.d
 	pos	20008.d, -15366.d, 5000.w, 3508.w
