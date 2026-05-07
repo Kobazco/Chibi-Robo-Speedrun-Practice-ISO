@@ -18368,7 +18368,7 @@ debug_lib:
 	set	flag(429.d), 1.w
 	win	@color, 0.w, 68.w, 151.w, 126.w
 	select	speed(0.b),
-		"Debug Menu (Save Slots/Debug Warps\n",
+		"Debug Menu (Save Slots/Debug Warps)\n",
 		speed(0.b),
 		"Downstairs Warps\n",
 		speed(0.b),

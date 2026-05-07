@@ -20686,7 +20686,8 @@ debug_drake_pose:
 drake_pose_game:
 	disp	168.d, 1.d
 	disp	9.d, 1.d
-	set	var(400.d), 0.d
+	set	var(400.d), 0.d	; Reset Staredown
+	set	var(401.d), 0	; Reset Pose Streak
 drake_are_you_ready:
 	while	1.d, else *drake_you_can_do_it
 	break	*drake_you_can_do_it
@@ -20720,6 +20721,7 @@ drake_start_rng:	; Start staredown/RNG
 		anim(0.b, 20008.w, 1.d),
 		wait(255.b)
 	set	var(101.d), 1.w	; Causes a reset
+	set	var(401.d), 0	; Reset Pose Streak
 drake_result:
 	if	eq(var(101.d), 0.w), else *drake_reset	; If var(101.d) is NOT 0, reset the minigame
 	run	*drake_z_pose_game	; START Minigame (staredown already happened)
@@ -20774,14 +20776,27 @@ drake_success:
 drake_ask_to_reset:
 	set	var(400.d), 0	; Reset Staredown frames
 	set	var(103.d), 1.d	; Reset difficulty
+	set var(401.d), add(var(401.d), 1.w)	; Add to Streak
+	pushbp
+	setsp	var(401.d)	; Pose Streak
 	msg	voice(7.b),
 		anim(0.b, 20008.w, 1019.d),
 		speed(0.b),
-		"Pose for Justice again?",
+		"Pose Streak = ",
+		color(4.b),	; Greem
+		format("%d"),
+		color(0.b),
+		"\nPose for Justice again?",
 		anim(0.b, 20008.w, 1.d),
 		wait(255.b)
+	popbp
 	lib	3.w
 	if	eq(result, 1.w), else *drake_start_rng	; redo game
+	; Exit
+	set	var(401.d), 0	; Reset Pose Streak
+	set	flag(3017.d), 0.w
+	set	cur_suit, 0.d	; Equp the Suit
+	warp	7.d, 1.w
 	return
 drake_too_slow:
 	set	var(103.d), 1.d	; Would normally add 1 to decrease Difficulty
@@ -20817,6 +20832,7 @@ drake_too_slow:
 	popbp
 	set	var(103.d), 1.d
 	set	var(400.d), 0	; Staredown Frames Reset
+	set	var(401.d), 0	; Reset Pose Streak
 	;
 	/*msg	voice(7.b),
 		anim(0.b, 20008.w, 1019.d),
@@ -20850,6 +20866,7 @@ drake_no_input:
 	popbp
 	set	var(103.d), 1.d
 	set	var(400.d), 0	; Staredown Frames Reset
+	set	var(401.d), 0	; Reset Pose Streak
 	;
 	/*msg	voice(7.b),
 		anim(0.b, 20008.w, 1019.d),
