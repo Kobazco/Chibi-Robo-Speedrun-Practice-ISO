@@ -11456,6 +11456,7 @@ debug_tree_practice_2:
 	call	20000.d, 701.d
 	pos	20000.d, 61286.d, 16700.d, -50974.d
 	; Timer
+	scrn	@hud, 4.d, -3.d, 0.d	; Reset IGT
 	scrn	@hud, 4.d, -2.d	; Pause
 	scrn	@hud, 4.d, 3.d	; Fade In
 	wait	@time, 60.d

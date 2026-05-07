@@ -18211,6 +18211,7 @@ loc_3935:
 lib_369:
 	goto *debug_lib
 	set	battery(0.d), battery(1.d)
+	scrn	@hud, 4.d, -1.d	; Unpause IGT
 	return
 	/*msg	voice(0.b),
 		speed(0.b),
@@ -18320,8 +18321,11 @@ lib_372:
 	.lib	375.w, *debug_menu
 debug_menu:
 	call	-200.d, *advance_cycle_text, *advance_cycle_func
-	call	-200.d, *debug_test_option_text, *debug_test_option_func
-	return
+	call	-200.d, *debug_start_igt_text, *debug_start_igt_func
+	call	-200.d, *debug_stop_igt_text, *debug_stop_igt_func
+	call	-200.d, *debug_pause_igt_text, *debug_pause_igt_func
+	call	-200.d, *debug_play_igt_text, *debug_play_igt_func
+	break	*debug_menu_break
 
 advance_cycle_text:
 	.db	"Advance Cycle"
@@ -18329,27 +18333,54 @@ advance_cycle_text:
 advance_cycle_func:
 	run	*lib_73
 	run	*lib_121
-	return
+	break	*debug_menu_break
 
-debug_test_option_text:
+debug_start_igt_text:
 	.db	"Start IGT Timer"
 
-debug_test_option_func:
+debug_start_igt_func:
 	; Set up IGT timer
-	;call	-100.d, 7.w, 1.d	; Display IGT
-	scrn	@hud, 4.d, -2.d	; Pause
-	scrn	@hud, 4.d, 3.d	; Fade In
+	scrn	@hud, 4.d, -3.d, 0.d	; Reset IGT
+	scrn	@hud, 4.d, -2.d		; Pause IGT
+	scrn	@hud, 4.d, 3.d		; Fade In IGT
 	wait	@time, 30.d
-	scrn	@hud, 4.d, -1.d	; Play
-	run	*sub_8
+	scrn	@hud, 4.d, -1.d		; Play IGT
+	break	*debug_menu_break
+
+debug_stop_igt_text:
+	.db	"Stop & Remove IGT Timer"
+
+debug_stop_igt_func:
+	; Stop IGT timer
+	scrn	@hud, 4.d, -3.d, 0.d	; Reset IGT
+	scrn	@hud, 4.d, -2.d		; Pause IGT
+	scrn	@hud, 4.d, 2.d		; Fade Out IGT
+	break	*debug_menu_break
+
+debug_pause_igt_text:
+	.db	"Pause IGT Timer"
+
+debug_pause_igt_func:
+	; Pause IGT timer
+	scrn	@hud, 4.d, -2.d		; Pause IGT
+	break	*debug_menu_break
+
+debug_play_igt_text:
+	.db	"Resume IGT Timer"
+
+debug_play_igt_func:
+	; Play IGT timer
+	scrn	@hud, 4.d, -1.d		; Play IGT
 	break	*debug_menu_break
 
 debug_menu_break:
+	scrn	@hud, 4.d, -1.d		; Play IGT
 	return
 
 ; Move this here so all files can access our Practice Tool stuff
 	;.lib	376.w, *lib_376
 debug_lib:
+	scrn	@hud, 4.d, -2.d	; Pause IGT
 	; Unset Debug FLags
 	set	flag(3000.d), 0.w	; Kitchen (From Foyer)
 	set	flag(3001.d), 0.w	; Foyer (From Basement)
@@ -18374,7 +18405,7 @@ debug_lib:
 	set	flag(429.d), 1.w
 	win	@color, 0.w, 68.w, 151.w, 126.w
 	select	speed(0.b),
-		"Debug Menu (Save Slots/Debug Warps)\n",
+		"Debug Menu (Save Slots/IGT Functions)\n",
 		speed(0.b),
 		"Downstairs Warps\n",
 		speed(0.b),
@@ -18674,6 +18705,7 @@ debug_option_4:
 
 debug_break:
 	set	battery(0.d), battery(1.d)
+	scrn	@hud, 4.d, -1.d	; Unpause IGT
 	return
 
 debug_cycle_advance:
