@@ -5215,9 +5215,24 @@ sub_438:
 loc_440:
 	return
 
+debug_tree_practice:
+	call	20000.d, 701.d
+	disp	6.d, 0.d
+	disp	20000.d, 1.d
+	pos	20000.d, 572.w, 199.w, -573.d
+	dir	20000.d, 90.w
+	camera	@pos, 572.w, 199.w, -573.d, 3.d, 0.w
+	camera	@unk227, 28651.w, 2076.w, 1422.w, 3.d, 0.w
+	camera	@unk229, 38.w, 3.d, 0.w
+	camera	@distance, 120.w, 3.d, 0.w
+	camera	@lead, 20000.d
+	wait	@time, 1.w
+	wait	@cam
+	endif	*loc_336
 
 sub_333:
 	attach	5.d, *sub_858
+	;case	eq(flag(3018.d), 0.w), else	*debug_tree_practice
 	case	or(eq(map(1.d), 7.d), eq(flag(3012.d), 1.d)), else *loc_339
 	if	flag(49.d), else *loc_338
 	call	20000.d, 701.d
@@ -11430,8 +11445,20 @@ sub_332:
 	run	*sub_333
 	return
 
+debug_tree_practice_2:
+	pushbp
+	setsp	0.d
+	setsp	1.d
+	setsp	0.w
+	lib	144.w
+	popbp
+	lib	63.w
+	call	20000.d, 701.d
+	pos	20000.d, 61286.d, 16700.d, -50974.d
+	endif	*loc_153
 
 sub_148:
+	case	eq(flag(3018.d), 0.w), else	*debug_tree_practice_2
 	if	not(flag(31.d)), else *loc_155
 	pushbp
 	setsp	0.d

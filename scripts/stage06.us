@@ -8885,10 +8885,11 @@ debug_rafters_skip_2:
 	camera	@lead, 20000.d
 	wait	@time, 1.w
 	wait	@cam
+	endif	*loc_176
 
 sub_172:
 	attach	33.d, *sub_1090
-	case	eq(flag(3007.d), 0.w), else *debug_rafters_skip_1
+	case	eq(flag(3007.d), 0.w), else *debug_rafters_skip_2
 	case	or(eq(map(1.d), 2.d), eq(flag(3015.d), 1.d)), else *loc_181
 	if	flag(486.d), else *loc_180
 	set	flag(488.d), 1.w

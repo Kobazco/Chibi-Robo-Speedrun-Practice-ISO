@@ -18210,6 +18210,7 @@ loc_3935:
 	.lib	369.w, *lib_369
 lib_369:
 	goto *debug_lib
+	set	battery(0.d), battery(1.d)
 	return
 	/*msg	voice(0.b),
 		speed(0.b),
@@ -18363,6 +18364,7 @@ debug_lib:
 	set	flag(3015.d), 0.w	; Bedroom Warp
 	set	flag(3016.d), 0.w	; Jenny's Room Warp
 	set	flag(3017.d), 0.w	; Drake Redcrest Pose minigame
+	set	flag(3018.d), 0.w	; Day 2 Tree
 	; Set some flags i don't wanna deal with while practicing
 	set	flag(430.d), 1.w
 	set	flag(429.d), 1.w
@@ -18522,9 +18524,9 @@ debug_all_tools:
 	set	item(21.d), 1.w
 	set	item(22.d), 1.w
 	set	item(56.d), 1.w
-	set	atc(1.d), 1.w
-	set	atc(2.d), 1.w
-	set	atc(3.d), 1.w
+	set	atc(1.d), 1.w	; Copter
+	set	atc(2.d), 1.w	; Blaster
+	set	atc(3.d), 1.w	; Radar
 	return
 debug_all_suits:
 	case eq(result, 5.w), else *debug_exit_house_crm
@@ -18545,32 +18547,44 @@ debug_all_suits:
 debug_misc_warps:
 	case eq(result, 3.w), else *debug_all_tools
 	select	speed(0.b),
-		"Drake Redcrest Pose\n",
+		"Night 1 - Drake Redcrest Pose\n",
 		speed(0.b),
-		"Rafters Skip\n",
+		"Day 2 - Backyard (Tree)\n",
 		speed(0.b),
-		"Storm the Castle\n",
+		"Day 3 - Rafters Skip\n",
 		speed(0.b),
-		"Bird Skip (Not Implemented)\n",
+		"Bingo - Storm the Castle\n",
 		speed(0.b),
-		"Kitchen Table Hover (Not Implemented)\n",
-		speed(0.b),
-		"Kitchen Counter (Not Implemented)"
-	case eq(result, 0.w), else *debug_rafters_skip
+		"Bingo - Kitchen Table Hover (Not Implemented)"
+	case eq(result, 0.w), else *debug_day_2_tree
 ;	Drake Redcrest Posing
 	set	flag(3017.d), 1.w	; Drake
 	set	item(24), 1.w	; Drake Suit
 	set	cur_suit, 1.d	; Equp the Suit
 	set	time(0.d), 1.d	; Set time to night
+	run	*debug_exit_crm
 	warp 7.d, 1.w
+debug_day_2_tree:
+	case eq(result, 1.w), else *debug_rafters_skip
+	set	flag(3018.d), 1.w	; Placement
+	set	atc(2.d), 1.w		; Blaster
+	set	item(53.d), 1.w		; Charge Chip
+	; Battery
+	set	battery(1.d), 7800.d
+	set	battery(0.d), battery(1.d)
+	; Time of Day
+	set	time(0.d), 0.d	; Set time to Day
+	set	time(1.d), 55.d; % of cycle used
+	run	*debug_exit_crm
+	warp 	9.d, 1.w
 debug_rafters_skip:
-	case eq(result, 1.w), else *debug_storm_the_castle
+	case eq(result, 2.w), else *debug_storm_the_castle
 	set	flag(507.d), 1.w ; Frog Cutscene
 	set	flag(3007.d), 1.w ; Flag for pos setting in bedroom
 	run	*debug_exit_crm
 	warp	6.d, 1.w
 debug_storm_the_castle:
-	case eq(result, 2.w), else *debug_break
+	case eq(result, 3.w), else *debug_break
 	set	flag(3008.d), 1.w
 	set	flag(950.d), 1.d; Charge Chip tutorial on return to house
 	; Items
@@ -18643,9 +18657,10 @@ debug_page_2:
 	return
 debug_chips:
 	case eq(result, 1.w), else *debug_option_4
-	set	item(53.d), 1.w
-	set	item(54.d), 1.w
-	set	item(158.d), 1.w
+	set	item(53.d), 1.w		; Charge Chip
+	set	item(54.d), 1.w		; Range Chip
+	set	item(62.d), 1.w		; Alien Ear Chip
+	set	item(158.d), 1.w	; Chibi-Battery
 	return
 ; Advance the cycle
 debug_option_4:
