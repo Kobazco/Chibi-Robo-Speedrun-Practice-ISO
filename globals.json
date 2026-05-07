@@ -3029,8 +3029,8 @@
     },
     {
       "id": 8,
-      "name": "",
-      "description": ""
+      "name": "Debug Room",
+      "description": "(Warps)"
     },
     {
       "id": 9,
@@ -3074,8 +3074,8 @@
     },
     {
       "id": 17,
-      "name": "",
-      "description": ""
+      "name": "Fireplace",
+      "description": "(Unused)"
     },
     {
       "id": 18,
@@ -3084,12 +3084,12 @@
     },
     {
       "id": 19,
-      "name": "",
+      "name": "Debug Room",
       "description": ""
     },
     {
       "id": 20,
-      "name": "",
+      "name": "Speedrun",
       "description": ""
     },
     {
@@ -3100,7 +3100,7 @@
     {
       "id": 22,
       "name": "",
-      "description": "Mother Spider's Room"
+      "description": "VS. Queen"
     },
     {
       "id": 23,
@@ -3134,7 +3134,7 @@
     },
     {
       "id": 29,
-      "name": "",
+      "name": "Demo Disc",
       "description": ""
     }
   ],
