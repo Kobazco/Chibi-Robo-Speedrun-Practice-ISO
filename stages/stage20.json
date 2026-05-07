@@ -14,16 +14,115 @@
     {
       "id": 1,
       "object": "living_map",
-      "position": {"x": 0.0, "y": 0.0, "z": 0.31},
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
       "rotation": {"x": 0, "y": 0, "z": 0},
       "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
       "data": 0,
       "spawnFlag": null,
       "variant": 0,
-      "flags": ["spawn", "botcam", "interact", "mirror"]
+      "flags": ["spawn", "botcam", "pushblock", "interact"]
     },
     {
       "id": 2,
+      "object": "living_danro",
+      "position": {"x": -228.01, "y": 0.0, "z": -326.46},
+      "rotation": {"x": 0, "y": 45, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 3,
+      "object": "living_shelf_b",
+      "position": {"x": 17.99, "y": 0.0, "z": 359.56},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "pushblock", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 4,
+      "object": "living_shelf_dan",
+      "position": {"x": -242.08, "y": 0.0, "z": -171.74},
+      "rotation": {"x": 0, "y": 90, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 5,
+      "object": "living_sidetable",
+      "position": {"x": 72.0, "y": 0.0, "z": -89.63},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.4, "y": 1.11, "z": 0.4},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "pushblock", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 6,
+      "object": "living_sofa_1",
+      "position": {"x": 32.46, "y": 0.0, "z": -148.19},
+      "rotation": {"x": 0, "y": -45, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "pushblock", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 7,
+      "object": "living_sofa_2",
+      "position": {"x": 143.22, "y": 0.0, "z": 10.96},
+      "rotation": {"x": 0, "y": -89, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "pushblock", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 8,
+      "object": "living_standlight",
+      "position": {"x": 238.99, "y": 0.0, "z": -151.24},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 9,
+      "object": "living_mat",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "opaque", "pushblock", "interact"]
+    },
+    {
+      "id": 10,
+      "object": "living_tv",
+      "position": {"x": -237.02, "y": 0.0, "z": 28.0},
+      "rotation": {"x": 0, "y": 90, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "lowpri", "pushblock", "climb", "clamber"]
+    },
+    {
+      "id": 11,
       "object": "living_wall",
       "position": {"x": 0.0, "y": 0.0, "z": 0.0},
       "rotation": {"x": 0, "y": 0, "z": 0},
@@ -31,18 +130,84 @@
       "data": 0,
       "spawnFlag": null,
       "variant": 0,
-      "flags": ["spawn", "reflect", "climb", "clamber", "interact", "mirror"]
+      "flags": ["spawn", "reflect", "climb", "clamber", "interact"]
     },
     {
-      "id": 3,
+      "id": 12,
       "object": "living_window",
-      "position": {"x": 318.23, "y": 2.0, "z": 134.0},
-      "rotation": {"x": 0, "y": -89, "z": 0},
+      "position": {"x": 317.95, "y": 0.0, "z": 134.0},
+      "rotation": {"x": 0, "y": -90, "z": 0},
       "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
       "data": 0,
       "spawnFlag": null,
       "variant": 0,
-      "flags": ["spawn", "reflect", "climb", "clamber", "interact", "mirror"]
+      "flags": ["spawn", "lowpri", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 13,
+      "object": "living_wall_up",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 14,
+      "object": "living_wall_corner",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 15,
+      "object": "living_wall_under",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "interact"]
+    },
+    {
+      "id": 16,
+      "object": "living_protector",
+      "position": {"x": 0.0, "y": 0.0, "z": 0.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["interact"]
+    },
+    {
+      "id": 17,
+      "object": "coin_g",
+      "position": {"x": -335.77, "y": 0.0, "z": 68.46},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "interact"]
+    },
+    {
+      "id": 18,
+      "object": "living_wall_c_h",
+      "position": {"x": -253.31, "y": 4.28, "z": 141.06},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "data": 0,
+      "spawnFlag": null,
+      "variant": 0,
+      "flags": ["spawn", "climb", "clamber", "grab", "interact"]
     }
   ]
 }
