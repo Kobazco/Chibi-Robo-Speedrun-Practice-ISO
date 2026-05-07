@@ -20894,7 +20894,7 @@ drake_hit_exact_frame:
 	pushbp
 	setsp	var(400.d)	; Staredown Frames
 	msg	speed(0.b),
-		"Frame Hit = 12(-5) | Frames Remaining = 0",
+		"Exact Frame was hit or went into the negatives (failsafe).",
 		"\nStaredown was ",
 		color(1.b),
 		format("%d"),
