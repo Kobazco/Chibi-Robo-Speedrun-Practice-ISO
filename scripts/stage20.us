@@ -6,6 +6,7 @@ evt_startup:
 	lib	375.w	; Enables Debug Menu additional options
 	if	not(flag(35.d)), else *startup_flags
 	lib	74.w
+	lib	55.w
 startup_flags:
 	set	flag(160.d), 0.w
 	set	flag(161.d), 0.w

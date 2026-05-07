@@ -3528,6 +3528,7 @@ lib_55:
 	run	*lib_37
 	popbp
 	win	@reset
+	if	not(flag(4000.d)), else *debug_reapply_custom_color	; Reapply Chibi's Custom Color
 	if	eq(map(0.d), 5.w), else *loc_1057
 	win	@color, 0.w, 0.w, 0.w, 255.w
 loc_1057:
@@ -18318,6 +18319,7 @@ lib_372:
 
 
 ; Debug Menu 0
+; Gets called on start up in every room (except for Chibi-House & Queen Spydor Fight)
 	.lib	375.w, *debug_menu
 debug_menu:
 	call	-200.d, *advance_cycle_text, *advance_cycle_func
@@ -18326,6 +18328,10 @@ debug_menu:
 	call	-200.d, *debug_pause_igt_text, *debug_pause_igt_func
 	call	-200.d, *debug_play_igt_text, *debug_play_igt_func
 	call	-200.d, *debug_save_igt_text, *debug_save_igt_func
+	return
+
+debug_reapply_custom_color:
+	color	20000.d, @modulate, var(410.w), var(411.w), var(412.w), 100.w
 	return
 
 advance_cycle_text:
@@ -18737,18 +18743,25 @@ debug_change_chibi_color:
 debug_chibi_color_red:
 	case eq(result, 1.w), else *debug_chibi_color_green
 	color	20000.d, @modulate, 255.w, 0.w, 0.w, 100.w
+	set	flag(4000.d), 1.w	; Custom Color ON
+	set	var(410.d),	255	; Red
 	return
 debug_chibi_color_blue:
 	case eq(result, 3.w), else *debug_chibi_color_default
 	color	20000.d, @modulate, 0.w, 0.w, 255.w, 100.w
+	set	flag(4000.d), 1.w	; Custom Color ON
+	set	var(412.d),	255	; Blue
 	return
 debug_chibi_color_green:
 	case eq(result, 2.w), else *debug_chibi_color_blue
 	color	20000.d, @modulate, 0.w, 255.w, 0.w, 100.w
+	set	flag(4000.d), 1.w	; Custom Color ON
+	set	var(411.d),	255	; Green
 	return
 debug_chibi_color_default:
 	case eq(result, 4.w), else *debug_break
 	color	20000.d, @modulate, 255.w, 255.w, 255.w, 30.w
+	set	flag(4000.d), 0.w	; Custom Color OFF
 	return
 
 debug_break:
@@ -18846,4 +18859,5 @@ debug_custom_color:
 		input(3.b, 3.b, 3.b)
 	set	var(412.d),	result	; Blue
 	color	20000.d, @modulate, var(410.w), var(411.w), var(412.w), 100.w
+	set	flag(4000.d), 1.w	; Custom Color ON
 	return
