@@ -519,6 +519,7 @@ loc_137:
 kitchen_to_foyer:	; Enter From Foyer
 	case	or(eq(map(1.d), 2.d), eq(flag(3000.d), 1.w)), else *kitchen_to_living
 	case	eq(flag(3010.d), 0.w), else *kitchen_to_living
+	case	eq(flag(3019.d), 0.w), else *loc_144	; Else go to drain
 	call	20000.d, 701.d
 	moveto	20000.d, -17326.d, 0.w, 28848.w, 100.w, -1.d, -2.d
 	wait	@time, 100.w
@@ -530,6 +531,7 @@ kitchen_to_foyer:	; Enter From Foyer
 	break	*loc_137
 kitchen_to_living:	; Enter from Living Room
 	case	or(eq(map(1.d), 7.d), eq(flag(3010.d), 1.w)), else *loc_142
+	case	eq(flag(3019.d), 0.w), else *loc_169	; Else go to drain
 	disp	18.d, 0.d
 	call	20000.d, 701.d
 	moveto	20000.d, 14822.w, 0.w, 26273.w, 100.w, -1.d, -2.d
@@ -547,7 +549,7 @@ loc_142:	; Enter from Debug(?) Unused
 	camera	@unk230
 	break	*loc_137
 loc_144:	; Enter from Drain
-	case	eq(map(1.d), 11.d), else *loc_149
+	case	or(eq(map(1.d), 11.d), eq(flag(3019.d), 1.w)), else *loc_149
 	lib	55.w
 	camera	@unk211, 34.w, 0.w, 2.d, 0.w
 	wait	@time, 1.w
@@ -9476,6 +9478,7 @@ sub_161:
 kitchen_to_foyer_cam:	; Foyer
 	case	or(eq(map(1.d), 2.d), eq(flag(3000.d), 1.w)), else *kitchen_to_living_cam
 	case	eq(flag(3010.d), 0.w), else *kitchen_to_living_cam
+	case	eq(flag(3019.d), 0.w), else *loc_169	; Else go to drain
 	disp	19.d, 0.d
 	dir	20000.d, 180.w
 	pos	20000.d, -15112.d, 0.w, 30123.w
@@ -9490,6 +9493,7 @@ loc_164:
 	return
 kitchen_to_living_cam:	; Living Room
 	case	or(eq(map(1.d), 7.d), eq(flag(3010.d), 1.w)), else *loc_167
+	case	eq(flag(3019.d), 0.w), else *loc_169	; Else go to drain
 	dir	20000.d, 240.w
 	pos	20000.d, 18006.w, 0.w, 28625.w
 	wait	@time, 1.w
@@ -9509,8 +9513,8 @@ loc_167:
 	camera	@unk229, 25.w, 3.d, 0.w
 	camera	@distance, 114.w, 3.d, 0.w
 	break	*loc_164
-loc_169:
-	case	eq(map(1.d), 11.d), else *loc_174
+loc_169:	; From Drain
+	case	or(eq(map(1.d), 11.d), eq(flag(3019.d), 1.w)), else *loc_174
 	dir	20000.d, 0.w
 	pos	20000.d, -564.d, 5186.w, -14165.d
 	wait	@time, 1.w

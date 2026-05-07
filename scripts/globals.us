@@ -18400,6 +18400,7 @@ debug_lib:
 	set	flag(3016.d), 0.w	; Jenny's Room Warp
 	set	flag(3017.d), 0.w	; Drake Redcrest Pose minigame
 	set	flag(3018.d), 0.w	; Day 2 Tree
+	set	flag(3019.d), 0.w	; Kitchen (From Drain)
 	; Set some flags i don't wanna deal with while practicing
 	set	flag(430.d), 1.w
 	set	flag(429.d), 1.w
@@ -18433,6 +18434,8 @@ debug_option_2: ; Downstairs Warps
 		speed(0.b),
 		"Kitchen - Foyer\n",
 		speed(0.b),
+		"Kitchen - Drain\n",
+		speed(0.b),
 		"Foyer - Living Room\n",
 		speed(0.b),
 		"Foyer - Basement\n",
@@ -18456,45 +18459,49 @@ debug_option_break:
 	return
 ; Downstairs Warp Selections
 debug_kitchen_foyer:
-	case eq(result, 1.w), else *debug_foyer_living
+	case eq(result, 1.w), else *debug_kitchen_drain
 	set	flag(3000.d), 1.w
 	run	*debug_exit_crm
 	warp 	1.d, 1.w
-	break *debug_option_break
+debug_kitchen_drain:
+	case eq(result, 2.w), else *debug_foyer_living
+	set	flag(3019.d), 1.w
+	run	*debug_exit_crm
+	warp 	1.d, 1.w
 debug_foyer_living:
-	case eq(result, 2.w), else *debug_foyer_basement
+	case eq(result, 3.w), else *debug_foyer_basement
 	set	flag(3011.d), 1.w
 	run	*debug_exit_crm
 	warp	2.d, 1.w
 debug_foyer_basement:
-	case eq(result, 3.w), else *debug_foyer_kitchen
+	case eq(result, 4.w), else *debug_foyer_kitchen
 	set	flag(3001.d), 1.w
 	run	*debug_exit_crm
 	warp	2.d, 1.w
 debug_foyer_kitchen:
-	case eq(result, 4.w), else *debug_backyard
+	case eq(result, 5.w), else *debug_backyard
 	set	flag(3002.d), 1.w
 	run	*debug_exit_crm
 	warp	2.d, 1.w
 debug_backyard:
-	case eq(result, 5.w), else *debug_basement
+	case eq(result, 6.w), else *debug_basement
 	set	flag(3012.d), 1.w
 	set	flag(49.d), 1.w
 	run	*debug_exit_crm
 	warp	9.d, 1.w
 debug_basement:
-	case eq(result, 6.w), else *debug_drain
+	case eq(result, 7.w), else *debug_drain
 	set	flag(3013.d), 1.w
 	run	*debug_exit_crm
 	warp	3.d, 1.w
 debug_drain:
-	case eq(result, 7.w), else *debug_chibi_house
+	case eq(result, 8.w), else *debug_chibi_house
 	set	flag(3014.d), 1.w
 	run	*debug_exit_crm
 	set	flag(1122.d), 1.w
 	warp	11.d, 1.w
 debug_chibi_house:
-	case eq(result, 8.w), else *debug_break
+	case eq(result, 9.w), else *debug_break
 	run	*debug_exit_crm
 	warp	5.d, 1.w
 ; Upstairs Warps
