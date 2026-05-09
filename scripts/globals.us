@@ -9503,6 +9503,7 @@ lib_104:
 	set	result, 0.d
 	; No suit, debug options
 	lib	369.w
+	set	result, 0.d
 	return
 loc_2251:
 	if	ne(cur_atc, 0.d), else *loc_2253
@@ -18222,7 +18223,6 @@ loc_3935:
 	.lib	369.w, *lib_369
 lib_369:
 	goto *debug_lib
-	set	battery(0.d), battery(1.d)
 	scrn	@hud, 4.d, -1.d	; Unpause IGT
 	return
 	/*msg	voice(0.b),
@@ -18813,7 +18813,6 @@ debug_chibi_color_default:
 	return
 
 debug_break:
-	set	battery(0.d), battery(1.d)
 	scrn	@hud, 4.d, -1.d	; Unpause IGT
 	return
 
