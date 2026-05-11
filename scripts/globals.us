@@ -9498,6 +9498,7 @@ lib_104:
 	set	var(1007.d), sp(2.b)
 	set	var(1009.d), sp(1.b)
 	set	var(1008.d), sp(0.b)
+	if	not(and(pad(0.d), 4.d)), else *debug_save_state_menu	; Go to save state menu regardless of suit
 	if	eq(cur_suit, 0.d), else *loc_2251
 	printf	"きぐるみを着てないので　Ｚアクション不可です\n"
 	set	result, 0.d
@@ -18223,9 +18224,9 @@ loc_3935:
 
 	.lib	369.w, *lib_369
 lib_369:
-	if	not(and(pad(0.d), 16.d)), else *debug_save_state_menu
 	goto *debug_lib
 	scrn	@hud, 4.d, -1.d	; Unpause IGT
+	set	result, 0.d
 	return
 	/*msg	voice(0.b),
 		speed(0.b),
@@ -18920,4 +18921,253 @@ debug_custom_color:
 
 ; save states
 debug_save_state_menu:
+	select	speed(0.b),
+		"Save State\n",
+		speed(0.b),
+		"Load State"
+	case	eq(result, 0.w), else *debug_load_state_menu
+	; Select Slot to "Save" to
+	select	speed(0.b),
+		"1\n",
+		speed(0.b),
+		"2\n",
+		speed(0.b),
+		"3\n",
+		speed(0.b),
+		"4\n",
+		speed(0.b),
+		"5\n",
+		speed(0.b),
+		"6\n",
+		speed(0.b),
+		"7\n",
+		speed(0.b),
+		"8\n",
+		speed(0.b),
+		"9\n",
+		speed(0.b),
+		"10"
+	case	eq(result, 0.w), else *debug_save_state_2
+	; Things we need to save: X, Y, Z, dir, anim(?), map, battery %, time left in cycle, moolah, happy points(?)
+	set	var(500.d), obj(@dir, 20000.d)		; Facing Direction
+	set	var(501.d), obj(@pos_x, 20000.d)	; X coordinate
+	set	var(502.d), obj(@pos_y, 20000.d)	; Y coordinate
+	set	var(503.d), obj(@pos_z, 20000.d)	; Z coordinate
+	set	var(504.d), obj(@anim, 20000.d)		; Animation at the time of happening
+	set var(505.d), map(0.d)				; Current Map
+	set var(506.d),	battery(0.d)			; Current Battery
+	set var(507.d), time(1.d)				; % Time left in Cycle
+	set var(508.d), money					; Current Moolah
+	set var(509.d), exp						; Current Happy Point Coint
+	set var(510.d), scrap					; Current Scrap Count
+	set var(511.d), cur_atc					; Equipped Chibi-Tool
+	set var(512.d), cur_suit				; Equipped Suit
+	set flag(4011.d), 1.d					; State 1 in use
+	return
+debug_save_state_2:
+	case	eq(result, 1.w), else *debug_save_state_3
+	; Things we need to save: X, Y, Z, dir, anim(?), map, battery %, time left in cycle, moolah, happy points(?)
+	set	var(521.d), obj(@dir, 20000.d)		; Facing Direction
+	set	var(522.d), obj(@pos_x, 20000.d)	; X coordinate
+	set	var(523.d), obj(@pos_y, 20000.d)	; Y coordinate
+	set	var(524.d), obj(@pos_z, 20000.d)	; Z coordinate
+	set	var(525.d), obj(@anim, 20000.d)		; Animation at the time of happening
+	set var(526.d), map(0.d)				; Current Map
+	set var(527.d),	battery(0.d)			; Current Battery
+	set var(528.d), time(1.d)				; % Time left in Cycle
+	set var(529.d), money					; Current Moolah
+	set var(530.d), exp						; Current Happy Point Coint
+	set var(531.d), scrap					; Current Scrap Count
+	set var(532.d), cur_atc					; Equipped Chibi-Tool
+	set var(533.d), cur_suit				; Equipped Suit
+	set flag(4012.d), 1.d					; State 2 in use
+	return
+debug_save_state_3:
+	case	eq(result, 2.w), else *debug_save_state_4
+	; Things we need to save: X, Y, Z, dir, anim(?), map, battery %, time left in cycle, moolah, happy points(?)
+	set	var(541.d), obj(@dir, 20000.d)		; Facing Direction
+	set	var(542.d), obj(@pos_x, 20000.d)	; X coordinate
+	set	var(543.d), obj(@pos_y, 20000.d)	; Y coordinate
+	set	var(544.d), obj(@pos_z, 20000.d)	; Z coordinate
+	set	var(545.d), obj(@anim, 20000.d)		; Animation at the time of happening
+	set var(546.d), map(0.d)				; Current Map
+	set var(547.d),	battery(0.d)			; Current Battery
+	set var(548.d), time(1.d)				; % Time left in Cycle
+	set var(549.d), money					; Current Moolah
+	set var(550.d), exp						; Current Happy Point Coint
+	set var(551.d), scrap					; Current Scrap Count
+	set var(552.d), cur_atc					; Equipped Chibi-Tool
+	set var(553.d), cur_suit				; Equipped Suit
+	set flag(4013.d), 1.d					; State 3 in use
+	return
+debug_save_state_4:
+	case	eq(result, 3.w), else *debug_save_state_5
+	; Things we need to save: X, Y, Z, dir, anim(?), map, battery %, time left in cycle, moolah, happy points(?)
+	set	var(561.d), obj(@dir, 20000.d)		; Facing Direction
+	set	var(562.d), obj(@pos_x, 20000.d)	; X coordinate
+	set	var(563.d), obj(@pos_y, 20000.d)	; Y coordinate
+	set	var(564.d), obj(@pos_z, 20000.d)	; Z coordinate
+	set	var(565.d), obj(@anim, 20000.d)		; Animation at the time of happening
+	set var(566.d), map(0.d)				; Current Map
+	set var(567.d),	battery(0.d)			; Current Battery
+	set var(568.d), time(1.d)				; % Time left in Cycle
+	set var(569.d), money					; Current Moolah
+	set var(570.d), exp						; Current Happy Point Coint
+	set var(571.d), scrap					; Current Scrap Count
+	set var(572.d), cur_atc					; Equipped Chibi-Tool
+	set var(573.d), cur_suit				; Equipped Suit
+	set flag(4014.d), 1.d					; State 4 in use
+	return
+debug_save_state_5:
+	case	eq(result, 4.w), else *debug_save_state_6
+	; Things we need to save: X, Y, Z, dir, anim(?), map, battery %, time left in cycle, moolah, happy points(?)
+	set	var(581.d), obj(@dir, 20000.d)		; Facing Direction
+	set	var(582.d), obj(@pos_x, 20000.d)	; X coordinate
+	set	var(583.d), obj(@pos_y, 20000.d)	; Y coordinate
+	set	var(584.d), obj(@pos_z, 20000.d)	; Z coordinate
+	set	var(585.d), obj(@anim, 20000.d)		; Animation at the time of happening
+	set var(586.d), map(0.d)				; Current Map
+	set var(587.d),	battery(0.d)			; Current Battery
+	set var(588.d), time(1.d)				; % Time left in Cycle
+	set var(589.d), money					; Current Moolah
+	set var(590.d), exp						; Current Happy Point Coint
+	set var(591.d), scrap					; Current Scrap Count
+	set var(592.d), cur_atc					; Equipped Chibi-Tool
+	set var(593.d), cur_suit				; Equipped Suit
+	set flag(4015.d), 1.d					; State 5 in use
+	return
+debug_save_state_6:
+	case	eq(result, 5.w), else *debug_save_state_7
+	; Things we need to save: X, Y, Z, dir, anim(?), map, battery %, time left in cycle, moolah, happy points(?)
+	set	var(601.d), obj(@dir, 20000.d)		; Facing Direction
+	set	var(602.d), obj(@pos_x, 20000.d)	; X coordinate
+	set	var(603.d), obj(@pos_y, 20000.d)	; Y coordinate
+	set	var(604.d), obj(@pos_z, 20000.d)	; Z coordinate
+	set	var(605.d), obj(@anim, 20000.d)		; Animation at the time of happening
+	set var(606.d), map(0.d)				; Current Map
+	set var(607.d),	battery(0.d)			; Current Battery
+	set var(608.d), time(1.d)				; % Time left in Cycle
+	set var(609.d), money					; Current Moolah
+	set var(610.d), exp						; Current Happy Point Coint
+	set var(611.d), scrap					; Current Scrap Count
+	set var(612.d), cur_atc					; Equipped Chibi-Tool
+	set var(613.d), cur_suit				; Equipped Suit
+	set flag(4016.d), 1.d					; State 6 in use
+	return
+debug_save_state_7:
+	case	eq(result, 6.w), else *debug_save_state_8
+	; Things we need to save: X, Y, Z, dir, anim(?), map, battery %, time left in cycle, moolah, happy points(?)
+	set	var(621.d), obj(@dir, 20000.d)		; Facing Direction
+	set	var(622.d), obj(@pos_x, 20000.d)	; X coordinate
+	set	var(623.d), obj(@pos_y, 20000.d)	; Y coordinate
+	set	var(624.d), obj(@pos_z, 20000.d)	; Z coordinate
+	set	var(625.d), obj(@anim, 20000.d)		; Animation at the time of happening
+	set var(626.d), map(0.d)				; Current Map
+	set var(627.d),	battery(0.d)			; Current Battery
+	set var(628.d), time(1.d)				; % Time left in Cycle
+	set var(629.d), money					; Current Moolah
+	set var(630.d), exp						; Current Happy Point Coint
+	set var(631.d), scrap					; Current Scrap Count
+	set var(632.d), cur_atc					; Equipped Chibi-Tool
+	set var(633.d), cur_suit				; Equipped Suit
+	set flag(4017.d), 1.d					; State 7 in use
+	return
+debug_save_state_8:
+	case	eq(result, 7.w), else *debug_save_state_9
+	; Things we need to save: X, Y, Z, dir, anim(?), map, battery %, time left in cycle, moolah, happy points(?)
+	set	var(641.d), obj(@dir, 20000.d)		; Facing Direction
+	set	var(642.d), obj(@pos_x, 20000.d)	; X coordinate
+	set	var(643.d), obj(@pos_y, 20000.d)	; Y coordinate
+	set	var(644.d), obj(@pos_z, 20000.d)	; Z coordinate
+	set	var(645.d), obj(@anim, 20000.d)		; Animation at the time of happening
+	set var(646.d), map(0.d)				; Current Map
+	set var(647.d),	battery(0.d)			; Current Battery
+	set var(648.d), time(1.d)				; % Time left in Cycle
+	set var(649.d), money					; Current Moolah
+	set var(650.d), exp						; Current Happy Point Coint
+	set var(651.d), scrap					; Current Scrap Count
+	set var(652.d), cur_atc					; Equipped Chibi-Tool
+	set var(653.d), cur_suit				; Equipped Suit
+	set flag(4018.d), 1.d					; State 8 in use
+	return
+debug_save_state_9:
+	case	eq(result, 8.w), else *debug_save_state_10
+	; Things we need to save: X, Y, Z, dir, anim(?), map, battery %, time left in cycle, moolah, happy points(?)
+	set	var(661.d), obj(@dir, 20000.d)		; Facing Direction
+	set	var(662.d), obj(@pos_x, 20000.d)	; X coordinate
+	set	var(663.d), obj(@pos_y, 20000.d)	; Y coordinate
+	set	var(664.d), obj(@pos_z, 20000.d)	; Z coordinate
+	set	var(665.d), obj(@anim, 20000.d)		; Animation at the time of happening
+	set var(666.d), map(0.d)				; Current Map
+	set var(667.d),	battery(0.d)			; Current Battery
+	set var(668.d), time(1.d)				; % Time left in Cycle
+	set var(669.d), money					; Current Moolah
+	set var(670.d), exp						; Current Happy Point Coint
+	set var(671.d), scrap					; Current Scrap Count
+	set var(672.d), cur_atc					; Equipped Chibi-Tool
+	set var(673.d), cur_suit				; Equipped Suit
+	set flag(4019.d), 1.d					; State 9 in use
+	return
+debug_save_state_10:
+	case	eq(result, 9.w), else *debug_state_return
+	; Things we need to save: X, Y, Z, dir, anim(?), map, battery %, time left in cycle, moolah, happy points(?)
+	set	var(681.d), obj(@dir, 20000.d)		; Facing Direction
+	set	var(682.d), obj(@pos_x, 20000.d)	; X coordinate
+	set	var(683.d), obj(@pos_y, 20000.d)	; Y coordinate
+	set	var(684.d), obj(@pos_z, 20000.d)	; Z coordinate
+	set	var(685.d), obj(@anim, 20000.d)		; Animation at the time of happening
+	set var(686.d), map(0.d)				; Current Map
+	set var(687.d),	battery(0.d)			; Current Battery
+	set var(688.d), time(1.d)				; % Time left in Cycle
+	set var(689.d), money					; Current Moolah
+	set var(690.d), exp						; Current Happy Point Coint
+	set var(691.d), scrap					; Current Scrap Count
+	set var(692.d), cur_atc					; Equipped Chibi-Tool
+	set var(693.d), cur_suit				; Equipped Suit
+	set flag(4020.d), 1.d					; State 10 in use
+	return
+
+debug_load_state_menu:
+	select	speed(0.b),
+		"1\n",
+		speed(0.b),
+		"2\n",
+		speed(0.b),
+		"3\n",
+		speed(0.b),
+		"4\n",
+		speed(0.b),
+		"5\n",
+		speed(0.b),
+		"6\n",
+		speed(0.b),
+		"7\n",
+		speed(0.b),
+		"8\n",
+		speed(0.b),
+		"9\n",
+		speed(0.b),
+		"10"
+	case	eq(result, 0.w), else *debug_load_state_2
+	if		flag(4011.d), else *debug_load_state_2
+	dir	20000.d, var(500.d)							; Load Dir
+	pos	20000.d, var(501.d), var(502.d), var(503.d)	; Load Position
+	anim	20000.d, var(504.d)						; Load Animation
+	;set var(505.d), map(0.d)				; Current Map
+	set battery(0.d), var(506.d)			; Load Battery
+	set time(1.d), var(507.d)				; Load % left in Cycle
+	set money, var(508.d)					; Load Money
+	set exp, var(509.d)						; Load Happy Points
+	set scrap, var(510.d)					; Load Scrap
+	if	not(eq(cur_atc, var(511.d))), else *state_2_suit	; Only if you're not holding the saved tool
+	set cur_atc, var(511.d)					; Load Chibi-Tool
+state_2_suit:
+	if	not(eq(cur_suit, var(512.d))), else *debug_state_return	; Only if you're not in the saved suit
+	set cur_suit, var(512.d)				; Load Suit
+	return
+
+debug_load_state_2:
+	return
+
+debug_state_return:
 	return
