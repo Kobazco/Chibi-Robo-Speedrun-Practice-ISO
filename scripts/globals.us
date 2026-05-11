@@ -18920,6 +18920,7 @@ debug_custom_color:
 	return
 
 ; save states
+; TODO: Add Map Checking
 debug_save_state_menu:
 	select	speed(0.b),
 		"Save Chibi-State\n",
@@ -19152,7 +19153,9 @@ debug_load_state_menu:
 		speed(0.b),
 		"10"
 	case	eq(result, 0.w), else *debug_load_state_2
-	if		flag(4011.d), else *debug_state_return
+	if	flag(4011.d), else *debug_state_no_state
+	set	var(700.d), var(505.d)	; Copy to a common var cause im lazy
+	case	eq(map(0.d), var(700.d)), else *debug_state_wrong_map
 	dir	20000.d, var(500.d)							; Load Dir
 	pos	20000.d, var(501.d), var(502.d), var(503.d)	; Load Position
 	anim	20000.d, var(504.d)						; Load Animation
@@ -19171,7 +19174,9 @@ state_1_suit:
 	
 debug_load_state_2:
 	case	eq(result, 1.w), else *debug_load_state_3
-	if		flag(4012.d), else *debug_state_return	; Has this state been saved before
+	if	flag(4012.d), else *debug_state_no_state	; Has this state been saved before
+	set	var(700.d), var(525.d)	; Copy to a common var cause im lazy
+	case	eq(map(0.d), var(700.d)), else *debug_state_wrong_map
 	dir	20000.d, var(520.d)							; Load Dir
 	pos	20000.d, var(521.d), var(522.d), var(523.d)	; Load Position
 	anim	20000.d, var(524.d)						; Load Animation
@@ -19190,7 +19195,9 @@ state_2_suit:
 	
 debug_load_state_3:
 	case	eq(result, 2.w), else *debug_load_state_4
-	if		flag(4013.d), else *debug_state_return	; Has this state been saved before
+	if	flag(4013.d), else *debug_state_no_state	; Has this state been saved before
+	set	var(700.d), var(545.d)	; Copy to a common var cause im lazy
+	case	eq(map(0.d), var(700.d)), else *debug_state_wrong_map
 	dir	20000.d, var(540.d)							; Load Dir
 	pos	20000.d, var(541.d), var(542.d), var(543.d)	; Load Position
 	anim	20000.d, var(544.d)						; Load Animation
@@ -19209,7 +19216,9 @@ state_3_suit:
 	
 debug_load_state_4:
 	case	eq(result, 3.w), else *debug_load_state_5
-	if		flag(4014.d), else *debug_state_return	; Has this state been saved before
+	if	flag(4014.d), else *debug_state_no_state	; Has this state been saved before
+	set	var(700.d), var(565.d)	; Copy to a common var cause im lazy
+	case	eq(map(0.d), var(700.d)), else *debug_state_wrong_map
 	dir	20000.d, var(560.d)							; Load Dir
 	pos	20000.d, var(561.d), var(562.d), var(563.d)	; Load Position
 	anim	20000.d, var(564.d)						; Load Animation
@@ -19228,7 +19237,9 @@ state_4_suit:
 	
 debug_load_state_5:
 	case	eq(result, 4.w), else *debug_load_state_6
-	if		flag(4015.d), else *debug_state_return	; Has this state been saved before
+	if	flag(4015.d), else *debug_state_no_state	; Has this state been saved before
+	set	var(700.d), var(585.d)	; Copy to a common var cause im lazy
+	case	eq(map(0.d), var(700.d)), else *debug_state_wrong_map
 	dir	20000.d, var(580.d)							; Load Dir
 	pos	20000.d, var(581.d), var(582.d), var(583.d)	; Load Position
 	anim	20000.d, var(584.d)						; Load Animation
@@ -19247,7 +19258,9 @@ state_5_suit:
 	
 debug_load_state_6:
 	case	eq(result, 5.w), else *debug_load_state_7
-	if		flag(4016.d), else *debug_state_return	; Has this state been saved before
+	if	flag(4016.d), else *debug_state_no_state	; Has this state been saved before
+	set	var(700.d), var(605.d)	; Copy to a common var cause im lazy
+	case	eq(map(0.d), var(700.d)), else *debug_state_wrong_map
 	dir	20000.d, var(600.d)							; Load Dir
 	pos	20000.d, var(601.d), var(602.d), var(603.d)	; Load Position
 	anim	20000.d, var(604.d)						; Load Animation
@@ -19266,7 +19279,9 @@ state_6_suit:
 	
 debug_load_state_7:
 	case	eq(result, 6.w), else *debug_load_state_8
-	if		flag(4017.d), else *debug_state_return	; Has this state been saved before
+	if	flag(4017.d), else *debug_state_no_state	; Has this state been saved before
+	set	var(700.d), var(625.d)	; Copy to a common var cause im lazy
+	case	eq(map(0.d), var(700.d)), else *debug_state_wrong_map
 	dir	20000.d, var(620.d)							; Load Dir
 	pos	20000.d, var(621.d), var(622.d), var(623.d)	; Load Position
 	anim	20000.d, var(624.d)						; Load Animation
@@ -19285,7 +19300,9 @@ state_7_suit:
 	
 debug_load_state_8:
 	case	eq(result, 7.w), else *debug_load_state_9
-	if		flag(4018.d), else *debug_state_return	; Has this state been saved before
+	if	flag(4018.d), else *debug_state_no_state	; Has this state been saved before
+	set	var(700.d), var(645.d)	; Copy to a common var cause im lazy
+	case	eq(map(0.d), var(700.d)), else *debug_state_wrong_map
 	dir	20000.d, var(640.d)							; Load Dir
 	pos	20000.d, var(641.d), var(642.d), var(643.d)	; Load Position
 	anim	20000.d, var(644.d)						; Load Animation
@@ -19304,7 +19321,9 @@ state_8_suit:
 	
 debug_load_state_9:
 	case	eq(result, 8.w), else *debug_load_state_10
-	if		flag(4019.d), else *debug_state_return	; Has this state been saved before
+	if	flag(4019.d), else *debug_state_no_state	; Has this state been saved before
+	set	var(700.d), var(665.d)	; Copy to a common var cause im lazy
+	case	eq(map(0.d), var(700)), else *debug_state_wrong_map
 	dir	20000.d, var(660.d)							; Load Dir
 	pos	20000.d, var(661.d), var(662.d), var(663.d)	; Load Position
 	anim	20000.d, var(664.d)						; Load Animation
@@ -19323,7 +19342,9 @@ state_9_suit:
 	
 debug_load_state_10:
 	case	eq(result, 9.w), else *debug_state_return
-	if		flag(4020.d), else *debug_state_return	; Has this state been saved before
+	if	flag(4020.d), else *debug_state_no_state	; Has this state been saved before
+	set	var(700.d), var(685.d)	; Copy to a common var cause im lazy
+	case	eq(map(0.d), var(700.d)), else *debug_state_wrong_map
 	dir	20000.d, var(680.d)							; Load Dir
 	pos	20000.d, var(681.d), var(682.d), var(683.d)	; Load Position
 	anim	20000.d, var(684.d)						; Load Animation
@@ -19341,4 +19362,34 @@ state_10_suit:
 	break *debug_state_return
 
 debug_state_return:
+	return
+
+debug_state_wrong_map:
+	pushbp
+	setsp	map(0.d)	; Current Map
+	setsp	var(700.d)	; Saved Map
+	msg	speed(0.b),
+		color(7.b),	; Red
+		"Wrong Map! Can't load Chibi-State!",
+		color(0.b),
+		"\nSaved Map: ",
+		format("%d"),
+		" | Current Map: ",
+		format("%d"),
+		wait(255.b)
+	popbp
+	return
+
+debug_state_no_state:
+	set	result, add(result, 1)
+	pushbp
+	setsp	result
+	msg	speed(0.b),
+		color(7.b),	; Red
+		"No Chibi-State detected in slot ",
+		color(0.b),
+		format("%d"),
+		".",
+		wait(255.b)
+	popbp
 	return
