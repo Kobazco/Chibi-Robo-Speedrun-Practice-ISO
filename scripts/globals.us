@@ -18758,7 +18758,9 @@ debug_page_2:
 		speed(0.b),
 		"Advance day/night cycle\n",
 		speed(0.b),
-		"Change Chibi-Robo's Color"
+		"Change Chibi-Robo's Color\n",
+		speed(0.b),
+		"Access Save States"
 	case eq(result, 0.w), else *debug_chips
 ; All Utilibots
 	set	var(701.d), 1.d
@@ -18784,8 +18786,19 @@ debug_option_4:
 	case eq(result, 2.w), else *debug_change_chibi_color
 	goto *debug_cycle_advance
 
+debug_menu_access_states:
+	case eq(result, 4.w), else *debug_break
+	msg  	speed(0.b),
+		"Hold ",
+		icon(3.b),
+		" while pressing ",
+		icon(10.b),
+		"\nto quickly access the Save State menu.",
+		wait(255.b)
+	goto *debug_save_state_menu
+
 debug_change_chibi_color:
-	case eq(result, 3.w), else *debug_break
+	case eq(result, 3.w), else *debug_menu_access_states
 	select	speed(0.b),
 		"Custom Color\n",
 		speed(0.b),
@@ -18933,7 +18946,6 @@ debug_custom_color:
 	return
 
 ; save states
-; TODO: Add Map Checking
 debug_save_state_menu:
 	select	speed(0.b),
 		"Save Chibi-State\n",
