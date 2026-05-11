@@ -18716,7 +18716,9 @@ debug_battery_selection:
 		speed(0.b),
 		"140.0\n",
 		speed(0.b),
-		"80.0"
+		"80.0\n",
+		speed(0.b),
+		"Custom"
 	case eq(result, 0.w), else *debug_battery_120
 	set	battery(1.d), 10000.d
 	set	battery(0.d), battery(1.d)
@@ -18732,8 +18734,19 @@ debug_battery_140:
 	set	battery(0.d), battery(1.d)
 	return
 debug_battery_80:
-	case eq(result, 3.w), else *debug_break
+	case eq(result, 3.w), else *debug_battery_custom
 	set	battery(1.d), 8000.d
+	set	battery(0.d), battery(1.d)
+	return
+debug_battery_custom:
+	case eq(result, 4.w), else *debug_break
+	msg	speed(0.b),
+		"Max Battery - Ex: (140.00):\n",
+		size(24.b),
+		speed(0.b),
+		" ",
+		input(5.b, 5.b, 5.b)
+	set	battery(1.d), result
 	set	battery(0.d), battery(1.d)
 	return
 debug_page_2:
