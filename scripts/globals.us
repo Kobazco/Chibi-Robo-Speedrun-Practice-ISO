@@ -9502,7 +9502,8 @@ lib_104:
 	printf	"きぐるみを着てないので　Ｚアクション不可です\n"
 	set	result, 0.d
 	; No suit, debug options
-	lib	369.w
+	;lib	369.w
+	run	*lib_369
 	set	result, 0.d
 	return
 loc_2251:
@@ -18222,6 +18223,7 @@ loc_3935:
 
 	.lib	369.w, *lib_369
 lib_369:
+	if	not(and(pad(0.d), 16.d)), else *debug_save_state_menu
 	goto *debug_lib
 	scrn	@hud, 4.d, -1.d	; Unpause IGT
 	return
@@ -18423,7 +18425,7 @@ debug_save_igt_func:
 	msg	speed(0.b),
 		"Timer Value = ",
 		format("%d"),
-		"\n              m:ss:ms",
+		"\n(centiseconds)",
 		wait(255.b)
 	popbp*/
 	scrn	@hud, 4.d, -1.d		; Play IGT
@@ -18512,7 +18514,8 @@ debug_option_2: ; Downstairs Warps
 	warp	1.d, 1.w ; Kitchen Warp
 	break *debug_option_break
 debug_option_break:
-	lib 53.w
+	;lib 53.w
+	run *lib_53
 	return
 ; Downstairs Warp Selections
 debug_kitchen_foyer:
@@ -18826,21 +18829,26 @@ debug_neither_time:
 	printf	"昼夜ステータスがないよ\n"
 debug_set_day:
 	set	time(1.d), 0.d
-	lib	252.w
-	lib	121.w
+	;lib	252.w
+	;lib	121.w
+	run *lib_252
+	run *lib_121
 	return
 debug_day_time:
 	elif	eq(time(0.d), 1.d), else *debug_neither_time
 	printf	"昼です\n"
 	set	time(0.d), 0.d
-	lib	264.w
-	lib	265.w
+	;lib	264.w
+	;lib	265.w
+	run *lib_264
+	run *lib_265
 	endif	*debug_set_day
 
 sub_918:
 	call	10.d, 2.d, 0.d
 	wait	@time, 1.w
-	lib	155.w
+	run	*lib_155
+	;lib	155.w
 	call	20000.d, 800.d
 	scrn	@hud, 0.d, 3.d
 	scrn	@hud, 1.d, 3.d
@@ -18875,7 +18883,8 @@ debug_menu_option_1_func:
 	menu	6*/
 
 debug_menu_test:
-	lib	375.w	; Write Extra Debug Functions
+	;lib	375.w	; Write Extra Debug Functions
+	run	*debug_menu
 	menu 	0.d
 	;menu	1000, *debug_menu_option_1,	*debug_menu_option_1_func
 	break	*debug_menu_break
@@ -18907,4 +18916,8 @@ debug_custom_color:
 	set	var(412.d),	result	; Blue
 	color	20000.d, @modulate, var(410.w), var(411.w), var(412.w), 100.w
 	set	flag(4000.d), 1.w	; Custom Color ON
+	return
+
+; save states
+debug_save_state_menu:
 	return
