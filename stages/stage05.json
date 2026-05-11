@@ -956,17 +956,6 @@
       "spawnFlag": null,
       "variant": 0,
       "flags": ["interact"]
-    },
-    {
-      "id": 87,
-      "object": "npc_consentman",
-      "position": {"x": -6.43, "y": 0.0, "z": -15},
-      "rotation": {"x": 0, "y": 0, "z": 0},
-      "scale": {"x": 0.5, "y": 0.5, "z": 0.5},
-      "data": 0,
-      "spawnFlag": null,
-      "variant": 1,
-      "flags": ["spawn", "opaque", "lowpri", "interact", "projectile"]
     }
   ]
 }

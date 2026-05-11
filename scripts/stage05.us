@@ -6042,9 +6042,3 @@ evt_test_box_4_61:
 	printf	"コレクションルーム"
 	lib	39.w
 	return
-
-; Mr. Prongs Debug thing
-	.interact  87.d, *evt_npc_debug
-evt_npc_debug:
-	lib	369.w
-	return
