@@ -18756,7 +18756,7 @@ debug_page_2:
 		speed(0.b),
 		"All Chips\n",
 		speed(0.b),
-		"Advance day/night cycle\n",
+		"Edit/Advance Cycle\n",
 		speed(0.b),
 		"Change Chibi-Robo's Color\n",
 		speed(0.b),
@@ -18784,7 +18784,20 @@ debug_chips:
 ; Advance the cycle
 debug_option_4:
 	case eq(result, 2.w), else *debug_change_chibi_color
-	goto *debug_cycle_advance
+	select	speed(0.b),
+		"Set % of cycle used\n",
+		speed(0.b),
+		"Advance to day/night"
+	case eq(result, 0.w), else *debug_cycle_advance
+	; Set % of cycle used
+	msg	speed(0.b),
+		"% of cycle elapsed:\n",
+		size(24.b),
+		speed(0.b),
+		" ",
+		input(3.b, 3.b, 3.b)
+	set 	time(1.d), result
+	return
 
 debug_menu_access_states:
 	case eq(result, 4.w), else *debug_break
